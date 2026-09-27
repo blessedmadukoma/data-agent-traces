@@ -1,0 +1,33 @@
+{
+ "dry_run": {
+  "cells": 1545,
+  "not_run": 0,
+  "data_failures": 9,
+  "caught": 9,
+  "ok_cells_ran": 1517,
+  "false_blocks": 13,
+  "false_blocks_by_type": {
+   "KeyError": 13,
+   "FileNotFoundError": 0
+  },
+  "other_errors_on_ok": 154,
+  "new_files_cells": 2,
+  "seconds_median": 0.0,
+  "seconds_p95": 1.136,
+  "caught_ci": [
+   0.7008472464490406,
+   1.0
+  ],
+  "false_block_rate_ci": [
+   0.00501486094127041,
+   0.014606906374931356
+  ]
+ },
+ "ia_deepseek41_v8.jsonl": {
+  "cells": 1545,
+  "data_failures": 9,
+  "caught": 8,
+  "ok_cells": 1517,
+  "blocks_on_ok": 0
+ }
+}

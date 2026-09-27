@@ -1,0 +1,33 @@
+{
+ "dry_run": {
+  "cells": 2113,
+  "not_run": 0,
+  "data_failures": 114,
+  "caught": 104,
+  "ok_cells_ran": 1889,
+  "false_blocks": 18,
+  "false_blocks_by_type": {
+   "KeyError": 18,
+   "FileNotFoundError": 0
+  },
+  "other_errors_on_ok": 150,
+  "new_files_cells": 0,
+  "seconds_median": 0.003,
+  "seconds_p95": 1.856,
+  "caught_ci": [
+   0.8460255383653317,
+   0.9516554164078552
+  ],
+  "false_block_rate_ci": [
+   0.0060358754130440135,
+   0.015012689876307193
+  ]
+ },
+ "db_gpt-oss_v8.jsonl": {
+  "cells": 2113,
+  "data_failures": 114,
+  "caught": 18,
+  "ok_cells": 1889,
+  "blocks_on_ok": 0
+ }
+}

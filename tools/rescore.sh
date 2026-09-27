@@ -41,8 +41,10 @@ for run in $RUNS; do
   # the Python folders that the sandbox of the recorded runs mounted
   uv run infiagent/mount_exists.py --roots /home/claude/iaenv /usr -- --gate-dir dabstep-gate --kb "$kb" \
     --results "$results" --out "$OUT/${name}_v8_live.jsonl" > "$OUT/${name}_v8_live.txt"
-  uv run baselines/dry_run_score.py --dry "$REC/dry/${name}_s100.jsonl" --gate "$OUT/${name}_v8.jsonl" \
-    > "$OUT/${name}_dry_s100.json"
+  for variant in h0 s100; do
+    uv run baselines/dry_run_score.py --dry "$REC/dry/${name}_$variant.jsonl" --gate "$OUT/${name}_v8.jsonl" \
+      > "$OUT/${name}_dry_$variant.json"
+  done
 done
 uv run baselines/llm_checker_score.py "$REC"/llm_check/*.jsonl > "$OUT/llm_checker.txt"
 cat "$REC"/e1/validation_seed1.jsonl "$REC"/e1/validation_seed2.jsonl > "$OUT/e1_validation.jsonl"
@@ -67,7 +69,7 @@ echo "v6 on the v7 runs (blocks on working cells):"
 for f in ia_gpt-oss_v6 qr_gpt-oss_v6 ia_deepseek41_v6; do
   echo "  $f: $(grep -h 'cells without an error' "$OUT/$f.txt")"
 done
-echo "Baselines: see $OUT/*_dry_s100.json (caught, false_blocks) and $OUT/llm_checker.txt"
-echo "Table 4: $OUT/e1_gpt-oss.txt and $OUT/e1_deepseek41.txt"
+echo "Baselines: see $OUT/*_dry_h0.json and *_dry_s100.json (caught, false_blocks) and $OUT/llm_checker.txt"
+echo "Table 5: $OUT/e1_gpt-oss.txt and $OUT/e1_deepseek41.txt"
 echo "Receipt replay: $(grep -h 'all episodes' "$OUT/receipts_gpt-oss.txt")"
 echo "Constant answers: $(tail -1 "$OUT/constant_answers_gpt-oss.txt")"
