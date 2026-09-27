@@ -19,7 +19,7 @@ SHA256 = $(shell command -v sha256sum > /dev/null && echo sha256sum || echo shas
 DAB_MODELS = gemini-2.5-flash gemini-3-pro gpt-5-mini gpt-5.1 gpt-5.2 kimi-k2-thinking
 
 .PHONY: help setup test check-frozen dabstep-data dabstep dabstep-extra dabstep-recount dab-data dab \
-        bench-data rescore \
+        bench-data rescore fa-rescore fa-replay \
         receipts-select receipts-cost-check receipts-report
 
 help:
@@ -34,6 +34,8 @@ help:
 	@echo "dab              DataAgentBench replay: prevalence, checker, harness counts, MongoDB"
 	@echo "bench-data       clone InfiAgent-DABench, QRData and DiscoveryBench at the pinned commits (about 540 MB)"
 	@echo "rescore          score the recorded model runs again, without model calls"
+	@echo "fa-rescore       score the recorded runs again with the answers that our harness lost recovered"
+	@echo "fa-replay        replay the recorded runs with final_answer protected (Linux, bubblewrap; about 1 hour)"
 	@echo "receipts-select  cut the 1,000 DABstep episodes of the receipt replay (no model calls)"
 	@echo "receipts-cost-check  run the first 10 episodes with a model (needs OLLAMA_API_KEY; about USD 0.07)"
 	@echo "receipts-report  report the receipt replay"
@@ -45,6 +47,7 @@ test:
 	cd dabstep-gate && uv run python -m unittest test_gate.py
 	cd dataagentbench-replay && uv run python -m unittest test_dab.py
 	cd rq3-pilot && DABSTEP_DATA=$(abspath $(DATA)) uv run python -m unittest test_rq3.py
+	cd live && uv run python -m unittest test_fa_runner.py
 
 check-frozen:
 	$(SHA256) -c frozen/v6.sha256 frozen/v7.sha256 frozen/v8.sha256
@@ -121,6 +124,35 @@ bench-data:
 
 rescore:
 	sh tools/rescore.sh
+
+# Answers lost by our harness (preprint, Section 3.4). fa-rescore uses the released replays in
+# results/fa-replay; fa-replay makes them again. SANDBOX_PY is a Python with requirements/sandbox.txt.
+FA_REPLAYS ?= results/fa-replay
+SANDBOX_PY ?= sandbox-env/bin/python
+BENCH ?= data
+
+fa-rescore:
+	[ -d recorded ] || tar xzf recorded-runs-2026-09.tar.gz
+	mkdir -p runs
+	uv run live/fa_rescore.py --rec recorded --replays $(FA_REPLAYS) --out runs/fa_recorded | tee runs/fa_rescore_summary.txt
+	BENCH=$(BENCH) REC=runs/fa_recorded OUT=runs/rescore_fa sh tools/rescore.sh
+
+fa-replay:
+	[ -d recorded ] || tar xzf recorded-runs-2026-09.tar.gz
+	uv run python tools/make_kb.py discoverybench --data $(BENCH)/discoverybench/discoverybench/real --out runs/fa_db_kb
+	$(SANDBOX_PY) live/fa_replay.py --tag live_gpt --results recorded/e1/results.jsonl \
+	  --data $(BENCH)/QRData/benchmark/data --out runs/fa-replay/live_gpt.jsonl
+	$(SANDBOX_PY) live/fa_replay.py --tag live_ds --results recorded/e1/results_deepseek41.jsonl \
+	  --data $(BENCH)/QRData/benchmark/data --out runs/fa-replay/live_ds.jsonl
+	$(SANDBOX_PY) live/fa_replay.py --tag ia_gpt --results recorded/ia/results_gpt-oss.jsonl \
+	  --data $(BENCH)/InfiAgent/examples/DA-Agent/data/da-dev-tables --out runs/fa-replay/ia_gpt.jsonl
+	$(SANDBOX_PY) live/fa_replay.py --tag ia_ds --results recorded/ia/results_deepseek41.jsonl \
+	  --data $(BENCH)/InfiAgent/examples/DA-Agent/data/da-dev-tables --out runs/fa-replay/ia_ds.jsonl
+	$(SANDBOX_PY) live/fa_replay.py --tag qr_gpt --results recorded/qr/results_gpt-oss.jsonl \
+	  --data $(BENCH)/QRData/benchmark/data --out runs/fa-replay/qr_gpt.jsonl
+	$(SANDBOX_PY) live/fa_replay.py --tag db_gpt --results recorded/db/results_gpt-oss.jsonl \
+	  --data-per-domain runs/fa_db_kb/data --out runs/fa-replay/db_gpt.jsonl
+	@echo "Now run: make fa-rescore FA_REPLAYS=runs/fa-replay"
 
 receipts-select:
 	mkdir -p $(RQ3_RUN)/gate-v6

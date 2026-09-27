@@ -1,0 +1,8 @@
+P0G0: seed 1: 0.384 (n 411); seed 2: 0.382 (n 411)
+P0G1: seed 1: 0.326 (n 411); seed 2: 0.409 (n 411)
+P1G0: seed 1: 0.382 (n 411); seed 2: 0.401 (n 411)
+P1G1: seed 1: 0.443 (n 411); seed 2: 0.421 (n 411)
+seed 1, P0, questions where the checker never blocked: 238; accuracy without the checker 0.412, with it 0.324, difference -8.8 points
+seed 1, P1, questions where the checker never blocked: 330; accuracy without the checker 0.394, with it 0.464, difference +7.0 points
+seed 2, P0, questions where the checker never blocked: 230; accuracy without the checker 0.409, with it 0.430, difference +2.2 points
+seed 2, P1, questions where the checker never blocked: 305; accuracy without the checker 0.436, with it 0.413, difference -2.3 points

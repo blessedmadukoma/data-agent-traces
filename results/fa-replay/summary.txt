@@ -1,0 +1,15 @@
+live_gpt: runs 3288, no recorded answer 1141, model defined or assigned final_answer 962, replayed 1149, answer recovered 934, answer changed 0, not used because an earlier cell diverged 4, cells removed 9610; replay reproduced the recorded outcome of 5287/5294 earlier cells
+  P0G0: runs 822, model defined or assigned final_answer 284, answer recovered 278
+  P0G1: runs 822, model defined or assigned final_answer 252, answer recovered 240
+  P1G0: runs 822, model defined or assigned final_answer 226, answer recovered 217
+  P1G1: runs 822, model defined or assigned final_answer 200, answer recovered 199
+live_ds: runs 850, no recorded answer 213, model defined or assigned final_answer 167, replayed 213, answer recovered 167, answer changed 0, not used because an earlier cell diverged 0, cells removed 1616; replay reproduced the recorded outcome of 792/793 earlier cells
+  P0G0: runs 411, model defined or assigned final_answer 74, answer recovered 74
+  P0G1: runs 411, model defined or assigned final_answer 89, answer recovered 89
+  P1G0: runs 15, model defined or assigned final_answer 3, answer recovered 3
+  P1G1: runs 13, model defined or assigned final_answer 1, answer recovered 1
+ia_gpt: runs 257, no recorded answer 91, model defined or assigned final_answer 41, replayed 91, answer recovered 35, answer changed 0, not used because an earlier cell diverged 1, cells removed 393; replay reproduced the recorded outcome of 818/831 earlier cells
+ia_ds: runs 257, no recorded answer 68, model defined or assigned final_answer 68, replayed 68, answer recovered 68, answer changed 0, not used because an earlier cell diverged 0, cells removed 647; replay reproduced the recorded outcome of 171/171 earlier cells
+qr_gpt: runs 411, no recorded answer 148, model defined or assigned final_answer 112, replayed 150, answer recovered 108, answer changed 0, not used because an earlier cell diverged 1, cells removed 924; replay reproduced the recorded outcome of 1041/1042 earlier cells
+db_gpt: runs 264, no recorded answer 79, model defined or assigned final_answer 64, replayed 80, answer recovered 56, answer changed 0, not used because an earlier cell diverged 4, cells removed 520; replay reproduced the recorded outcome of 422/457 earlier cells
+written runs/fa_recorded

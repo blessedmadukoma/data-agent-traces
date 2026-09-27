@@ -1,0 +1,9 @@
+P0G0: n 822 (not done 0); accuracy 0.613; cells 5.60; tokens 18647; executed name failures 567 in 348 questions; blocked 0 in 0; cost $3.04
+P0G1: n 822 (not done 0); accuracy 0.573; cells 5.27; tokens 16542; executed name failures 39 in 35 questions; blocked 387 in 352; cost $2.72
+P1G0: n 822 (not done 0); accuracy 0.572; cells 4.69; tokens 14857; executed name failures 277 in 187 questions; blocked 0 in 0; cost $2.46
+P1G1: n 822 (not done 1); accuracy 0.583; cells 4.41; tokens 13847; executed name failures 29 in 24 questions; blocked 197 in 187; cost $2.29
+H1 gate within P0: questions 411, pairs 822; cells saved 0.332 [-0.005, 0.664], fewer/more/equal 204/163/44, sign p 0.0367; accuracy 0.613 -> 0.573, diff -0.040 [-0.073, -0.007], McNemar p 0.022; tokens saved 2106 [875, 3398]; benefit claim False
+H3 gate within P1: questions 411, pairs 821; cells saved 0.288 [-0.051, 0.630], fewer/more/equal 193/162/56, sign p 0.1112; accuracy 0.571 -> 0.583, diff +0.012 [-0.020, +0.045], McNemar p 0.509; tokens saved 1026 [-95, 2157]; benefit claim False
+prompt within G0: questions 411, pairs 822; cells saved 0.906 [0.566, 1.242], fewer/more/equal 236/144/31, sign p 0.0000; accuracy 0.613 -> 0.572, diff -0.041 [-0.074, -0.009], McNemar p 0.016; tokens saved 3790 [2488, 5101]; benefit claim False
+H2 prompting within G0: executed name failures P0 567 -> P1 277 (question-runs with one: 348 -> 187); fewer/more 262/83, sign p 0.0000
+block validation: {'confirmed': 580, 'other_error': 8}

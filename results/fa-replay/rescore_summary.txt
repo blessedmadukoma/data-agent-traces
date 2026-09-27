@@ -1,0 +1,18 @@
+Table 3 (working cells, blocked; failures caught with the version of the row):
+  ia_gpt-oss_v7: cells without an error: 1664; blocked 0 | caught with a cause match: 6 / 23 
+  qr_gpt-oss_v7: cells without an error: 2143; blocked 0 | caught with a cause match: 13 / 280 
+  ia_deepseek41_v7: cells without an error: 875; blocked 0 | caught with a cause match: 8 / 9 
+  db_gpt-oss_v8: cells without an error: 1380; blocked 0 | caught with a cause match: 18 / 114 
+Table 3, live file check:
+  ia_gpt-oss_v7_live: caught with a cause match: 12 / 23 
+  qr_gpt-oss_v7_live: caught with a cause match: 142 / 280 
+  ia_deepseek41_v7_live: caught with a cause match: 8 / 9 
+  db_gpt-oss_v8_live: caught with a cause match: 86 / 114 
+v6 on the v7 runs (blocks on working cells):
+  ia_gpt-oss_v6: cells without an error: 1664; blocked 11
+  qr_gpt-oss_v6: cells without an error: 2143; blocked 0
+  ia_deepseek41_v6: cells without an error: 875; blocked 7
+Baselines: see runs/rescore_fa/*_dry_h0.json and *_dry_s100.json (caught, false_blocks) and runs/rescore_fa/llm_checker.txt
+Table 5: runs/rescore_fa/e1_gpt-oss.txt and runs/rescore_fa/e1_deepseek41.txt
+Receipt replay:   all episodes: n = 907; mean saving 0.332 [0.257, 0.406]; receipt fewer 484, more 238, equal 185; sign p = 0.0000; Wilcoxon p = 0.0000
+Constant answers: pairs where only the receipt arm did so: 309; only the traceback arm: 245; sign test p = 0.007
