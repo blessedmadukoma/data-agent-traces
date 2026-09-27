@@ -1,0 +1,10 @@
+# Python packages inside the sandbox where the agent's code runs.
+# Used for the InfiAgent-DABench, QRData, DiscoveryBench and live QRData runs (24 September 2026).
+# numpy, scipy and openpyxl versions were not recorded at run time.
+pandas==3.0.6
+numpy
+scipy
+openpyxl
+scikit-learn==1.9.1
+statsmodels==0.15.0
+matplotlib==3.11.2

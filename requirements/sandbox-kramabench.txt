@@ -1,0 +1,6 @@
+# Python packages inside the sandbox for the KramaBench run (23 September 2026).
+# numpy, scipy and openpyxl versions were not recorded at run time.
+pandas==3.0.6
+numpy
+scipy
+openpyxl
