@@ -6,11 +6,11 @@ Each `.sha256` file lists the files of one frozen checker version with their SHA
 make check-frozen
 ```
 
-| File | Version | Workloads it was tested on unchanged |
-| --- | --- | --- |
-| `v6.sha256` | v6 (`dabstep-gate/v6/gate.py`) | KramaBench, receipt replay on DABstep |
-| `v7.sha256` | v7 (`dabstep-gate/v7/gate.py`, scored with `kramabench/kb_gate.py`) | InfiAgent-DABench with gpt-oss:120b and deepseek-v4.1-flash, QRData |
-| `v8.sha256` | v8 (`dabstep-gate/gate.py` and the scripts of the live experiment and the LLM baseline) | DiscoveryBench, live QRData experiment, baselines |
+| File | Version | In the preprint | Workloads it was tested on unchanged |
+| --- | --- | --- | --- |
+| `v6.sha256` | v6 (`dabstep-gate/v6/gate.py`) | frozen release 1 | KramaBench, receipt replay on DABstep |
+| `v7.sha256` | v7 (`dabstep-gate/v7/gate.py`, scored with `kramabench/kb_gate.py`) | frozen release 2 | InfiAgent-DABench with gpt-oss:120b and deepseek-v4.1-flash, QRData |
+| `v8.sha256` | v8 (`dabstep-gate/gate.py` and the scripts of the live experiment and the LLM baseline) | frozen release 3 | DiscoveryBench, live QRData experiment, baselines |
 
 ## Two differences from the freeze records
 

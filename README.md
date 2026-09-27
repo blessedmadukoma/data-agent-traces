@@ -66,13 +66,13 @@ The experiments with models need Linux with [bubblewrap](https://github.com/cont
 
 ## Frozen checker versions
 
-We changed the checker only between workloads. Before a new workload was opened, we froze the checker by SHA-256 and then ran it unchanged on that workload. Three versions were frozen:
+We changed the checker only between workloads. Before a new workload was opened, we froze the checker by SHA-256 and then ran it unchanged on that workload. Versions 1 to 5 were development versions, built and tested only on DABstep and DAB. Three versions were frozen, and the preprint calls them frozen releases 1, 2 and 3:
 
-| Version | Frozen on | Used for | Hash file |
-| --- | --- | --- | --- |
-| v6 | 23 September 2026 | KramaBench, receipt replay | `frozen/v6.sha256` |
-| v7 | 24 September 2026 | InfiAgent-DABench (two models), QRData | `frozen/v7.sha256` |
-| v8 | 24 September 2026, 10:21 UTC | DiscoveryBench, live QRData experiment, baselines | `frozen/v8.sha256` |
+| Code version | In the preprint | Frozen on | Used for | Hash file |
+| --- | --- | --- | --- | --- |
+| v6 | frozen release 1 | 23 September 2026 | KramaBench, receipt replay | `frozen/v6.sha256` |
+| v7 | frozen release 2 | 24 September 2026 | InfiAgent-DABench (two models), QRData | `frozen/v7.sha256` |
+| v8 | frozen release 3 | 24 September 2026, 10:21 UTC | DiscoveryBench, live QRData experiment, baselines | `frozen/v8.sha256` |
 
 `make check-frozen` checks all three. Frozen files are kept byte for byte, so a few of their docstrings still show paths from our machine, such as `/home/claude/iaenv`. Replace these with your own paths when you run the commands. [frozen/README.md](frozen/README.md) lists the two files that are not byte-identical to their freeze and explains why.
 

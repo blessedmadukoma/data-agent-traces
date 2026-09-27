@@ -121,7 +121,7 @@ Receipt replay:   all episodes: n = 907; mean saving 0.332 [0.257, 0.406]; ...
 | Preprint | Value | File in `runs/rescore/` |
 | --- | --- | --- |
 | Table 3 | the four later rows | summary above; one report per run and version |
-| 3.2 | frozen release 7 blocked none of 6,628 working cells; v6 would have made 20 false blocks | summary above (2,057 + 3,054 + 1,517 cells; 12 + 0 + 8 blocks) |
+| 3.2 | frozen release 2 (v7) blocked none of 6,628 working cells; release 1 (v6) would have made 20 false blocks | summary above (2,057 + 3,054 + 1,517 cells; 12 + 0 + 8 blocks) |
 | 3.2 | the frozen releases blocked none of 8,517 working cells in the four later runs | `ia_gpt-oss_v7.txt`, `qr_gpt-oss_v7.txt`, `ia_deepseek41_v7.txt`, `db_gpt-oss_v8.txt` |
 | 3.2, Table 4 | dry run on 101-line copies: 425 of 428 caught (99.3%), 11 of 8,517 wrongly stopped | `*_dry_s100.json`: add `caught`, `data_failures` and `false_blocks` over the four runs |
 | Table 4 | dry run on header-only copies: 409 of 428, 61 working cells stopped | `*_dry_h0.json`: add over the four runs |
