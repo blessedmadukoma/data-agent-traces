@@ -1,0 +1,19 @@
+[project]
+name = "data-agent-traces"
+version = "1.0.0"
+description = "Program-data failures in LLM data agents: trace parsers, an exact pre-execution checker, and the experiments of the preprint"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Blessed Madukoma", email = "blessedmadukoma@gmail.com" }]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "huggingface-hub>=0.24",
+    "numpy>=2.0",
+    "pandas>=3.0.6",
+    "pyflakes>=3.2",
+    "scipy>=1.13",
+    "statsmodels>=0.14",
+]
+
+[dependency-groups]
+dab = ["mongomock>=4.1", "pymongo>=4.6"]

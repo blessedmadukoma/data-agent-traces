@@ -1,0 +1,14 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Downloaded data and run outputs
+data/
+runs/
+recorded/
+dry_lakes/
+sandbox-env*/
