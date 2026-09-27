@@ -18,7 +18,7 @@ The checker and the scripts for the DABstep submissions at dataset commit `c8fb5
 | List every submission file and decide which to use | `build_manifest.py` | `manifest.jsonl` |
 | Parse the three trace formats into cells | `extract_xml_trace_cells.py`, `extract_smolagents_trace_cells.py`, `extract_generic_trace_cells.py` | `parsed_*_cells.jsonl` |
 | Run the checker on every cell | `evaluate_gate.py` | `gate_predictions.jsonl`, `checker_report.txt` |
-| Recovery after a program-data failure | `recovery_episodes.py` | `recovery_report.txt` |
+| Recovery after a data-reference error | `recovery_episodes.py` | `recovery_report.txt` |
 | Filters on values that are not in the column | `silent_filter_check.py` | `silent_filter_report.txt` |
 | Syntax errors in code that compiles | `dabstep_syntax_check.py` | `syntax_check_report.txt` |
 | Recovery by error group and the outcome regression | `recovery_from_traces.py` | `recovery.csv`, `outcome_report.txt` |

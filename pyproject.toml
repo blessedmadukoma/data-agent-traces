@@ -1,7 +1,7 @@
 [project]
 name = "data-agent-traces"
 version = "1.0.0"
-description = "Program-data failures in LLM data agents: trace parsers, an exact pre-execution checker, and the experiments of the preprint"
+description = "Data-reference errors and harness effects in LLM data agents: trace parsers, an exact pre-execution checker, and the experiments of the preprint"
 readme = "README.md"
 license = "MIT"
 authors = [{ name = "Blessed Madukoma", email = "blessedmadukoma@gmail.com" }]

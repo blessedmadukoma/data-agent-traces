@@ -5,7 +5,7 @@ Scripts for the baseline logs of DataAgentBench (DAB) [1]: branch `refs/pull/6/h
 | Step | Script | Output in `runs/dab/` |
 | --- | --- | --- |
 | One record per run, every call classified | `extract_dab_cells.py` | `cells_<model>.jsonl` |
-| Program-data failures and harness-caused failures by model | `dab_rq1.py` | `rq1.json`, `rq1_report.txt` |
+| Data-reference errors and harness-caused failures by model | `dab_rq1.py` | `rq1.json`, `rq1_report.txt` |
 | Checker on every Python call | `dab_gate_eval.py`, `dab_gate_summary.py` | `gate_<model>.jsonl`, `checker_report.txt` |
 | Syntax errors caused by the code wrapper, all logs and paper-matched | `dab_harness_count.py` | `harness_report.txt`, `harness_report_paper_matched.txt` |
 | MongoDB queries cut by the default limit of 5 | `dab_mongo.py` | `mongo.json`, `mongo_report.txt` |

@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the preprint below."
-title: "data-agent-traces: code for 'Data Agents Often Name Missing Data and Recover Cheaply; Harnesses Distort the Record'"
+title: "data-agent-traces: code for 'What Agent Traces Hide: Data-Reference Errors and Harness Effects in LLM Data Agents'"
 type: software
 version: 1.0.0
 date-released: 2026-09-27
@@ -19,7 +19,7 @@ keywords:
 preferred-citation:
   type: article
   status: preprint
-  title: "Data Agents Often Name Missing Data and Recover Cheaply; Harnesses Distort the Record"
+  title: "What Agent Traces Hide: Data-Reference Errors and Harness Effects in LLM Data Agents"
   authors:
     - family-names: Madukoma
       given-names: Blessed

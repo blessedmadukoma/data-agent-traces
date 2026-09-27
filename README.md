@@ -1,6 +1,6 @@
 # data-agent-traces
 
-Code for the preprint *Data Agents Often Name Missing Data and Recover Cheaply; Harnesses Distort the Record* (B. Madukoma, 2026).
+Code for the preprint *What Agent Traces Hide: Data-Reference Errors and Harness Effects in LLM Data Agents* (B. Madukoma, 2026).
 
 A data agent answers a question by writing Python or SQL, running it and reading the output. The code names columns, keys and files. This repository measures what happens when a name is wrong. It has three parts:
 
@@ -14,10 +14,10 @@ The repository contains no benchmark data. The commands below download each data
 
 | Result in the preprint | Command | Cost |
 | --- | --- | --- |
-| DABstep: 4,429 of 26,265 failed cells (16.9%) are program-data failures | `make dabstep` | free, about 10 minutes |
+| DABstep: 16.9% of failed cells (4,429 of 26,265) are data-reference errors | `make dabstep` | free, about 10 minutes |
 | DABstep: the checker stops 2,122 of them (47.9%) and blocks 4 of 48,219 working cells | `make dabstep` | free |
 | DABstep: 2,459 recovery episodes, next cell fixes 36%, never recovered 6% | `make dabstep-extra` | free |
-| DAB: 17.0% of failed calls (after harness errors) are program-data failures | `make dab` | free, about 20 minutes |
+| DAB: 17.0% of failed calls (after harness errors) are data-reference errors | `make dab` | free, about 20 minutes |
 | DAB: the harness turns 16,293 of 75,366 Python calls (21.6%) into syntax errors | `make dab` | free |
 | DAB, paper-matched corpus: 8,940 of 52,940 Python calls (16.9%) | `make dab` | free |
 | DAB: 5,418 of 6,306 unlimited MongoDB queries (85.9%) are cut to 5 documents | `make dab` | free |

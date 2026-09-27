@@ -30,19 +30,27 @@ make dabstep-recount
 | Table 1 | 74,484 cells, 48,219 working | `checker_report.txt`: `cells without an error: 48219` and `n=74484` |
 | Table 1 | 26 submission files, 9 submitters | `silent_filter_report.txt`: `submissions: 26; submitters: 9` |
 | Table 1 | 11,226 traces | distinct `(submission_file, trace_line)` pairs in `parsed_*_cells.jsonl` |
-| Finding 1 | 4,429 of 26,265 failed cells (16.9%) | `checker_report.txt`: `failed cells: 26265` and `data-reference failures: 4429` |
-| Finding 1 | 6.0% to 26.2% by submitter | `checker_report.txt`: column `data-fail` divided by column `failed` (ConfuseG 6 of 100, yiliu051016 1,940 of 7,418) |
-| Finding 1 | 3,401 key and index errors: 58.5% in no file, 11.9% only in another file, 11.0% case mismatch | `recount_report.txt`: `missing-key classes (n=3401)`; "only in another file" is the sum of the five `exists-only-in` lines |
-| Finding 1 | odds ratio 0.73 (0.49 to 1.08), 10,100 traces, 9 clusters | `outcome_report.txt`: `OR(correct ...): 0.73 [0.49, 1.08], n=10100, submitters=9` |
-| Finding 2 | 2,122 of 4,429 stopped (47.9%), 4 of 48,219 working cells blocked | `checker_report.txt`: `caught with a cause match: 2122 (47.9%)` and `blocked 4` |
-| Finding 2 | 2,459 recovery episodes; next cell fixes 36%; never recovered 6% | `recovery_report.txt`: row `ALL (pooled)` of the first table, columns `fix next` and `never ok` |
-| Finding 2 | within two cells 61% | `recovery_report.txt`: `fix next` plus `fix 2` (36% + 25%) |
-| Finding 2 | a perfect receipt would save 3.9% of all cells | `recovery_report.txt`: `ceiling: ... 2916 cells would be saved, 3.9% of all 74484 cells` |
-| Finding 3 | 6 submissions without state; 80% to 96% of cells that use an earlier name fail; 0% to 5% in the others | `fresh_process.txt` (also the first lines of `checker_report.txt`) |
-| Finding 3 | `NameError`: 8,153 cells, 31% of failures | `error_types.txt` |
-| Finding 3 | 23 silently replaced keys | `checker_report.txt`: `replaced silently, in cells without an error: 23` |
-| Finding 3 | 18 more false blocks without the tolerant profile | the command below: `cells without an error: 48219; blocked 22` (22 = 4 + 18) |
-| What this means | 1.5% of traces have a filter on a value that is not in the column | `silent_filter_report.txt`: `traces with a silent impossible filter: 163 (1.5%)` |
+| 3.1 | 4,429 of 26,265 failed cells (16.9%) | `checker_report.txt`: `failed cells: 26265` and `data-reference failures: 4429` |
+| 3.1 | 6.0% to 26.2% by submitter | `checker_report.txt`: column `data-fail` divided by column `failed` (ConfuseG 6 of 100, yiliu051016 1,940 of 7,418) |
+| 3.1 | 3,393 missing columns or keys, 1,002 missing files, 34 missing `usecols` fields | `error_types.txt`: `index-error(wrapped)` 2,484 + `KeyError` 882 + `KeyError(wrapped)` 27; `FileNotFoundError` 1,002; `ValueError:usecols` 34 |
+| 3.1 | 3,401 key and index errors: 58.5% in no file, 11.9% only in another file, 11.0% case mismatch | `recount_report.txt`: `missing-key classes (n=3401)`; "only in another file" is the sum of the five `exists-only-in` lines |
+| 3.1 | odds ratio 0.73 (0.49 to 1.08), 10,100 traces, 9 clusters | `outcome_report.txt`: `OR(correct ...): 0.73 [0.49, 1.08], n=10100, submitters=9` |
+| 3.1 | without one submitter, 0.63 (0.44 to 0.89) | `outcome_report.txt`: `without sileiam 0.63 [0.44, 0.89]` |
+| 3.2 | 2,122 of 4,429 stopped (47.9%), 4 of 48,219 working cells blocked | `checker_report.txt`: `caught with a cause match: 2122 (47.9%)` and `blocked 4` |
+| 3.2 | pyflakes flags only 6% of the stopped cells | `checker_report.txt`: `not flagged by lint ...: 1994 of 2122` (128 of 2,122 flagged) |
+| 3.2 | missing files: a live check could stop 81.9%, a replay 60.9% | `checker_report.txt`: line starting `missing-file failures: 1002` |
+| 2.3 | median cost 0.65 ms per cell | `checker_report.txt`: `gate latency per cell: median 0.65 ms` |
+| 3.3 | 2,459 recovery episodes; next cell fixes 36%; never recovered 6% | `recovery_report.txt`: row `ALL (pooled)` of the first table, columns `fix next` and `never ok` |
+| 3.3 | within two cells 61% | `recovery_report.txt`: `fix next` plus `fix 2` (36% + 25%) |
+| 3.3 | a perfect receipt would save 3.9% of all cells | `recovery_report.txt`: `ceiling: ... 2916 cells would be saved, 3.9% of all 74484 cells` |
+| 3.4 | 6 submissions without state; 80% to 96% of cells that use an earlier name fail; 0% to 5% in the others | `fresh_process.txt` (also the first lines of `checker_report.txt`) |
+| 3.4 | `NameError`: 8,153 cells, 31% of failures | `error_types.txt` |
+| 3.4 | 10 submissions ran on smolagents 1.0 to 1.4 | `checker_report.txt`: `--tolerant auto: 10 submissions` |
+| 3.4 | 90 of 3,127 syntax-error cells have code that compiles | `syntax_check_report.txt` |
+| 3.4 | 160 and 165 of 450 traces read files that are not part of the benchmark | `recount_report.txt`: the two `Renmin University` lines, `traces: 160` and `traces: 165` |
+| 3.4 | 23 silently replaced keys | `checker_report.txt`: `replaced silently, in cells without an error: 23` |
+| 3.4 | 18 more false blocks without the tolerant profile | the command below: `cells without an error: 48219; blocked 22` (22 = 4 + 18) |
+| 4, Discussion | 1.5% of traces have a filter on a value that is not in the column | `silent_filter_report.txt`: `traces with a silent impossible filter: 163 (1.5%)` |
 
 Command for the check without the tolerant profile. It is the command of `make dabstep` without `--tolerant auto`, and without `--lint`, which does not change any block:
 
@@ -65,12 +73,13 @@ The DAB logs have no licence file. The authors allowed us to publish statistics 
 | --- | --- | --- |
 | Table 1 | 19,130 runs, 198,606 calls, 154,329 working | `rq1_report.txt`: row `ALL` (154,329 = 198,606 calls minus 44,277 failed) |
 | Table 2 | failed calls, harness-caused, share by model | `rq1_report.txt`: columns `failed`, `harness`, `primary` |
-| Finding 1 | 4,751 of 27,984 (17.0%); 10.7% of all failed calls | `rq1_report.txt`: row `ALL`, columns `data`, `primary`, `second.` |
-| Finding 1 | 3,532 SQL and 1,219 Python references | `rq1_report.txt`: columns `sql` and `py` |
-| Finding 3 | 16,293 of 75,366 Python calls (21.6%) | `harness_report.txt` |
-| Finding 3 | 4,976 calls with a changed string literal | `harness_report.txt`: last line |
-| Finding 3 | paper-matched: 12,958 runs; 8,940 of 52,940 (16.9%); 31.3% of failed calls | `harness_report_paper_matched.txt` |
-| Finding 3 | 5,418 of 6,306 unlimited MongoDB queries (85.9%) | `mongo_report.txt`: `"nolimit_checked": 6306`, `"nolimit_cut": 5418` |
+| 3.1 | 4,751 of 27,984 (17.0%); 10.7% of all failed calls | `rq1_report.txt`: row `ALL`, columns `data`, `primary`, `second.` |
+| 3.1 | 3,532 SQL and 1,219 Python references | `rq1_report.txt`: columns `sql` and `py` |
+| 3.2 | the checker stops 41.3% of Python data-reference errors (503 of 1,219) and blocks none of 38,350 working calls; SQL is 74% of the errors (3,532 of 4,751) | `checker_report.txt`, `rq1_report.txt` |
+| 3.4 | 16,293 of 75,366 Python calls (21.6%) | `harness_report.txt` |
+| 3.4 | 4,976 calls with a changed string literal | `harness_report.txt`: last line |
+| 3.4 | paper-matched: 12,958 runs; 8,940 of 52,940 (16.9%); 31.3% of failed calls | `harness_report_paper_matched.txt` |
+| 3.4 | 5,418 of 6,306 unlimited MongoDB queries (85.9%) | `mongo_report.txt`: `"nolimit_checked": 6306`, `"nolimit_cut": 5418` |
 | Introduction | harness errors outnumber program-data failures (16,293 against 4,751) | `rq1_report.txt`: row `ALL`, columns `harness` and `data` |
 
 `dab_harness_count.py` compiles code with the Python that runs it. The published counts use Python 3.12, as in DAB's executor image, and the script warns if you use another version.
@@ -112,15 +121,17 @@ Receipt replay:   all episodes: n = 907; mean saving 0.332 [0.257, 0.406]; ...
 | Preprint | Value | File in `runs/rescore/` |
 | --- | --- | --- |
 | Table 3 | the four later rows | summary above; one report per run and version |
-| Finding 2 | frozen v7 blocked none of 6,628 working cells; v6 would have made 20 false blocks | summary above (2,057 + 3,054 + 1,517 cells; 12 + 0 + 8 blocks) |
-| Finding 2 | frozen v8 blocked none of 8,517 working cells | `*_v8.txt` of the four runs |
-| Finding 2 | dry run: 425 of 428 caught (99.3%), 11 of 8,517 wrongly stopped | `*_dry_s100.json`: add `caught`, `data_failures` and `false_blocks` over the four runs |
-| Finding 2 | LLM checker: 244 of 428 caught (57.0%), 134 wrongly stopped | `llm_checker.txt`: add the four lines |
-| Table 4 | accuracy, cells, tokens and failures by arm; H1 saving 0.58 cells, p = 0.056 | `e1_gpt-oss.txt` |
-| Finding 2 | 588 live blocks: 580 confirmed, 8 with another error first | `e1_gpt-oss.txt`: `block validation` |
-| Finding 1 | deepseek-v4.1-flash: 7 failures in 5 of 411 runs without the checker; accuracy 56.0% in both arms | `e1_deepseek41.txt`: line `P0G0` (failures) and lines `P0G0`, `P0G1` (accuracy) |
-| Finding 2 | receipt saves 0.33 cells (0.26 to 0.41); 0.17 without the largest submitter | `receipts_gpt-oss.txt`: `PRIMARY` and `(c)` |
-| Finding 2 | the receipt arm more often ends with a constant answer (309 against 245 pairs) | `constant_answers_gpt-oss.txt` |
+| 3.2 | frozen release 7 blocked none of 6,628 working cells; v6 would have made 20 false blocks | summary above (2,057 + 3,054 + 1,517 cells; 12 + 0 + 8 blocks) |
+| 3.2 | the frozen releases blocked none of 8,517 working cells in the four later runs | `ia_gpt-oss_v7.txt`, `qr_gpt-oss_v7.txt`, `ia_deepseek41_v7.txt`, `db_gpt-oss_v8.txt` |
+| 3.2, Table 4 | dry run on 101-line copies: 425 of 428 caught (99.3%), 11 of 8,517 wrongly stopped | `*_dry_s100.json`: add `caught`, `data_failures` and `false_blocks` over the four runs |
+| Table 4 | dry run on header-only copies: 409 of 428, 61 working cells stopped | `*_dry_h0.json`: add over the four runs |
+| 3.2, Table 4 | LLM checker: 244 of 428 caught (57.0%), 134 wrongly stopped | `llm_checker.txt`: add the four lines |
+| Table 5 | accuracy, cells, tokens and failures by arm; H1 saving 0.58 cells, p = 0.056 | `e1_gpt-oss.txt` |
+| 3.3 | 588 live blocks: 580 confirmed, 8 with another error first | `e1_gpt-oss.txt`: `block validation` |
+| 3.1 | deepseek-v4.1-flash: 7 failures in 5 of 411 runs without the checker; accuracy 56.0% in both arms | `e1_deepseek41.txt`: line `P0G0` (failures) and lines `P0G0`, `P0G1` (accuracy) |
+| 3.3 | receipt saves 0.33 cells (0.26 to 0.41); 0.17 without the largest submitter | `receipts_gpt-oss.txt`: `PRIMARY` and `(c)` |
+| 3.3 | the receipt arm more often ends with a constant answer (309 against 245 pairs) | `constant_answers_gpt-oss.txt` |
+| 3.3 | deepseek-v4-flash:0731 and deepseek-v4.1-flash save 0.23 and 0.20 cells | `results/model-runs/receipts_deepseek-v4-flash-0731.txt` and `receipts_deepseek41.txt` (from the original runs) |
 | Table 1 | cells and working cells of our runs: KramaBench 1,150 and 953; InfiAgent-DABench 3,648 and 3,574; QRData 3,434 and 3,054; DiscoveryBench 2,113 and 1,889 | `model cells` and `cells without an error` in the `*_v8.txt` reports (InfiAgent-DABench: add both models) and in `results/model-runs/kramabench_gpt-oss_v6.txt` |
 
 The KramaBench run is not in the archive, because the KramaBench repository has no licence file. Its report is `results/model-runs/kramabench_gpt-oss_v6.txt` (953 working cells, 4 blocked, 8 of 47 failures caught).
@@ -197,7 +208,7 @@ uv run infiagent/mount_exists.py --roots $ROOTS -- --gate-dir dabstep-gate --kb 
 
 `tools/rescore.sh` shows the full set of scoring commands.
 
-## B3. Baselines (Finding 2)
+## B3. Baselines (Section 3.2, Table 4)
 
 The baselines use the recorded cells of the four later runs (InfiAgent-DABench with both models, QRData, DiscoveryBench).
 
@@ -219,7 +230,7 @@ uv run baselines/llm_checker_score.py runs/llm_check/*.jsonl
 
 For InfiAgent-DABench use `--lake $IA/da-dev-tables` (dry run) or `--tables $IA/da-dev-tables` (LLM checker). For DiscoveryBench use `--kb runs/db/db_kb` in both. The dry run is not frozen (see `frozen/README.md`).
 
-## B4. Live experiment on QRData (Table 4)
+## B4. Live experiment on QRData (Section 3.3, Table 5)
 
 411 questions, 4 arms: `P0` plain prompt or `P1` with column names, crossed with `G0` no checker or `G1` checker v8 in the loop. gpt-oss:120b ran all 4 arms with seeds 1 and 2 (3,288 runs, USD 10.51). deepseek-v4.1-flash ran `P0G0` and `P0G1` with seed 1 (822 runs; USD 9.73 with 28 partial runs in the other arms, which we stopped when the cost was three times the estimate).
 
@@ -243,7 +254,7 @@ uv run live/e1_report.py --results runs/e1/results_deepseek41.jsonl --questions 
 
 The preprint's estimate of run-to-run noise (5 to 9 points of accuracy at temperature 1.0) comes from comparing arms on the questions where the checker never blocked (9 points in seed 1). No script in this release prints it.
 
-## B5. Receipt replay on recorded DABstep traces (Finding 2)
+## B5. Receipt replay on recorded DABstep traces (Section 3.3)
 
 The replay cuts a recorded DABstep trace at the first cell that checker v6 blocks, rebuilds the state in the sandbox, and lets a model continue twice: once with the traceback and once with the receipt. It needs Part A1 first. It uses the repository's own Python environment inside the sandbox.
 
