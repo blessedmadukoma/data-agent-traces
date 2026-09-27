@@ -5,7 +5,9 @@ Input: the recorded runs (recorded/) and the replays of live/fa_replay.py (one f
 For each replayed run in which the harness now records an answer that the recording lacks,
 the run ends at that cell and the answer is scored; the later cells are removed. All other
 runs are copied unchanged. The dry-run and LLM-checker records are cut to the same cells.
-The output folder has the layout of recorded/, so tools/rescore.sh scores it unchanged:
+The output folder has the layout of recorded/, so tools/rescore.sh scores it unchanged.
+Run files or baseline folders that --rec lacks are skipped, so the script also works on a
+folder with your own runs in the same layout:
 
   uv run live/fa_rescore.py --rec recorded --replays runs/fa_replay --out runs/fa_recorded
   REC=runs/fa_recorded OUT=runs/rescore_fa sh tools/rescore.sh
@@ -91,6 +93,9 @@ def main():
     shutil.copytree(a.rec, a.out)
     kept = {}
     for tag, rel in RUNS.items():
+        if not os.path.exists(os.path.join(a.rec, rel)):
+            print(f"{tag}: {rel} not found, skipped")
+            continue
         recs = [json.loads(line) for line in open(os.path.join(a.rec, rel))]
         rp = {}
         path = os.path.join(a.replays, f"{tag}.jsonl")
@@ -114,9 +119,13 @@ def main():
             print(f"  {arm}: runs {st['runs ' + arm]}, model defined or assigned final_answer {st['defined ' + arm]}, "
                   f"answer recovered {st['recovered ' + arm]}")
     for sub in ("dry", "llm_check"):
+        if not os.path.isdir(os.path.join(a.rec, sub)):
+            continue
         for fn in sorted(os.listdir(os.path.join(a.rec, sub))):
             stem = fn[:-6] if sub == "llm_check" else fn.rsplit("_", 1)[0]
-            tag = BASELINE_TAG[stem]
+            tag = BASELINE_TAG.get(stem)
+            if tag not in kept:
+                continue
             rows = [json.loads(line) for line in open(os.path.join(a.rec, sub, fn))]
             with open(os.path.join(a.out, sub, fn), "w") as f:
                 for row in rows:
