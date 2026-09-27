@@ -1,0 +1,9 @@
+DAB harness count, paper-matched corpus
+  results-gemini-2.5-flash     runs   2587  python calls  10227  harness-caused   1719
+  results-gemini-3-pro         runs   2596  python calls  11663  harness-caused   1174
+  results-gpt-5-mini           runs   2587  python calls   5177  harness-caused   1246
+  results-gpt-5.2              runs   2600  python calls   4888  harness-caused   1419
+  results-kimi-k2-thinking     runs   2588  python calls  20985  harness-caused   3382
+runs 12958; tool calls 143153; failed 28529
+harness-caused syntax errors: 8940 of 52940 Python calls (16.9%); 31.3% of failed calls
+successful calls whose string literals changed: 3143

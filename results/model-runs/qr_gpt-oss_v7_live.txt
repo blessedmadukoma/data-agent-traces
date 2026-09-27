@@ -1,0 +1,46 @@
+schema qrdata: 195 files; ambiguous base names 0; unreadable 0
+tasks 411; model cells 3434: run 29.0%, unknown 66.8%, block 4.2%, gate errors 0
+failed cells 380; KeyError 26, FileNotFoundError 256
+caught with a cause match: 143 / 282 (50.7%, 95% CI 44.9%-56.5%); KeyError 12, FileNotFoundError 131; by kind {'file': 131, 'column': 12}
+blocks on other failures: 1
+cells without an error: 3054; blocked 0
+latency per cell: median 0.45 ms, p95 1.62 ms
+top unknown reasons:
+   2277 no supported source read in this cell
+      9 dynamic path
+      3 violation only in code that may not run
+      3 read_csv(index_col=...) may change the column names
+      1 invalid Python: SyntaxError
+      1 hosts is not in the schema (workspace file?)
+=== BLOCK ON OTHER FAILURE ('qr-94', 1, 'SyntaxError', "diabetes2.csv has no column 'treat'")
+misses (first 30):
+   ('qr-1', 4, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('qr-3', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-4', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/home/sandbox/input/sinusitis.csv'")
+   ('qr-4', 8, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/home/sandbox'")
+   ('qr-8', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-8', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('qr-7', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-9', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-19', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-28', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-37', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-40', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-41', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-43', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/root/input'")
+   ('qr-45', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/home/sandbox/input/burger.csv'")
+   ('qr-45', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/home/sandbox/input'")
+   ('qr-44', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-46', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-47', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/home/sandbox/input/burger.csv'")
+   ('qr-47', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/home/sandbox/input'")
+   ('qr-48', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-48', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('qr-50', 1, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('qr-61', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-64', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-71', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/home/sandbox/input/fish_oil_18.csv'")
+   ('qr-70', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-70', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('qr-73', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/input'")
+   ('qr-76', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")

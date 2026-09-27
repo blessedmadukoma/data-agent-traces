@@ -1,0 +1,334 @@
+schema infiagent: 68 files; ambiguous base names 0; unreadable 0
+tasks 257; model cells 2103: run 35.0%, unknown 64.0%, block 1.0%, gate errors 0
+failed cells 46; KeyError 10, FileNotFoundError 13
+caught with a cause match: 6 / 23 (26.1%, 95% CI 12.5%-46.5%); KeyError 6, FileNotFoundError 0; by kind {'column': 6}
+blocks on other failures: 3
+cells without an error: 2057; blocked 12
+latency per cell: median 0.13 ms, p95 0.90 ms
+top unknown reasons:
+   1342 no supported source read in this cell
+      2 dynamic path
+      1 violation only in code that may not run
+      1 invalid Python: SyntaxError
+=== BLOCK ON ERROR-FREE CELL ia-64 step 5 | beauty and the labor market.csv has no column 'wage'
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('input/beauty and the labor market.csv')
+
+# Verify 'wage' column exists
+if 'wage' not in df.columns:
+    raise KeyError("Column 'wage' not found in the dataset.")
+
+# Calculate mean and standard deviation using pandas methods
+mean_wage = df['wage'].mean()
+std_wage = df['wage'].std()
+
+# Format to two decimal places
+print(f"@mean_wage[{mean_wage:.2f}] @std_wage[{std_wage:.2f}]")
+--- output: @mean_wage[6.31] @std_wage[4.66]
+
+=== BLOCK ON ERROR-FREE CELL ia-64 step 15 | beauty and the labor market.csv has no column 'wage'
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('input/beauty and the labor market.csv')
+
+# Calculate mean and standard deviation of the wage column using pandas methods
+mean_wage = df['wage'].mean()
+std_wage = df['wage'].std()
+
+# Print the result in the required format (two decimal places)
+print(f"@mean_wage[{mean_wage:.2f}] @std_wage[{std_wage:.2f}]")
+--- output: @mean_wage[6.31] @std_wage[4.66]
+
+=== BLOCK ON ERROR-FREE CELL ia-66 step 4 | beauty and the labor market.csv has no column 'wage'
+import pandas as pd, scipy.stats as stats, os
+
+# Load the dataset
+df = pd.read_csv(os.path.join('input', 'beauty and the labor market.csv'))
+
+# Drop rows with missing values in either column
+data = df[['wage', 'exper']].dropna()
+
+# Compute Pearson correlation and p-value
+r, p_value = stats.pearsonr(data['wage'], data['exper'])
+
+# Round as required
+r_rounded = round(r, 2)
+p_rounded = round(p_value, 4)
+
+# Determine relationship type
+if p_value < 0.05:
+    if abs(r) >= 0.5:
+        relationship = "linear"
+    else:
+        relationship = "nonlinear"
+else:
+    relationship = "none"
+
+print("@correlation_coefficient[{}] @p_value[{}] @relationship_type[{}]".format(
+    r_rounded, f"{p_rounded:.4f}", relationship))
+--- output: @correlation_coefficient[0.23] @p_value[0.0000] @relationship_type[nonlinear]
+
+=== BLOCK ON ERROR-FREE CELL ia-66 step 5 | beauty and the labor market.csv has no column 'wage'
+import pandas as pd, scipy.stats as stats, os
+
+df = pd.read_csv(os.path.join('input', 'beauty and the labor market.csv'))
+# Ensure numeric
+df['wage'] = pd.to_numeric(df['wage'], errors='coerce')
+df['exper'] = pd.to_numeric(df['exper'], errors='coerce')
+data = df[['wage','exper']].dropna()
+
+r, p = stats.pearsonr(data['wage'], data['exper'])
+r_rounded = round(r, 2)
+p_rounded = round(p, 4)
+
+if p < 0.05:
+    relationship = "linear" if abs(r) >= 0.5 else "nonlinear"
+else:
+    relationship = "none"
+
+print("@correlation_coefficient[{}] @p_value[{}] @relationship_type[{}]".format(
+    r_rounded, f"{p_rounded:.4f}", relationship))
+--- output: @correlation_coefficient[0.23] @p_value[0.0000] @relationship_type[nonlinear]
+
+=== BLOCK ON ERROR-FREE CELL ia-66 step 7 | beauty and the labor market.csv has no column 'wage'
+import os
+import pandas as pd
+import scipy.stats as stats
+
+# Load the dataset
+df = pd.read_csv(os.path.join('input', 'beauty and the labor market.csv'))
+
+# Ensure the relevant columns are numeric
+df['wage'] = pd.to_numeric(df['wage'], errors='coerce')
+df['exper'] = pd.to_numeric(df['exper'], errors='coerce')
+
+# Drop rows with missing values in either column
+data = df[['wage', 'exper']].dropna()
+
+# Compute Pearson correlation and its p‑value
+r, p_value = stats.pearsonr(data['wage'], data['exper'])
+
+# Round results as specified
+r_rounded = round(r, 2)
+p_rounded = round(p_value, 4)
+
+# Determine relationship type
+if p_value < 0.05:
+    relationship = "linear" if abs(r) >= 0.5 else "nonlinear"
+else:
+    relationship = "none"
+
+# Output in the required format
+print(f"@correlation_coefficient[{r_rounded}] @p_value[{p_rounded:.4f}] @relationship_type[{relationship}]")
+--- output: @correlation_coefficient[0.23] @p_value[0.0000] @relationship_type[nonlinear]
+
+=== BLOCK ON ERROR-FREE CELL ia-66 step 8 | beauty and the labor market.csv has no column 'wage'
+import os
+import pandas as pd
+import scipy.stats as stats
+
+# Load dataset
+df = pd.read_csv(os.path.join('input', 'beauty and the labor market.csv'))
+
+# Convert to numeric and drop NaNs
+df['wage'] = pd.to_numeric(df['wage'], errors='coerce')
+df['exper'] = pd.to_numeric(df['exper'], errors='coerce')
+data = df[['wage', 'exper']].dropna()
+
+# Pearson correlation
+r, p = stats.pearsonr(data['wage'], data['exper'])
+
+# Round results
+r_rounded = round(r, 2)
+p_rounded = round(p, 4)
+
+# Determine relationship type
+if p < 0.05:
+    relationship = "linear" if abs(r) >= 0.5 else "nonlinear"
+else:
+    relationship = "none"
+
+print(f"@correlation_coefficient[{r_rounded}] @p_value[{p_rounded:.4f}] @relationship_type[{relationship}]")
+--- output: @correlation_coefficient[0.23] @p_value[0.0000] @relationship_type[nonlinear]
+
+=== BLOCK ON ERROR-FREE CELL ia-66 step 9 | beauty and the labor market.csv has no column 'wage'
+import os
+import pandas as pd
+import scipy.stats as stats
+
+# Load the dataset
+df = pd.read_csv(os.path.join('input', 'beauty and the labor market.csv'))
+
+# Ensure wage and exper are numeric
+df['wage'] = pd.to_numeric(df['wage'], errors='coerce')
+df['exper'] = pd.to_numeric(df['exper'], errors='coerce')
+
+# Drop rows with missing values in either column
+data = df[['wage', 'exper']].dropna()
+
+# Compute Pearson correlation and p-value
+r, p_value = stats.pearsonr(data['wage'], data['exper'])
+
+# Round to required precision
+r_rounded = round(r, 2)
+p_rounded = round(p_value, 4)
+
+# Determine relationship type
+if p_value < 0.05:
+    relationship = "linear" if abs(r) >= 0.5 else "nonlinear"
+else:
+    relationship = "none"
+
+# Output in the specified format
+print(f"@correlation_coefficient[{r_rounded}] @p_value[{p_rounded:.4f}] @relationship_type[{relationship}]")
+--- output: @correlation_coefficient[0.23] @p_value[0.0000] @relationship_type[nonlinear]
+
+=== BLOCK ON ERROR-FREE CELL ia-70 step 4 | beauty and the labor market.csv has no column 'wage'
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+
+df = pd.read_csv('input/beauty and the labor market.csv')
+
+features = ['exper','looks','union','goodhlth','black','female',
+            'married','south','bigcity','smllcity','service','educ']
+X = df[features]
+y = df['wage']
+
+# split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, train_size=0.7, random_state=42)
+
+# model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# predictions
+y_pred = model.predict(X_test)
+
+# RMSE
+mse = mean_squared_error(y_test, y_pred)
+rmse = np.sqrt(mse)
+print("RMSE:", rmse)
+--- output: RMSE: 3.6258949847385975
+
+=== BLOCK ON ERROR-FREE CELL ia-69 step 5 | beauty and the labor market.csv has no column 'wage'
+import pandas as pd
+df = pd.read_csv('input/beauty and the labor market.csv')
+# ensure numeric
+df['exper'] = pd.to_numeric(df['exper'], errors='coerce')
+df['looks'] = pd.to_numeric(df['looks'], errors='coerce')
+df['wage'] = pd.to_numeric(df['wage'], errors='coerce')
+df['experience_score'] = df['exper'] * df['looks']
+valid = df[['experience_score','wage']].dropna()
+corr = valid['experience_score'].corr(valid['wage'])
+print(round(corr,3))
+def final_answer(answer):
+    print(answer)
+final_answer(f"@correlation[{round(corr,3)}]")
+--- output: 0.252
+@correlation[0.252]
+
+=== BLOCK ON ERROR-FREE CELL ia-69 step 6 | beauty and the labor market.csv has no column 'wage'
+import pandas as pd
+
+# Load data
+df = pd.read_csv('input/beauty and the labor market.csv')
+
+# Convert relevant columns to numeric (coerce errors to NaN)
+df['exper'] = pd.to_numeric(df['exper'], errors='coerce')
+df['looks'] = pd.to_numeric(df['looks'], errors='coerce')
+df['wage']  = pd.to_numeric(df['wage'],  errors='coerce')
+
+# Feature engineering: experience_score = exper * looks
+df['experience_score'] = df['exper'] * df['looks']
+
+# Drop rows with any missing values in the two columns of interest
+valid = df[['experience_score', 'wage']].dropna()
+
+# Compute Pearson correlation
+corr = valid['experience_score'].corr(valid['wage'])
+
+# Round to three decimal places
+corr_rounded = round(corr, 3)
+
+print("Pearson correlation:", corr_rounded)
+
+def final_answer(answer):
+    print(answer)
+
+final_answer(f"@correlation[{corr_rounded}]")
+--- output: Pearson correlation: 0.252
+@correlation[0.252]
+
+=== BLOCK ON ERROR-FREE CELL ia-715 step 1 | Current_Logan.csv has no column 'Unnamed: 8'
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('input/Current_Logan.csv')
+
+# Total rows
+total_rows = len(df)
+
+# Count missing values in "Unnamed: 8"
+missing_count = df['Unnamed: 8'].isna().sum()
+
+# Compute percentage
+missing_percentage = (missing_count / total_rows) * 100
+missing_percentage_rounded = round(missing_percentage, 2)
+
+missing_percentage_rounded
+--- output: 
+=== BLOCK ON ERROR-FREE CELL ia-716 step 2 | Current_Logan.csv has no column 'JAMES LOGAN'
+import pandas as pd
+import numpy as np
+
+# Load data
+df = pd.read_csv('input/Current_Logan.csv')
+
+# Convert the "JAMES LOGAN" column to numeric, coercing errors (e.g., the header string "Wins")
+wins = pd.to_numeric(df['JAMES LOGAN'], errors='coerce')
+
+# Drop rows where wins is NaN (missing or non‑numeric)
+valid_wins = wins.dropna()
+
+# Calculate mean and standard deviation
+mean_wins = valid_wins.mean()
+stddev_wins = valid_wins.std(ddof=1)  # sample std dev
+
+# Round to two decimal places
+mean_wins = round(mean_wins, 2)
+stddev_wins = round(stddev_wins, 2)
+
+# Output in required format
+print(f"@mean_wins[{mean_wins}]")
+print(f"@stddev_wins[{stddev_wins}]")
+--- output: @mean_wins[2.6]
+@stddev_wins[1.17]
+
+=== BLOCK ON OTHER FAILURE ('ia-70', 3, 'TypeError', "beauty and the labor market.csv has no column 'wage'")
+=== BLOCK ON OTHER FAILURE ('ia-453', 1, 'AssertionError', "baro_2015.csv has no column 'WINDSPEED'")
+=== BLOCK ON OTHER FAILURE ('ia-514', 1, 'ValueError', "hotel_data.csv has no column 'city'")
+misses (first 30):
+   ('ia-23', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/unemployement_industry.csv'")
+   ('ia-23', 5, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('ia-117', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/2015.csv'")
+   ('ia-117', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('ia-247', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/baseball_data.csv'")
+   ('ia-247', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('ia-431', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/cost_data_with_errors.csv'")
+   ('ia-431', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('ia-431', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('ia-447', 3, 'KeyError', 'run', 'None', "KeyError: 'BARO'")
+   ('ia-550', 1, 'KeyError', 'run', 'None', 'KeyError: "None of [Index([\'length\', \'diameter\', \'height\', \'whole weight\', \'shucked weight\',\\n       \'viscera weight\', \'shell weight\'],\\n      dtype=\'str\')] are')
+   ('ia-572', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/tr_eikon_eod_data.csv'")
+   ('ia-618', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/traj-Osak.csv'")
+   ('ia-618', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('ia-618', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('ia-652', 1, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('ia-310', 1, 'KeyError', 'run', 'None', 'KeyError: "[\'age\', \'fare\'] not in index"')

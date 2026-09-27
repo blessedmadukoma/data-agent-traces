@@ -1,0 +1,27 @@
+submission                                                               fail  cells  share  harness
+v1__personal-q_test_da_bs32_maxlen_10__22-11-2025.jsonl                    98    102    96%  fresh process
+v1__personal-q_test_da-bs16-maxlen15__22-11-2025.jsonl                    117    125    94%  fresh process
+v1__personal-test-da-1111__11-11-2025.jsonl                                99    106    93%  fresh process
+v1__independent researcher-DA__05-04-2026.jsonl                          7277   8589    85%  fresh process
+v1__Renmin University of China-deepanalyze-8B__09-02-2026.jsonl            61     75    81%  fresh process
+v1__Renmin University of China-deepanalyze__09-02-2026.jsonl               64     80    80%  fresh process
+v1__personal-qwen3.5-27b-v2__17-04-2026.jsonl                               6    129     5%  keeps state
+v1__personal-znx-single_sft_checkpoint_600.__24-04-2026.jsonl               1     35     3%  keeps state
+v1__null-DataPilot__19-12-2025.jsonl                                       12    741     2%  keeps state
+v1__ONE LAB-Qwen-7B__01-05-2025.jsonl                                       4   1164     0%  keeps state
+v1__ByteDance DataPlatform-LLM-data_agent__27-08-2025.jsonl                 4   1417     0%  keeps state
+v1__ONE_LAB-4o-mini__25-04-2025.jsonl                                       1    970     0%  keeps state
+v1__personal-qwen3.5-27b-checkpoint16__29-05-2026.jsonl                     0      0     0%  keeps state
+v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl                                0    384     0%  keeps state
+v1__ONE LAB-Qwen-14B__01-05-2025.jsonl                                      0   1180     0%  keeps state
+v1__ONE LAB-gpt-4.1-mini__01-05-2025.jsonl                                  0    848     0%  keeps state
+v1__ONE LAB-gpt-4.1-nano__01-05-2025.jsonl                                  0    231     0%  keeps state
+v1__ONE LAB-gpt-4.1__01-05-2025.jsonl                                       0   1246     0%  keeps state
+v1__cam-basic__23-08-2025.jsonl                                             0    936     0%  keeps state
+v1__ds-org-ds-rookie-v0__29-04-2025.jsonl                                   0    336     0%  keeps state
+v1__msr-basic gpt-5-mini__08-09-2025.jsonl                                  0     92     0%  keeps state
+v1__msr-basic-gpt5-nano__10-09-2025.jsonl                                   0     29     0%  keeps state
+v1__msr-basic5__04-09-2025.jsonl                                            0     91     0%  keeps state
+v1__msr-basic__24-08-2025.jsonl                                             0    882     0%  keeps state
+v1__personal-Qwen3.5-27B__27-03-2026.jsonl                                  0    121     0%  keeps state
+v1__personal-znx-qwen3.5-27b-baseline__23-04-2026.jsonl                     0    290     0%  keeps state

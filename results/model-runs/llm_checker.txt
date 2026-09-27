@@ -1,0 +1,4 @@
+recorded/llm_check/db_gpt-oss.jsonl: cells 2113; caught 65/114 (57.0%, CI 47.8%-65.7%); false blocks 30/1889 (1.59%, CI 1.11%-2.26%); cost $0.74; median 1.44 s/cell
+recorded/llm_check/ia_deepseek41.jsonl: cells 1545; caught 6/9 (66.7%, CI 35.4%-87.9%); false blocks 13/1517 (0.86%, CI 0.50%-1.46%); cost $0.27; median 1.15 s/cell
+recorded/llm_check/ia_gpt-oss.jsonl: cells 2103; caught 10/23 (43.5%, CI 25.6%-63.2%); false blocks 11/2057 (0.53%, CI 0.30%-0.96%); cost $0.40; median 1.10 s/cell
+recorded/llm_check/qr_gpt-oss.jsonl: cells 3434; caught 163/282 (57.8%, CI 52.0%-63.4%); false blocks 80/3054 (2.62%, CI 2.11%-3.25%); cost $0.80; median 1.33 s/cell

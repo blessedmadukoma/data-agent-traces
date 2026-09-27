@@ -1,0 +1,19 @@
+literal filters: 17252; impossible literals: 541 (3.1%)
+impossible literals by column: [('merchant', 126), ('account_type', 108), ('monthly_fraud_level', 58), ('card_scheme', 54), ('monthly_volume', 41), ('aci', 39), ('shopper_interaction', 37), ('acquirer', 24)]
+most frequent impossible literals: [(('account_type', 'O'), 101), (('merchant', 'SwiftCharge'), 32), (('monthly_volume', '>1m'), 23), (('monthly_fraud_level', '>7.7%'), 22), (('merchant', 'TransactPlus'), 14), (('merchant', 'NexPay'), 13), (('shopper_interaction', 'H'), 12), (('issuing_country', 'US'), 12), (('shopper_interaction', 'SwiftCharge'), 12), (('merchant', 'Golfclub Baron Friso'), 10), (('aci', 'H'), 9), (('acquirer', 'NexPay'), 9), (('card_scheme', '*'), 9), (('card_scheme', 'All'), 8), (('acquirer', 'Rafa_AI'), 7)]
+
+traces: 11063; submissions: 26; submitters: 9
+traces with a silent impossible filter: 163 (1.5%)
+  ConfuseG        silent  0.0%  acc(silent) nan  acc(no silent) 0.86  n=450
+  aurora1025      silent  0.7%  acc(silent) 0.31  acc(no silent) 0.22  n=1796
+  caiqizh         silent  0.5%  acc(silent) 0.20  acc(no silent) 0.18  n=2216
+  consultantQ     silent  2.4%  acc(silent) 0.09  acc(no silent) 0.40  n=1329
+  flumatt         silent  0.9%  acc(silent) 0.00  acc(no silent) 0.31  n=864
+  jack-song-123   silent  6.1%  acc(silent) 0.00  acc(no silent) 0.11  n=376
+  shangzhu        silent  0.7%  acc(silent) 0.33  acc(no silent) 0.18  n=432
+  sileiam         silent  1.8%  acc(silent) 0.00  acc(no silent) 0.24  n=450
+  yiliu051016     silent  2.1%  acc(silent) 0.03  acc(no silent) 0.12  n=3150
+FE task+submission, clustered by sub, n=9961: silent: OR 0.54 [0.22, 1.30]
+FE task+submission, clustered by submitter, n=9961: silent: OR 0.54 [0.22, 1.29]
+FE task+submission, clustered by sub, n=9961: silent: OR 0.55 [0.22, 1.34]; data_err: OR 0.72 [0.48, 1.09]
+FE task+submission, clustered by submitter, n=9961: silent: OR 0.55 [0.23, 1.33]; data_err: OR 0.72 [0.48, 1.09]

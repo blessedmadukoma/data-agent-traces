@@ -1,0 +1,46 @@
+schema qrdata: 195 files; ambiguous base names 0; unreadable 0
+tasks 411; model cells 3434: run 32.7%, unknown 66.7%, block 0.6%, gate errors 0
+failed cells 380; KeyError 26, FileNotFoundError 256
+caught with a cause match: 14 / 282 (5.0%, 95% CI 3.0%-8.2%); KeyError 13, FileNotFoundError 1; by kind {'column': 13, 'file': 1}
+blocks on other failures: 1
+cells without an error: 3054; blocked 0
+latency per cell: median 0.48 ms, p95 1.66 ms
+top unknown reasons:
+   2272 no supported source read in this cell
+      9 dynamic path
+      5 read_csv(index_col=...) may change the column names
+      4 violation only in code that may not run
+      1 invalid Python: SyntaxError
+      1 hosts is not in the schema (workspace file?)
+=== BLOCK ON OTHER FAILURE ('qr-94', 1, 'SyntaxError', "diabetes2.csv has no column 'treat'")
+misses (first 30):
+   ('qr-1', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/migraine.csv'")
+   ('qr-1', 4, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('qr-2', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/input/migraine.csv'")
+   ('qr-3', 1, 'FileNotFoundError', 'unknown', 'violation only in code that may not run', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/sinusitis.csv'")
+   ('qr-3', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-4', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/home/sandbox/input/sinusitis.csv'")
+   ('qr-4', 8, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/home/sandbox'")
+   ('qr-8', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/smoking.csv'")
+   ('qr-8', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-8', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('qr-7', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/smoking.csv'")
+   ('qr-7', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-10', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/usairports.csv'")
+   ('qr-9', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/smoking.csv'")
+   ('qr-9', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-14', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/input/pm25_2011_durham.csv'")
+   ('qr-16', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/immigration.csv'")
+   ('qr-19', 1, 'FileNotFoundError', 'block', "dream.csv has no column 'Dream'", "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/dream.csv'")
+   ('qr-19', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-28', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/heart_transplant.csv'")
+   ('qr-28', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-37', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/smallpox.csv'")
+   ('qr-37', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-39', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/global_warming_pew.csv'")
+   ('qr-40', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/global_warming_pew.csv'")
+   ('qr-40', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-41', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/global_warming_pew.csv'")
+   ('qr-41', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('qr-43', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/root/input/global_warming_pew.csv'")
+   ('qr-43', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/root/input'")

@@ -1,0 +1,14 @@
+schema infiagent: 68 files; ambiguous base names 0; unreadable 0
+tasks 257; model cells 1545: run 40.6%, unknown 58.8%, block 0.5%, gate errors 0
+failed cells 28; KeyError 9, FileNotFoundError 0
+caught with a cause match: 8 / 9 (88.9%, 95% CI 56.5%-98.0%); KeyError 8, FileNotFoundError 0; by kind {'column': 8}
+blocks on other failures: 0
+cells without an error: 1517; blocked 0
+latency per cell: median 0.18 ms, p95 0.96 ms
+top unknown reasons:
+    900 no supported source read in this cell
+      5 invalid Python: SyntaxError
+      3 read_csv(encoding=...) may change the column names
+      1 violation only in code that may not run
+misses (first 30):
+   ('ia-523', 3, 'KeyError', 'unknown', 'no supported source read in this cell', 'KeyError: "[\'Cabin\'] not found in axis"')

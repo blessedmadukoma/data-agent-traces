@@ -1,0 +1,28 @@
+--carry: 6 submissions run every cell in a fresh process; no state is carried for them:
+  v1__Renmin University of China-deepanalyze-8B__09-02-2026.jsonl (61/75 cells that use an earlier name fail with NameError)
+  v1__Renmin University of China-deepanalyze__09-02-2026.jsonl (64/80 cells that use an earlier name fail with NameError)
+  v1__independent researcher-DA__05-04-2026.jsonl (7277/8589 cells that use an earlier name fail with NameError)
+  v1__personal-q_test_da-bs16-maxlen15__22-11-2025.jsonl (117/125 cells that use an earlier name fail with NameError)
+  v1__personal-q_test_da_bs32_maxlen_10__22-11-2025.jsonl (98/102 cells that use an earlier name fail with NameError)
+  v1__personal-test-da-1111__11-11-2025.jsonl (99/106 cells that use an earlier name fail with NameError)
+--tolerant auto: 10 submissions may replace a missing dict key silently (smolagents 1.0-1.4); dict-key checks there block only names without a close match
+submitter        failed  block  cause data-fail  caught      ok ok-block  unknown
+ConfuseG            100      6      5         6   83.3%    1850    0.16%    67.2%
+aurora1025         3440    316    131       477   27.5%    8272    0.01%    58.7%
+caiqizh            2240    201     71       258   27.5%    6287    0.00%    81.6%
+consultantQ         937     82     78       159   49.1%    4209    0.00%    19.8%
+flumatt             420     18     18       102   17.6%    2534    0.00%    43.3%
+jack-song-123     10252    729    639      1243   51.4%   13808    0.00%    89.1%
+shangzhu            590      4      1       124    0.8%    1487    0.00%    79.0%
+sileiam             868     73     71       120   59.2%    2164    0.00%    76.0%
+yiliu051016        7418   2044   1108      1940   57.1%    7608    0.00%    49.8%
+
+failed cells: 26265; blocked 3473 (13.22%); cause-matched 2122 (8.08%)
+data-reference failures: 4429; caught with a cause match: 2122 (47.9%)
+cells without an error: 48219; blocked 4 (0.01%) -- upper bound on false blocks; audit a sample with sample_false_block_audit.py
+outcomes over all cells: run 27.8%, unknown 67.5%, block 4.7%
+dict-key reads that a tolerant executor replaced silently, in cells without an error: 23
+missing-file failures: 1002; path resolved before execution in code that always runs: 821 (81.9%, what a live os.path.exists check can block); blocked with the replay evidence model: 610 (60.9%)
+gate latency per cell: median 0.65 ms, p95 3.09 ms, n=74484
+lint flags 5947 of 26265 failed cells; cause-matched gate blocks not flagged by lint (incremental coverage): 1994 of 2122
+predictions written to runs/dabstep/gate_predictions.jsonl

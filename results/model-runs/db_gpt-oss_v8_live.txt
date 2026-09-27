@@ -1,0 +1,60 @@
+schema train__evolution_freshwater_fish: 1 files; ambiguous base names 0; unreadable 0
+schema train__immigration_offshoring_effect_on_employment: 0 files; ambiguous base names 0; unreadable 0
+schema train__nls_bmi: 1 files; ambiguous base names 0; unreadable 0
+schema train__nls_bmi_raw: 1 files; ambiguous base names 0; unreadable 0
+schema test__archaeology: 3 files; ambiguous base names 0; unreadable 0
+schema test__introduction_pathways_non-native_plants: 3 files; ambiguous base names 0; unreadable 0
+schema test__meta_regression: 1 files; ambiguous base names 0; unreadable 0
+schema test__meta_regression_raw: 2 files; ambiguous base names 0; unreadable 0
+schema test__nls_incarceration: 1 files; ambiguous base names 0; unreadable 0
+schema test__nls_raw: 1 files; ambiguous base names 0; unreadable 0
+schema test__nls_ses: 1 files; ambiguous base names 0; unreadable 0
+schema test__requirements_engineering_for_ML_enabled_systems: 1 files; ambiguous base names 0; unreadable 0
+schema test__worldbank_education_gdp: 1 files; ambiguous base names 0; unreadable 0
+schema test__worldbank_education_gdp_indicators: 6 files; ambiguous base names 0; unreadable 0
+tasks 264; model cells 2113: run 46.2%, unknown 49.6%, block 4.2%, gate errors 0
+failed cells 224; KeyError 44, FileNotFoundError 70
+caught with a cause match: 86 / 114 (75.4%, 95% CI 66.8%-82.4%); KeyError 16, FileNotFoundError 70; by kind {'file': 70, 'column': 16}
+blocks on other failures: 2
+cells without an error: 1889; blocked 0
+latency per cell: median 0.19 ms, p95 1.78 ms
+top unknown reasons:
+   1013 no supported source read in this cell
+     15 violation only in code that may not run
+     14 read_csv(sep=...) may change the column names
+      2 read_csv(quotechar=...) may change the column names
+      2 invalid Python: SyntaxError
+      1 header=None gives integer column names
+      1 read_csv(sep=...) may change the column names; read_csv(sep=...) may c
+      1 header=None gives integer column names; read_csv(sep=...) may change t
+=== BLOCK ON OTHER FAILURE ('db-test__nls_raw-metadata_4-q0', 2, 'ModuleNotFoundError', "directory '/mnt/data/input' does not exist")
+=== BLOCK ON OTHER FAILURE ('db-test__nls_ses-metadata_6-q0', 1, 'ModuleNotFoundError', "file '/mnt/data/input/nls_ses_processed.csv' does not exist")
+misses (first 30):
+   ('db-train__evolution_freshwater_fish-metadata_3-q0', 9, 'KeyError', 'run', 'None', 'KeyError: 1')
+   ('db-train__nls_bmi_raw-metadata_1-q0', 3, 'KeyError', 'run', 'None', 'KeyError: "None of [Index([\'race\', \'sex\'], dtype=\'str\')] are in the [columns]"')
+   ('db-test__archaeology-metadata_3-q0', 2, 'KeyError', 'unknown', 'violation only in code that may not run', "KeyError: 'BCE'")
+   ('db-test__archaeology-metadata_19-q0', 1, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('db-test__archaeology-metadata_21-q0', 2, 'KeyError', 'unknown', 'line 9: read_csv(sep=...) may change the column names', 'KeyError: "None of [Index([\'Zhausgr\', \'ZDolch\', \'ZAxtSchwert\', \'ZBeil\'], dtype=\'str\')] are in the [columns]"')
+   ('db-test__archaeology-metadata_30-q0', 6, 'KeyError', 'run', 'None', "KeyError: 'year'")
+   ('db-test__introduction_pathways_non-native_plants-metadata_2-q0', 4, 'KeyError', 'unknown', 'line 4: read_csv(sep=...) may change the column names; line 9: read_csv(sep=...) may change the column names', "KeyError: 'intro.pathway'")
+   ('db-test__introduction_pathways_non-native_plants-metadata_3-q2', 4, 'KeyError', 'unknown', 'line 6: header=None gives integer column names; line 31: read_csv(sep=...) may change the column names', 'KeyError: 3')
+   ('db-test__introduction_pathways_non-native_plants-metadata_5-q0', 2, 'KeyError', 'run', 'None', 'KeyError: "None of [Index([\'n.gard\', \'n.unint\', \'n.agfo\'], dtype=\'str\')] are in the [index]"')
+   ('db-test__introduction_pathways_non-native_plants-metadata_5-q1', 3, 'KeyError', 'run', 'None', "KeyError: 'n.gard'")
+   ('db-test__meta_regression_raw-metadata_0-q2', 2, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('db-test__meta_regression_raw-metadata_13-q3', 1, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('db-test__nls_incarceration-metadata_0-q0', 5, 'KeyError', 'run', 'None', "KeyError: 'Male'")
+   ('db-test__nls_incarceration-metadata_7-q0', 3, 'KeyError', 'run', 'None', "KeyError: 'hispanic'")
+   ('db-test__nls_incarceration-metadata_12-q0', 3, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('db-test__nls_incarceration-metadata_14-q0', 3, 'KeyError', 'run', 'None', 'KeyError: "None of [Index([None, None], dtype=\'object\')] are in the [columns]"')
+   ('db-test__nls_raw-metadata_6-q0', 4, 'KeyError', 'run', 'None', 'KeyError: True')
+   ('db-test__nls_ses-metadata_2-q0', 2, 'KeyError', 'run', 'None', "KeyError: 'P>|z|'")
+   ('db-test__nls_ses-metadata_2-q0', 3, 'KeyError', 'run', 'None', "KeyError: 'P-value'")
+   ('db-test__nls_ses-metadata_10-q0', 2, 'KeyError', 'run', 'None', "KeyError: 'ABILITY'")
+   ('db-test__worldbank_education_gdp-metadata_0-q0', 5, 'KeyError', 'run', 'None', 'KeyError: \'Q("Adjusted savings: education expenditure (percentage of GNI)"]\'')
+   ('db-test__worldbank_education_gdp-metadata_0-q1', 6, 'KeyError', 'run', 'None', 'KeyError: "[\'adjusted_savings_education_expenditure_percentage_of_gni\', \'school_enrollment_primary_percentage_gross\', \'school_enrollment_secondary_percentage_gr')
+   ('db-test__worldbank_education_gdp-metadata_0-q1', 8, 'KeyError', 'run', 'None', 'KeyError: "[\'labor_force_participation_rate_total_percentage_of_total_population_ages_15__modeled_ilo_estimate\'] not in index"')
+   ('db-test__worldbank_education_gdp-metadata_2-q0', 6, 'KeyError', 'run', 'None', 'KeyError: "The following id_vars or value_vars are not present in the DataFrame: [\'Country\']"')
+   ('db-test__worldbank_education_gdp-metadata_2-q0', 10, 'KeyError', 'run', 'None', 'KeyError: "The following id_vars or value_vars are not present in the DataFrame: [\'Country\']"')
+   ('db-test__worldbank_education_gdp_indicators-metadata_0-q1', 1, 'KeyError', 'run', 'None', 'KeyError: "The following id_vars or value_vars are not present in the DataFrame: [\'Country Name\', \'Indicator Name\', \'Indicator Code\']"')
+   ('db-test__worldbank_education_gdp_indicators-metadata_1-q0', 2, 'KeyError', 'run', 'None', 'KeyError: "[\'1975 [YR1975]\', \'1976 [YR1976]\', \'1977 [YR1977]\', \'1978 [YR1978]\', \'1979 [YR1979]\', \'1980 [YR1980]\', \'1981 [YR1981]\', \'1982 [YR1982]\', \'1983 [YR198')
+   ('db-test__worldbank_education_gdp_indicators-metadata_1-q0', 4, 'KeyError', 'run', 'None', 'KeyError: "[\'1975 [YR1975]\', \'1976 [YR1976]\', \'1977 [YR1977]\', \'1978 [YR1978]\', \'1979 [YR1979]\', \'1980 [YR1980]\', \'1981 [YR1981]\', \'1982 [YR1982]\', \'1983 [YR198')

@@ -1,0 +1,61 @@
+schema train__evolution_freshwater_fish: 1 files; ambiguous base names 0; unreadable 0
+schema train__immigration_offshoring_effect_on_employment: 0 files; ambiguous base names 0; unreadable 0
+schema train__nls_bmi: 1 files; ambiguous base names 0; unreadable 0
+schema train__nls_bmi_raw: 1 files; ambiguous base names 0; unreadable 0
+schema test__archaeology: 3 files; ambiguous base names 0; unreadable 0
+schema test__introduction_pathways_non-native_plants: 3 files; ambiguous base names 0; unreadable 0
+schema test__meta_regression: 1 files; ambiguous base names 0; unreadable 0
+schema test__meta_regression_raw: 2 files; ambiguous base names 0; unreadable 0
+schema test__nls_incarceration: 1 files; ambiguous base names 0; unreadable 0
+schema test__nls_raw: 1 files; ambiguous base names 0; unreadable 0
+schema test__nls_ses: 1 files; ambiguous base names 0; unreadable 0
+schema test__requirements_engineering_for_ML_enabled_systems: 1 files; ambiguous base names 0; unreadable 0
+schema test__worldbank_education_gdp: 1 files; ambiguous base names 0; unreadable 0
+schema test__worldbank_education_gdp_indicators: 6 files; ambiguous base names 0; unreadable 0
+tasks 264; model cells 2113: run 46.2%, unknown 50.5%, block 3.2%, gate errors 0
+failed cells 224; KeyError 44, FileNotFoundError 70
+caught with a cause match: 65 / 114 (57.0%, 95% CI 47.8%-65.7%); KeyError 16, FileNotFoundError 49; by kind {'file': 49, 'column': 16}
+blocks on other failures: 1
+cells without an error: 1889; blocked 0
+latency per cell: median 0.17 ms, p95 1.47 ms
+top unknown reasons:
+   1032 no supported source read in this cell
+     15 violation only in code that may not run
+     14 read_csv(sep=...) may change the column names
+      2 read_csv(quotechar=...) may change the column names
+      2 invalid Python: SyntaxError
+      1 header=None gives integer column names
+      1 read_csv(sep=...) may change the column names; read_csv(sep=...) may c
+      1 header=None gives integer column names; read_csv(sep=...) may change t
+=== BLOCK ON OTHER FAILURE ('db-test__nls_ses-metadata_6-q0', 1, 'ModuleNotFoundError', "file '/mnt/data/input/nls_ses_processed.csv' does not exist")
+misses (first 30):
+   ('db-train__evolution_freshwater_fish-metadata_2-q0', 2, 'FileNotFoundError', 'block', "file '/mnt/data/input/body-size-evolution-in-south-american-freshwater-fishes.csv' does not exist", "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('db-train__evolution_freshwater_fish-metadata_3-q0', 9, 'KeyError', 'run', 'None', 'KeyError: 1')
+   ('db-train__nls_bmi-metadata_5-q0', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('db-train__nls_bmi_raw-metadata_1-q0', 3, 'KeyError', 'run', 'None', 'KeyError: "None of [Index([\'race\', \'sex\'], dtype=\'str\')] are in the [columns]"')
+   ('db-test__archaeology-metadata_3-q0', 2, 'KeyError', 'unknown', 'violation only in code that may not run', "KeyError: 'BCE'")
+   ('db-test__archaeology-metadata_19-q0', 1, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('db-test__archaeology-metadata_21-q0', 2, 'KeyError', 'unknown', 'line 9: read_csv(sep=...) may change the column names', 'KeyError: "None of [Index([\'Zhausgr\', \'ZDolch\', \'ZAxtSchwert\', \'ZBeil\'], dtype=\'str\')] are in the [columns]"')
+   ('db-test__archaeology-metadata_22-q0', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('db-test__archaeology-metadata_24-q0', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('db-test__archaeology-metadata_26-q0', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('db-test__archaeology-metadata_30-q0', 6, 'KeyError', 'run', 'None', "KeyError: 'year'")
+   ('db-test__introduction_pathways_non-native_plants-metadata_2-q0', 4, 'KeyError', 'unknown', 'line 4: read_csv(sep=...) may change the column names; line 9: read_csv(sep=...) may change the column names', "KeyError: 'intro.pathway'")
+   ('db-test__introduction_pathways_non-native_plants-metadata_3-q2', 4, 'KeyError', 'unknown', 'line 6: header=None gives integer column names; line 31: read_csv(sep=...) may change the column names', 'KeyError: 3')
+   ('db-test__introduction_pathways_non-native_plants-metadata_5-q0', 2, 'KeyError', 'run', 'None', 'KeyError: "None of [Index([\'n.gard\', \'n.unint\', \'n.agfo\'], dtype=\'str\')] are in the [index]"')
+   ('db-test__introduction_pathways_non-native_plants-metadata_5-q1', 3, 'KeyError', 'run', 'None', "KeyError: 'n.gard'")
+   ('db-test__meta_regression-metadata_6-q2', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('db-test__meta_regression-metadata_17-q0', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('db-test__meta_regression_raw-metadata_0-q2', 2, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('db-test__meta_regression_raw-metadata_13-q3', 1, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('db-test__nls_incarceration-metadata_0-q0', 5, 'KeyError', 'run', 'None', "KeyError: 'Male'")
+   ('db-test__nls_incarceration-metadata_2-q1', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/home/sandbox/input/nls_incarceration_processed.csv'")
+   ('db-test__nls_incarceration-metadata_3-q2', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('db-test__nls_incarceration-metadata_7-q0', 3, 'KeyError', 'run', 'None', "KeyError: 'hispanic'")
+   ('db-test__nls_incarceration-metadata_12-q0', 3, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('db-test__nls_incarceration-metadata_14-q0', 3, 'KeyError', 'run', 'None', 'KeyError: "None of [Index([None, None], dtype=\'object\')] are in the [columns]"')
+   ('db-test__nls_raw-metadata_4-q0', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('db-test__nls_raw-metadata_5-q0', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('db-test__nls_raw-metadata_6-q0', 4, 'KeyError', 'run', 'None', 'KeyError: True')
+   ('db-test__nls_raw-metadata_7-q0', 2, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('db-test__nls_ses-metadata_0-q0', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")

@@ -1,0 +1,52 @@
+model               runs   calls  failed harness  iface   sql  hint mongo    py   data  primary  second.
+gemini-2.5-flash    3162   24791    9959    2552     28   556   104     0   168    724     9.8%     7.3%
+gemini-3-pro        3193   41199    5033    2432    432   405   245     0    74    479    18.4%     9.5%
+gpt-5-mini          3187   27712    2709    1624     13   307   215     0    29    336    31.0%    12.4%
+gpt-5.1             3200   18364    3277     541     16   798   110     0    89    887    32.4%    27.1%
+gpt-5.2             3200   23149    3967    2014      6   713   182     0   129    842    43.1%    21.2%
+kimi-k2-thinking    3188   63391   19332    7130   1610   753   548     0   730   1483    12.2%     7.7%
+ALL                19130  198606   44277   16293   2105  3532  1404     0  1219   4751    17.0%    10.7%
+
+tool calls: execute_python 75366, list_db 11865, query_db 94702, return_answer 16673
+execute_python calls failing on the code wrapper: 16293 of 75366 (21.6%); of all failed calls 36.8%
+data-reference failures by group: mongo:missing-collection 0, py:data-file 613, py:data-key 606, sql:missing-column 1958, sql:missing-table 1574
+SQL data-reference failures by engine: duckdb 791, postgres 1889, sqlite 852; database message names candidates: 1404 (39.8%)
+interface misuse: interface:var-file 935, interface:var-key 192, interface:var-name 978
+MongoDB: 14118 queries; successful without limit 7770, of which exactly 5 records 4376 and preview cut 2411
+log checks: unreadable lines 0; runs with env/result count mismatch 4; variable values checked 105778, mismatched 24
+
+all failure groups (harness-caused excluded):
+  py:SyntaxError                 6280
+  py:TypeError                   5984
+  sql:missing-column             1958
+  py:other                       1710
+  sql:missing-table              1574
+  sql:function                   1278
+  py:print-format                1201
+  sql:syntax                     1114
+  interface:var-name              978
+  interface:var-file              935
+  sql:other                       902
+  py:data-file                    613
+  py:NameError                    609
+  py:data-key                     606
+  py:ValueError                   515
+  mongo:query-json                373
+  py:AttributeError               285
+  py:timeout                      266
+  interface:var-key               192
+  py:RuntimeError                 141
+  py:ModuleNotFoundError          137
+  py:IndexError                   131
+  py:JSONDecodeError               92
+  mongo:other                      56
+  py:OSError                       20
+  py:DateParseError                13
+  other                             6
+  py:DatabaseError                  4
+  py:NotImplementedError            3
+  py:OperationalError               3
+  py:UnboundLocalError              2
+  py:OptionError                    1
+  py:AssertionError                 1
+  py:OverflowError                  1

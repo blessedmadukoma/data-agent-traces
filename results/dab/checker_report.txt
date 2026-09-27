@@ -1,0 +1,1 @@
+DAB runs/dab: ran 52792; data-reference failures 1219, caught 503 (41.3%), by kind {'column': 47, 'key': 77, 'file': 379}, not flagged by pyflakes 498; interface misuse 1125, caught 733; error-free calls 38350, blocked 0; failed calls blocked 1262, cause-matched 1236; outcomes block 2.4%, run 53.3%, unknown 44.3%; latency median 1.37 ms

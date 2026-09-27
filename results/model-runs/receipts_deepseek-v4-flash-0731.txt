@@ -1,0 +1,23 @@
+episode-arms 500; pairs 250; used 230 (by seed {1: 230}); excluded {'replay_does_not_reproduce': 19, 'not_done': 1}
+  traceback cells to fix: mean 2.187; never recovered 0; constant answer 39; first cell repeats the missing name 4
+  receipt   cells to fix: mean 1.957; never recovered 0; constant answer 36; first cell repeats the missing name 6
+PRIMARY (episode = unit)
+  all episodes: n = 230; mean saving 0.230 [0.074, 0.383]; receipt fewer 100, more 50, equal 80; sign p = 0.0001; Wilcoxon p = 0.0017
+SECONDARY: by receipt kind (Holm over the three kinds)
+  column: n = 200; mean saving 0.255 [0.085, 0.420]; receipt fewer 90, more 42, equal 68; sign p = 0.0000; Wilcoxon p = 0.0018
+  file: n = 20; mean saving -0.200 [-0.600, 0.200]; receipt fewer 4, more 8, equal 8; sign p = 0.3877; Wilcoxon p = 0.4839
+  key: n = 10; mean saving 0.600 [0.300, 0.900]; receipt fewer 6, more 0, equal 4; sign p = 0.0312; Wilcoxon p = 0.0312
+  Holm-adjusted sign p: column 0.0001, file 0.3877, key 0.0625
+  column minus (file and key): 0.188 [-0.168, 0.552]
+SENSITIVITY
+  (a) seed 1 only: n = 230; mean saving 0.230 [0.074, 0.383]; receipt fewer 100, more 50, equal 80; sign p = 0.0001; Wilcoxon p = 0.0017
+  (b) pairs as the unit: n = 230; mean saving 0.230 [0.074, 0.383]; receipt fewer 100, more 50, equal 80; sign p = 0.0001; Wilcoxon p = 0.0017
+  (c) without yiliu051016: n = 57; mean saving 0.228 [-0.035, 0.474]; receipt fewer 24, more 10, equal 23; sign p = 0.0243; Wilcoxon p = 0.0661
+  (d) mean of per-submitter means: 0.241 [0.082, 0.399]; yiliu051016 0.23 (n=173), aurora1025 -0.27 (n=15), sileiam 0.69 (n=13), caiqizh 0.45 (n=11), jack-song-123 -0.09 (n=11), consultantQ 0.67 (n=6), flumatt 0.00 (n=1)
+  (e) constant answers not counted as a fix: n = 230; mean saving 0.204 [0.035, 0.374]; receipt fewer 100, more 52, equal 78; sign p = 0.0001; Wilcoxon p = 0.0052
+SECONDARY OUTCOMES (pairs)
+  traceback tokens in 14,902, out 2,548; cost $0.0099 per arm
+  receipt   tokens in 13,301, out 2,465; cost $0.0091 per arm
+  replay: earlier cells whose outcome differs from the recording: mean 0.34, max 7
+  FileNotFoundError in continuation cells by class: {('receipt', 'not_context'): 3, ('receipt', 'other_dir'): 3, ('traceback', 'not_context'): 8, ('traceback', 'other_dir'): 8}
+cost: $4.77 for 500 episode-arms; served {'deepseek-v4-flash:0731': 500}

@@ -1,0 +1,10 @@
+DAB harness count, all released logs
+  results-gemini-2.5-flash     runs   3162  python calls  12026  harness-caused   2552
+  results-gemini-3-pro         runs   3193  python calls  16556  harness-caused   2432
+  results-gpt-5-mini           runs   3187  python calls   6678  harness-caused   1624
+  results-gpt-5.2              runs   3200  python calls   6555  harness-caused   2014
+  results-gpt5.1               runs   3200  python calls   3850  harness-caused    541
+  results-kimi-k2-thinking     runs   3188  python calls  29701  harness-caused   7130
+runs 19130; tool calls 198606; failed 44277
+harness-caused syntax errors: 16293 of 75366 Python calls (21.6%); 36.8% of failed calls
+successful calls whose string literals changed: 4976

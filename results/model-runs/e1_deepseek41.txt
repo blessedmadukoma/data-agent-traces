@@ -1,0 +1,9 @@
+P0G0: n 411 (not done 18); accuracy 0.560; cells 5.90; tokens 21359; executed name failures 7 in 5 questions; blocked 0 in 0; cost $4.38
+P0G1: n 411 (not done 12); accuracy 0.560; cells 6.36; tokens 25258; executed name failures 7 in 7 questions; blocked 4 in 4; cost $5.06
+P1G0: n 15 (not done 0); accuracy 0.600; cells 5.80; tokens 24300; executed name failures 0 in 0 questions; blocked 0 in 0; cost $0.19
+P1G1: n 13 (not done 0); accuracy 0.769; cells 4.00; tokens 15250; executed name failures 0 in 0 questions; blocked 0 in 0; cost $0.11
+H1 gate within P0: questions 382, pairs 382; cells saved -0.419 [-0.995, 0.168], fewer/more/equal 135/151/96, sign p 0.3751; accuracy 0.594 -> 0.581, diff -0.013 [-0.067, +0.041], McNemar p 0.704; tokens saved -4148 [-8689, 389]; benefit claim False
+H3 gate within P1: questions 2, pairs 2; cells saved -1.500 [-3.000, 0.000], fewer/more/equal 0/1/1, sign p 1.0000; accuracy 1.000 -> 1.000, diff +0.000 [-0.658, +0.658], McNemar p nan; tokens saved -21087 [-41964, -210]; benefit claim False
+prompt within G0: questions 15, pairs 15; cells saved 1.200 [-2.000, 4.533], fewer/more/equal 7/4/4, sign p 0.5488; accuracy 0.467 -> 0.600, diff +0.133 [-0.188, +0.418], McNemar p 0.688; tokens saved 5355 [-16899, 28065]; benefit claim False
+H2 prompting within G0: executed name failures P0 0 -> P1 0 (question-runs with one: 0 -> 0); fewer/more 0/0, sign p nan
+block validation: {'confirmed': 4}

@@ -1,0 +1,29 @@
+All data-reference episodes
+submitter       episodes never ok  next ok  med k 1st ok = look fix next  fix 2 fix 3+   room gave up
+ConfuseG               4       0%     100%    1.0           25%      75%    25%     0%   0.25      0%
+aurora1025           216       8%      50%    1.0            4%      47%    21%    24%   1.02     15%
+caiqizh              174       0%      86%    1.0           40%      48%    42%    10%   0.66      1%
+consultantQ          121       1%      83%    1.0           10%      73%    17%     8%   0.50      0%
+flumatt               82       0%      90%    1.0           22%      68%    20%    10%   0.60      0%
+jack-song-123        813       1%      78%    1.0           55%      31%    23%    43%   1.90      0%
+shangzhu              59      14%      68%    1.0            0%      68%    15%     3%   0.25      0%
+sileiam               86       6%      74%    1.0           23%      53%    30%     9%   0.57      5%
+yiliu051016          904      10%      72%    1.0           60%      23%    27%    25%   1.36     15%
+ALL (pooled)        2459       6%      74%    1.0           46%      36%    25%    27%   1.34      7%
+ceiling: if every receipt made the next cell the fix, 2916 cells would be saved, 3.9% of all 74484 cells
+
+Episodes whose first failing cell the gate blocks with a cause match (a receipt exists)
+submitter       episodes never ok  next ok  med k 1st ok = look fix next  fix 2 fix 3+   room gave up
+ConfuseG               3       0%     100%    1.0           33%      67%    33%     0%   0.33      0%
+aurora1025            62       8%      48%    1.0            4%      45%    16%    31%   1.44      5%
+caiqizh               65       0%      92%    1.0           82%      14%    78%     8%   0.94      2%
+consultantQ           71       0%      83%    1.0            8%      75%    18%     7%   0.34      0%
+flumatt               16       0%      88%    1.0           25%      62%    38%     0%   0.38      0%
+jack-song-123        423       1%      77%    1.0           65%      22%    23%    53%   2.32      0%
+shangzhu               1       0%     100%    1.0            0%     100%     0%     0%   0.00      0%
+sileiam               54       6%      69%    1.0           25%      46%    33%    13%   0.68      6%
+yiliu051016          694       7%      73%    1.0           63%      21%    31%    29%   1.49     15%
+ALL (pooled)        1389       4%      75%    1.0           57%      26%    30%    33%   1.62      8%
+
+room = mean(k_fix - 1): the most cells per episode that a receipt could save.
+gave up = the first working cell after the error is final_answer(<constant>).

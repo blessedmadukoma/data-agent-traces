@@ -1,0 +1,17 @@
+schema infiagent: 68 files; ambiguous base names 0; unreadable 0
+tasks 257; model cells 2103: run 35.2%, unknown 63.7%, block 1.1%, gate errors 0
+failed cells 46; KeyError 10, FileNotFoundError 13
+caught with a cause match: 21 / 23 (91.3%, 95% CI 73.2%-97.6%); KeyError 8, FileNotFoundError 13; by kind {'file': 13, 'column': 8}
+blocks on other failures: 2
+cells without an error: 2057; blocked 0
+latency per cell: median 0.14 ms, p95 1.10 ms
+top unknown reasons:
+   1335 no supported source read in this cell
+      2 dynamic path
+      2 violation only in code that may not run
+      1 invalid Python: SyntaxError
+=== BLOCK ON OTHER FAILURE ('ia-453', 1, 'AssertionError', "baro_2015.csv has no column 'WINDSPEED'")
+=== BLOCK ON OTHER FAILURE ('ia-514', 1, 'ValueError', "hotel_data.csv has no column 'city'")
+misses (first 30):
+   ('ia-550', 1, 'KeyError', 'run', 'None', 'KeyError: "None of [Index([\'length\', \'diameter\', \'height\', \'whole weight\', \'shucked weight\',\\n       \'viscera weight\', \'shell weight\'],\\n      dtype=\'str\')] are')
+   ('ia-652', 1, 'KeyError', 'run', 'None', 'KeyError: None')

@@ -1,0 +1,33 @@
+schema qrdata: 195 files; ambiguous base names 0; unreadable 0
+tasks 411; model cells 3434: run 28.6%, unknown 63.5%, block 7.9%, gate errors 0
+failed cells 380; KeyError 26, FileNotFoundError 256
+caught with a cause match: 267 / 282 (94.7%, 95% CI 91.4%-96.8%); KeyError 13, FileNotFoundError 254; by kind {'file': 254, 'column': 13}
+blocks on other failures: 3
+cells without an error: 3054; blocked 0
+latency per cell: median 0.47 ms, p95 1.87 ms
+top unknown reasons:
+   2165 no supported source read in this cell
+      8 dynamic path
+      4 violation only in code that may not run
+      3 read_csv(index_col=...) may change the column names
+      1 invalid Python: SyntaxError
+      1 hosts is not in the schema (workspace file?)
+=== BLOCK ON OTHER FAILURE ('qr-94', 1, 'SyntaxError', "diabetes2.csv has no column 'treat'")
+=== BLOCK ON OTHER FAILURE ('qr-245', 2, 'ModuleNotFoundError', "directory '/input' does not exist")
+=== BLOCK ON OTHER FAILURE ('qr-248', 2, 'ModuleNotFoundError', "directory '/mnt/data/input' does not exist")
+misses (first 30):
+   ('qr-50', 1, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('qr-77', 6, 'KeyError', 'run', 'None', "KeyError: 'new_supplier'")
+   ('qr-96', 1, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('qr-112', 7, 'KeyError', 'run', 'None', 'KeyError: 1')
+   ('qr-116', 5, 'KeyError', 'run', 'None', 'KeyError: 1')
+   ('qr-157', 9, 'KeyError', 'run', 'None', 'KeyError: 1')
+   ('qr-158', 9, 'KeyError', 'run', 'None', 'KeyError: 1')
+   ('qr-161', 3, 'KeyError', 'run', 'None', 'KeyError: 1')
+   ('qr-246', 4, 'KeyError', 'run', 'None', 'KeyError: 1')
+   ('qr-314', 3, 'FileNotFoundError', 'unknown', 'line 16: dynamic path', 'FileNotFoundError')
+   ('qr-362', 1, 'KeyError', 'block', "ak91.csv has no column 'lwage'", "KeyError: 'quarter'")
+   ('qr-373', 2, 'KeyError', 'run', 'None', 'KeyError: 0')
+   ('qr-383', 3, 'KeyError', 'unknown', 'no supported source read in this cell', "KeyError: 'income'")
+   ('qr-399', 3, 'FileNotFoundError', 'unknown', 'violation only in code that may not run', 'FileNotFoundError: social.csv not found in the current directory.')
+   ('qr-401', 2, 'KeyError', 'run', 'None', "KeyError: 'msg_neighbors'")

@@ -1,0 +1,130 @@
+schema infiagent: 68 files; ambiguous base names 0; unreadable 0
+tasks 257; model cells 1545: run 40.0%, unknown 59.0%, block 1.0%, gate errors 0
+failed cells 28; KeyError 9, FileNotFoundError 0
+caught with a cause match: 8 / 9 (88.9%, 95% CI 56.5%-98.0%); KeyError 8, FileNotFoundError 0; by kind {'column': 8}
+blocks on other failures: 0
+cells without an error: 1517; blocked 8
+latency per cell: median 0.14 ms, p95 0.82 ms
+top unknown reasons:
+    904 no supported source read in this cell
+      5 invalid Python: SyntaxError
+      2 violation only in code that may not run
+=== BLOCK ON ERROR-FREE CELL ia-64 step 2 | beauty and the labor market.csv has no column 'wage'
+mean_wage = df['wage'].mean()
+std_wage = df['wage'].std()
+print(mean_wage, std_wage)
+print(f"{mean_wage:.2f}", f"{std_wage:.2f}")
+--- output: 6.306690474603175 4.660639037864324
+6.31 4.66
+
+=== BLOCK ON ERROR-FREE CELL ia-66 step 2 | beauty and the labor market.csv has no column 'wage'
+from scipy import stats
+
+r, p = stats.pearsonr(df['wage'], df['exper'])
+print(f"r = {r}, p = {p}")
+
+r_rounded = round(r, 2)
+p_rounded = round(p, 4)
+
+if p >= 0.05:
+    rel = "none"
+elif abs(r) >= 0.5:
+    rel = "linear"
+else:
+    rel = "nonlinear"
+
+print(f"@correlation_coefficient[{r_rounded}] @p_value[{p_rounded}] @relationship_type[{rel}]")
+--- output: r = 0.23463221292620545, p = 3.2165791903692924e-17
+@correlation_coefficient[0.23] @p_value[0.0] @relationship_type[nonlinear]
+
+=== BLOCK ON ERROR-FREE CELL ia-69 step 2 | beauty and the labor market.csv has no column 'wage'
+df['experience_score'] = df['exper'] * df['looks']
+corr = df['experience_score'].corr(df['wage'])  # Pearson by default
+corr_rounded = round(corr, 3)
+print(corr, corr_rounded)
+final_answer(f"@correlation[{corr_rounded}]")
+--- output: 0.2524071566789524 0.252
+
+=== BLOCK ON ERROR-FREE CELL ia-70 step 2 | beauty and the labor market.csv has no column 'wage'
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+import numpy as np
+
+features = ['exper', 'looks', 'union', 'goodhlth', 'black', 'female',
+            'married', 'south', 'bigcity', 'smllcity', 'service', 'educ']
+X = df[features]
+y = df['wage']
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.30, random_state=42)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+preds = model.predict(X_test)
+rmse = np.sqrt(mean_squared_error(y_test, preds))
+print(rmse)
+--- output: 3.6258949847385975
+
+=== BLOCK ON ERROR-FREE CELL ia-473 step 3 | oecd_education_spending.csv has no column 'LOCATION'
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('input/oecd_education_spending.csv')
+
+valid = df['Value'].dropna()
+Q1 = valid.quantile(0.25)
+Q3 = valid.quantile(0.75)
+IQR = Q3 - Q1
+lower = Q1 - 1.5*IQR
+upper = Q3 + 1.5*IQR
+
+print("Q1:", Q1, "Q3:", Q3, "IQR:", IQR, "lower:", lower, "upper:", upper)
+
+mask = df['Value'].notna() & ((df['Value'] < lower) | (df['Value'] > upper))
+outliers = df.index[mask].tolist()
+print("Outliers rows:", outliers)
+print(df.loc[mask, ['LOCATION','SUBJECT','MEASURE','TIME','Value']])
+--- output: Q1: 1.4 Q3: 3.7 IQR: 2.3000000000000003 lower: -2.0500000000000003 upper: 7.15
+Outliers rows: []
+Empty DataFrame
+Columns: [LOCATION, SUBJECT, MEASURE, TIME, Value]
+Index: []
+
+=== BLOCK ON ERROR-FREE CELL ia-710 step 2 | Current_Logan.csv has no column 'JAMES LOGAN'
+col = pd.to_numeric(df['JAMES LOGAN'], errors='coerce')
+print(col.tolist())
+print(col.mean())
+--- output: [nan, 5.0, 5.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0]
+2.6
+
+=== BLOCK ON ERROR-FREE CELL ia-716 step 2 | Current_Logan.csv has no column 'JAMES LOGAN'
+import pandas as pd
+import numpy as np
+df = pd.read_csv('input/Current_Logan.csv')
+wins = pd.to_numeric(df['JAMES LOGAN'], errors='coerce')
+wins = wins.dropna()
+mean_wins = round(wins.mean(), 2)
+std_wins = round(wins.std(), 2)
+print(len(wins), mean_wins, std_wins)
+print(wins.tolist())
+--- output: 40 2.6 1.17
+[5.0, 5.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0]
+
+=== BLOCK ON ERROR-FREE CELL ia-716 step 5 | Current_Logan.csv has no column 'JAMES LOGAN'
+import pandas as pd
+
+df = pd.read_csv('input/Current_Logan.csv')
+wins = pd.to_numeric(df['JAMES LOGAN'], errors='coerce').dropna()
+mean_wins = round(wins.mean(), 2)
+std_wins = round(wins.std(), 2)
+
+def final_answer(answer):
+    print(answer)
+
+final_answer(f"@mean_wins[{mean_wins:.2f}]\n@stddev_wins[{std_wins:.2f}]")
+--- output: @mean_wins[2.60]
+@stddev_wins[1.17]
+
+misses (first 30):
+   ('ia-523', 3, 'KeyError', 'unknown', 'no supported source read in this cell', 'KeyError: "[\'Cabin\'] not found in axis"')

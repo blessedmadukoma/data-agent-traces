@@ -1,0 +1,22 @@
+episode-arms 4000; pairs 2000; used 1778 (by seed {1: 888, 2: 890}); excluded {'not_done': 59, 'replay_does_not_reproduce': 163}
+  traceback cells to fix: mean 2.229; never recovered 3; constant answer 442; first cell repeats the missing name 54
+  receipt   cells to fix: mean 1.888; never recovered 6; constant answer 509; first cell repeats the missing name 57
+PRIMARY (episode = unit)
+  all episodes: n = 907; mean saving 0.332 [0.257, 0.406]; receipt fewer 484, more 238, equal 185; sign p = 0.0000; Wilcoxon p = 0.0000
+SECONDARY: by receipt kind (Holm over the three kinds)
+  column: n = 806; mean saving 0.380 [0.301, 0.458]; receipt fewer 457, more 207, equal 142; sign p = 0.0000; Wilcoxon p = 0.0000
+  file: n = 64; mean saving 0.031 [-0.164, 0.227]; receipt fewer 19, more 17, equal 28; sign p = 0.8679; Wilcoxon p = 0.5304
+  key: n = 37; mean saving -0.189 [-0.500, 0.095]; receipt fewer 8, more 14, equal 15; sign p = 0.2863; Wilcoxon p = 0.1555
+  Holm-adjusted sign p: column 0.0000, file 0.8679, key 0.5726
+  column minus (file and key): 0.429 [0.245, 0.613]
+SENSITIVITY
+  (a) seed 1 only: n = 888; mean saving 0.322 [0.222, 0.420]; receipt fewer 390, more 226, equal 272; sign p = 0.0000; Wilcoxon p = 0.0000
+  (b) pairs as the unit: n = 1778; mean saving 0.341 [0.273, 0.409]; receipt fewer 814, more 430, equal 534; sign p = 0.0000; Wilcoxon p = 0.0000
+  (c) without yiliu051016: n = 215; mean saving 0.167 [0.030, 0.298]; receipt fewer 96, more 52, equal 67; sign p = 0.0004; Wilcoxon p = 0.0028
+  (d) mean of per-submitter means: 0.232 [-0.108, 0.542]; yiliu051016 0.38 (n=692), jack-song-123 0.10 (n=44), aurora1025 -0.06 (n=44), sileiam -0.07 (n=42), caiqizh 0.41 (n=40), consultantQ 0.38 (n=32), flumatt 1.11 (n=9), ConfuseG -0.67 (n=3), shangzhu 0.50 (n=1)
+  (e) constant answers not counted as a fix: n = 907; mean saving 0.331 [0.253, 0.408]; receipt fewer 482, more 240, equal 185; sign p = 0.0000; Wilcoxon p = 0.0000
+SECONDARY OUTCOMES (pairs)
+  traceback tokens in 12,875, out 2,472; cost $0.0034 per arm
+  receipt   tokens in 10,765, out 2,355; cost $0.0030 per arm
+  replay: earlier cells whose outcome differs from the recording: mean 0.34, max 8
+cost: $12.86 for 4000 episode-arms; served {'gpt-oss:120b': 4000}

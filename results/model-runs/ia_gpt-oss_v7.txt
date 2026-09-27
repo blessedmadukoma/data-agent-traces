@@ -1,0 +1,32 @@
+schema infiagent: 68 files; ambiguous base names 0; unreadable 0
+tasks 257; model cells 2103: run 35.6%, unknown 64.0%, block 0.4%, gate errors 0
+failed cells 46; KeyError 10, FileNotFoundError 13
+caught with a cause match: 6 / 23 (26.1%, 95% CI 12.5%-46.5%); KeyError 6, FileNotFoundError 0; by kind {'column': 6}
+blocks on other failures: 2
+cells without an error: 2057; blocked 0
+latency per cell: median 0.13 ms, p95 0.90 ms
+top unknown reasons:
+   1342 no supported source read in this cell
+      2 dynamic path
+      1 violation only in code that may not run
+      1 invalid Python: SyntaxError
+=== BLOCK ON OTHER FAILURE ('ia-453', 1, 'AssertionError', "baro_2015.csv has no column 'WINDSPEED'")
+=== BLOCK ON OTHER FAILURE ('ia-514', 1, 'ValueError', "hotel_data.csv has no column 'city'")
+misses (first 30):
+   ('ia-23', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/unemployement_industry.csv'")
+   ('ia-23', 5, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('ia-117', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/2015.csv'")
+   ('ia-117', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('ia-247', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/baseball_data.csv'")
+   ('ia-247', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('ia-431', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/cost_data_with_errors.csv'")
+   ('ia-431', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('ia-431', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('ia-447', 3, 'KeyError', 'run', 'None', "KeyError: 'BARO'")
+   ('ia-550', 1, 'KeyError', 'run', 'None', 'KeyError: "None of [Index([\'length\', \'diameter\', \'height\', \'whole weight\', \'shucked weight\',\\n       \'viscera weight\', \'shell weight\'],\\n      dtype=\'str\')] are')
+   ('ia-572', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/tr_eikon_eod_data.csv'")
+   ('ia-618', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/traj-Osak.csv'")
+   ('ia-618', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('ia-618', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('ia-652', 1, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('ia-310', 1, 'KeyError', 'run', 'None', 'KeyError: "[\'age\', \'fare\'] not in index"')

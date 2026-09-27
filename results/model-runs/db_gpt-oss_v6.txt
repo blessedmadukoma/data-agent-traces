@@ -1,0 +1,188 @@
+schema train__evolution_freshwater_fish: 1 files; ambiguous base names 0; unreadable 0
+schema train__immigration_offshoring_effect_on_employment: 0 files; ambiguous base names 0; unreadable 0
+schema train__nls_bmi: 1 files; ambiguous base names 0; unreadable 0
+schema train__nls_bmi_raw: 1 files; ambiguous base names 0; unreadable 0
+schema test__archaeology: 3 files; ambiguous base names 0; unreadable 0
+schema test__introduction_pathways_non-native_plants: 3 files; ambiguous base names 0; unreadable 0
+schema test__meta_regression: 1 files; ambiguous base names 0; unreadable 0
+schema test__meta_regression_raw: 2 files; ambiguous base names 0; unreadable 0
+schema test__nls_incarceration: 1 files; ambiguous base names 0; unreadable 0
+schema test__nls_raw: 1 files; ambiguous base names 0; unreadable 0
+schema test__nls_ses: 1 files; ambiguous base names 0; unreadable 0
+schema test__requirements_engineering_for_ML_enabled_systems: 1 files; ambiguous base names 0; unreadable 0
+schema test__worldbank_education_gdp: 1 files; ambiguous base names 0; unreadable 0
+schema test__worldbank_education_gdp_indicators: 6 files; ambiguous base names 0; unreadable 0
+tasks 264; model cells 2113: run 49.0%, unknown 49.9%, block 1.1%, gate errors 0
+failed cells 224; KeyError 44, FileNotFoundError 70
+caught with a cause match: 18 / 114 (15.8%, 95% CI 10.2%-23.6%); KeyError 16, FileNotFoundError 2; by kind {'column': 16, 'file': 2}
+blocks on other failures: 1
+cells without an error: 1889; blocked 3
+latency per cell: median 0.17 ms, p95 1.51 ms
+top unknown reasons:
+   1032 no supported source read in this cell
+     17 violation only in code that may not run
+      3 non-literal names=
+      2 invalid Python: SyntaxError
+      1 header=None gives integer column names
+=== BLOCK ON ERROR-FREE CELL db-test__introduction_pathways_non-native_plants-metadata_3-q2 step 5 | invaded_niche_pathways.csv has no column 'n.gard'
+import pandas as pd, numpy as np, statsmodels.api as sm
+
+# Load the dataset with proper tab separator
+df = pd.read_csv("input/invaded_niche_pathways.csv", sep="\t", engine="python")
+
+# Verify key columns exist
+required_cols = ["n.gard", "n.total", "elevation", "urban.2009.50m"]
+missing = [c for c in required_cols if c not in df.columns]
+if missing:
+    raise ValueError(f"Missing expected columns: {missing}")
+
+# Convert to numeric (they may be read as objects)
+df["n_gard"] = pd.to_numeric(df["n.gard"], errors="coerce")
+df["n_total"] = pd.to_numeric(df["n.total"], errors="coerce")
+df["elevation"] = pd.to_numeric(df["elevation"], errors="coerce")
+df["urban_2009_50m"] = pd.to_numeric(df["urban.2009.50m"], errors="coerce")
+
+# Drop rows with any missing essential data
+df_clean = df.dropna(subset=["n_gard", "n_total", "elevation", "urban_2009_50m"])
+
+# Proportion of non‑native plants introduced through gardening
+df_clean["prop_gard"] = df_clean["n_gard"] / df_clean["n_total"]
+
+# Interaction linear model: prop_gard ~ elevation + urban + elevation*urban
+X = df_clean[["elevation", "urban_2009_50m"]].copy()
+X["elev_urban"] = X["elevation"] * X["urban_2009_50m"]
+X = sm.add_constant(X)
+model = sm.OLS(df_clean["prop_gard"], X).fit()
+
+# Extract interaction term results
+interaction_coef = model.params["elev_urban"]
+p_val = model.pvalues["elev_urban"]
+
+# Formulate hypothesis based on sign and significance
+if p_val < 0.05:
+    if interaction_coef < 0:
+        hypothesis = ("Urban land use prom
+--- output: 
+=== BLOCK ON ERROR-FREE CELL db-test__nls_ses-metadata_7-q1 step 6 | nls_ses_processed.csv has no column 'Unnamed: 0'
+import pandas as pd, numpy as np, statsmodels.formula.api as smf
+
+# Load data
+df = pd.read_csv('input/nls_ses_processed.csv')
+df = df.drop(columns=['Unnamed: 0'])
+
+# Rename columns to simplify formula syntax
+df = df.rename(columns={
+    'ABILITY: COMPOSITE OF ASVAB SCORE': 'ASVAB',
+    'PERCENTILE IN CLASS': 'class_percentile',
+    'SAMPLE_RACE': 'race',
+    'SAMPLE_SEX': 'sex',
+    'FAMILY SIZE OF SAMPLE': 'family_size',
+    'SES': 'SES',
+    'BA DEGREE COMPLETED': 'degree_raw'
+})
+
+# Convert numeric columns
+num_cols = ['family_size', 'ASVAB', 'class_percentile', 'SES']
+for c in num_cols:
+    df[c] = pd.to_numeric(df[c], errors='coerce')
+
+# Binary degree completion (True/False -> 1/0)
+df['degree'] = df['degree_raw'].astype(bool).astype(int)
+
+# ---- Base model: degree ~ SES (logit) ----
+base = smf.logit('degree ~ SES', data=df).fit(disp=0)
+print("Base model SES coeff:", base.params['SES'], "p:", base.pvalues['SES'])
+
+# ---- Extended model adding potential mediators ----
+mediators = ['ASVAB', 'class_percentile', 'family_size', 'race', 'sex']
+ext = smf.logit('degree ~ SES + ' + ' + '.join(mediators), data=df).fit(disp=0)
+print("\nExtended model SES coeff:", ext.params['SES'], "p:", ext.pvalues['SES'])
+
+# Reduction in SES effect
+reduction = base.params['SES'] - ext.params['SES']
+print("\nReduction in SES log‑odds after adding mediators:", reduction)
+
+# ---- Simple mediation checks for ASVAB and class_percentile ----
+# Path a: SES -> mediator (linear regression)
+a_asvab = smf.ols(
+--- output: Base model SES coeff: 0.472930956669265 p: 1.0276298084294205e-08
+
+Extended model SES coeff: 0.29064435374606307 p: 0.009688158983082423
+
+Reduction in SES log‑odds after adding mediators: 0.18228660292320192
+
+Indirect effect (ASVAB): 0.8556481925627806
+Indirect effect (Class Percentile): 0.4640405732409485
+
+Hypothesis: Higher socioeconomic status (SES) is positively associated with B.A. degree com
+=== BLOCK ON ERROR-FREE CELL db-test__nls_ses-metadata_9-q0 step 3 | nls_ses_processed.csv has no column 'Unnamed: 0'
+import pandas as pd
+import numpy as np
+import statsmodels.api as sm
+
+# Load data
+df = pd.read_csv('input/nls_ses_processed.csv')
+
+# Target: BA DEGREE COMPLETED (assume 0/1)
+y = df['BA DEGREE COMPLETED']
+
+# Feature selection: drop identifiers and target
+X = df.drop(columns=['Unnamed: 0', 'CASE ID', 'BA DEGREE COMPLETED'])
+
+# Convert categorical variables to dummies (race and sex)
+X = pd.get_dummies(X, columns=['SAMPLE_RACE', 'SAMPLE_SEX'], drop_first=True)
+
+# Add constant for intercept
+X = sm.add_constant(X)
+
+# Fit logistic regression
+logit_mod = sm.Logit(y, X).fit(disp=False)
+
+# Get absolute z-scores and sort
+coefs = logit_mod.params
+z_vals = logit_mod.tvalues
+abs_z = np.abs(z_vals)
+top_idx = abs_z.sort_values(ascending=False).index[:5]
+
+# Build hypothesis string based on top predictors
+top_predictors = ', '.join(top_idx.tolist())
+hypothesis = (
+    f"The strongest predictors of BA degree completion are the variables with the largest "
+    f"absolute z‑statistics in the logistic model: {top_predictors}."
+)
+
+# Return the hypothesis
+final_answer(hypothesis)
+--- output: 
+=== BLOCK ON OTHER FAILURE ('db-test__nls_ses-metadata_7-q1', 5, 'SyntaxError', "nls_ses_processed.csv has no column 'Unnamed: 0'")
+misses (first 30):
+   ('db-train__evolution_freshwater_fish-metadata_2-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/body-size-evolution-in-south-american-freshwater-fishes.csv'")
+   ('db-train__evolution_freshwater_fish-metadata_2-q0', 2, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('db-train__evolution_freshwater_fish-metadata_3-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/body-size-evolution-in-south-american-freshwater-fishes.csv'")
+   ('db-train__evolution_freshwater_fish-metadata_3-q0', 9, 'KeyError', 'run', 'None', 'KeyError: 1')
+   ('db-train__nls_bmi-metadata_1-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/nls_bmi_processed.csv'")
+   ('db-train__nls_bmi-metadata_5-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/nls_bmi_processed.csv'")
+   ('db-train__nls_bmi-metadata_5-q0', 3, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data'")
+   ('db-train__nls_bmi_raw-metadata_0-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/nls_raw.csv'")
+   ('db-train__nls_bmi_raw-metadata_1-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/nls_raw.csv'")
+   ('db-train__nls_bmi_raw-metadata_1-q0', 3, 'KeyError', 'run', 'None', 'KeyError: "None of [Index([\'race\', \'sex\'], dtype=\'str\')] are in the [columns]"')
+   ('db-test__archaeology-metadata_3-q0', 2, 'KeyError', 'unknown', 'violation only in code that may not run', "KeyError: 'BCE'")
+   ('db-test__archaeology-metadata_5-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/time_series_data.csv'")
+   ('db-test__archaeology-metadata_19-q0', 1, 'KeyError', 'run', 'None', 'KeyError: None')
+   ('db-test__archaeology-metadata_21-q0', 2, 'KeyError', 'run', 'None', 'KeyError: "None of [Index([\'Zhausgr\', \'ZDolch\', \'ZAxtSchwert\', \'ZBeil\'], dtype=\'str\')] are in the [columns]"')
+   ('db-test__archaeology-metadata_22-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/capital.csv'")
+   ('db-test__archaeology-metadata_22-q0', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('db-test__archaeology-metadata_24-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/time_series_data.csv'")
+   ('db-test__archaeology-metadata_24-q0', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('db-test__archaeology-metadata_26-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/time_series_data.csv'")
+   ('db-test__archaeology-metadata_26-q0', 2, 'FileNotFoundError', 'unknown', 'no supported source read in this cell', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input'")
+   ('db-test__archaeology-metadata_27-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/time_series_data.csv'")
+   ('db-test__archaeology-metadata_28-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/time_series_data.csv'")
+   ('db-test__archaeology-metadata_29-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/time_series_data.csv'")
+   ('db-test__archaeology-metadata_30-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/time_series_data.csv'")
+   ('db-test__archaeology-metadata_30-q0', 6, 'KeyError', 'run', 'None', "KeyError: 'year'")
+   ('db-test__introduction_pathways_non-native_plants-metadata_2-q0', 4, 'KeyError', 'run', 'None', "KeyError: 'intro.pathway'")
+   ('db-test__introduction_pathways_non-native_plants-metadata_3-q2', 4, 'KeyError', 'block', "invaded_niche_pathways.csv has no column 'elevation'", 'KeyError: 3')
+   ('db-test__introduction_pathways_non-native_plants-metadata_5-q0', 2, 'KeyError', 'run', 'None', 'KeyError: "None of [Index([\'n.gard\', \'n.unint\', \'n.agfo\'], dtype=\'str\')] are in the [index]"')
+   ('db-test__introduction_pathways_non-native_plants-metadata_5-q1', 3, 'KeyError', 'run', 'None', "KeyError: 'n.gard'")
+   ('db-test__meta_regression-metadata_1-q0', 1, 'FileNotFoundError', 'run', 'None', "FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/input/meta-regression_joined_data_heterogeneity_in_replication_projects.csv'")

@@ -1,0 +1,24 @@
+yelp.business: 100 documents, 49 field paths
+yelp.checkin: 90 documents, 3 field paths
+agnews.articles: 127600 documents, 4 field paths
+civic_unstructured.civic_docs: 19 documents, 3 field paths
+
+all models: {"filter_missing": 41, "filter_missing_empty": 40, "filter_missing_loose": 39, "nolimit": 7770, "nolimit_checked": 6306, "nolimit_count_error": 4, "nolimit_cut": 5418, "nolimit_true_gt5_sum": 137178412, "nolimit_zero": 481, "ok": 14088, "proj_missing": 650, "queries": 14118}
+  gemini-2.5-flash: {'queries': 1695, 'ok': 1686, 'nolimit': 1503, 'nolimit_checked': 1258, 'nolimit_zero': 124, 'nolimit_cut': 1075, 'nolimit_true_gt5_sum': 16668610, 'filter_missing': 9, 'filter_missing_empty': 9, 'proj_missing': 22, 'filter_missing_loose': 7}
+  gemini-3-pro: {'queries': 3438, 'ok': 3436, 'nolimit': 1886, 'nolimit_checked': 1283, 'nolimit_zero': 78, 'nolimit_cut': 1077, 'nolimit_true_gt5_sum': 30165994, 'filter_missing_loose': 5, 'proj_missing': 1}
+  gpt-5-mini: {'queries': 1536, 'ok': 1529, 'nolimit': 471, 'nolimit_checked': 367, 'nolimit_zero': 2, 'nolimit_cut': 266, 'nolimit_true_gt5_sum': 9581248, 'filter_missing': 1, 'filter_missing_empty': 1, 'proj_missing': 226, 'filter_missing_loose': 21}
+  gpt-5.1: {'queries': 1186, 'ok': 1186, 'nolimit': 169, 'nolimit_checked': 162, 'nolimit_zero': 43, 'nolimit_cut': 117, 'nolimit_true_gt5_sum': 3959596, 'filter_missing': 12, 'filter_missing_empty': 12, 'proj_missing': 195, 'filter_missing_loose': 1}
+  gpt-5.2: {'queries': 1505, 'ok': 1502, 'nolimit': 209, 'nolimit_checked': 184, 'nolimit_zero': 5, 'nolimit_cut': 176, 'nolimit_true_gt5_sum': 10733663, 'filter_missing': 1, 'filter_missing_empty': 1, 'proj_missing': 193, 'filter_missing_loose': 5}
+  kimi-k2-thinking: {'queries': 4758, 'ok': 4749, 'nolimit': 3532, 'nolimit_checked': 3052, 'nolimit_zero': 229, 'nolimit_cut': 2707, 'nolimit_true_gt5_sum': 66069301, 'filter_missing': 18, 'filter_missing_empty': 17, 'proj_missing': 13}
+examples (filter):
+    ('gemini-2.5-flash/agnews/query2/run_17', 2, ['projection'], 0)
+    ('gemini-2.5-flash/agnews/query2/run_28', 2, ['projection'], 0)
+    ('gemini-2.5-flash/agnews/query2/run_42', 2, ['projection'], 0)
+    ('gemini-2.5-flash/civic_unstructured/query3/run_34', 0, ['topic', 'topic'], 0)
+    ('gemini-2.5-flash/yelp/query3/run_45', 2, ['attributes.BusinessParking.garage', 'attributes.BusinessParking.street', 'attributes.BusinessParking.validated', 'attributes.BusinessParking.lot', 'attributes.BusinessParking.valet'], 0)
+examples (proj):
+    ('gemini-2.5-flash/civic_unstructured/query1/run_19', 1, ['Project_Name'])
+    ('gemini-2.5-flash/civic_unstructured/query3/run_34', 0, ['Project_Name', 'status'])
+    ('gemini-2.5-flash/yelp/query4/run_19', 0, ['attributes.categories'])
+    ('gemini-2.5-flash/yelp/query4/run_38', 0, ['attributes.Categories'])
+    ('gemini-2.5-flash/yelp/query4/run_38', 4, ['attributes.Categories'])

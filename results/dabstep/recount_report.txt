@@ -1,0 +1,62 @@
+submission files: 2246; with any trace: 368
+  duplicate traces: v1__O-Oagent V0__09-10-2025.jsonl == v1__O-OAgent V0__09-10-2025.jsonl
+  duplicate traces: v1__personal-q_test_da_bs_24_maxlen_10__22-11-2025.jsonl == v1__personal-q_test_da-bs16-maxlen15__22-11-2025.jsonl
+  duplicate traces: v1__personal-znx-single_sft_checkpoint_600_baseline__24-04-2026.jsonl == v1__personal-znx-single_sft_checkpoint_600.__24-04-2026.jsonl
+  duplicate traces: v1__zzz-zzzz-3__23-06-2025.jsonl == v1__TogetherAI-Open Data Scientist__24-06-2025.jsonl
+code-bearing files: 33; distinct: 29
+
+share of distinct error events per submission (executor / data-reference / other):
+  ByteDance DataPlatform-LLM-data_agent__27-08-2025.jsonl    2%   8%  90%  n=1322
+  ONE LAB-Qwen-14B-coder__01-05-2025.jsonl                  37%  37%  27%  n=1126
+  ONE LAB-Qwen-14B__01-05-2025.jsonl                        32%  39%  29%  n=1035
+  ONE LAB-Qwen-7B__01-05-2025.jsonl                         25%  59%  16%  n=1136
+  ONE LAB-gpt-4.1-mini__01-05-2025.jsonl                    60%  17%  23%  n=630
+  ONE LAB-gpt-4.1-nano__01-05-2025.jsonl                    71%  20%   9%  n=508
+  ONE LAB-gpt-4.1__01-05-2025.jsonl                         60%  21%  19%  n=651
+  ONE_LAB-4o-mini__25-04-2025.jsonl                         57%  15%  28%  n=634
+  Renmin University of China-deepanalyze-8B__09-02-2026.js   0%  24%  76%  n=205
+  Renmin University of China-deepanalyze__09-02-2026.jsonl   0%  24%  76%  n=209
+  cam-basic__23-08-2025.jsonl                               70%  21%   8%  n=519
+  ds-org-ds-rookie-v0__29-04-2025.jsonl                     31%  24%  45%  n=812
+  independent researcher-DA__05-04-2026.jsonl                2%  20%  78%  n=4938
+  msr-basic gpt-5-mini__08-09-2025.jsonl                    33%   2%  65%  n=437
+  msr-basic-gpt5-nano__10-09-2025.jsonl                     65%   2%  33%  n=499
+  msr-basic5__04-09-2025.jsonl                              28%   5%  67%  n=527
+  msr-basic__24-08-2025.jsonl                               48%  26%  27%  n=458
+  null-DataPilot__19-12-2025.jsonl                           0%  11%  89%  n=112
+  personal-Qwen3.5-27B__27-03-2026.jsonl                    72%   6%  21%  n=588
+  personal-q_test_da-bs16-maxlen15__22-11-2025.jsonl         0%  18%  82%  n=305
+  personal-q_test_da_bs32_maxlen_10__22-11-2025.jsonl        0%  20%  80%  n=245
+  personal-qwen3.5-27b-v2__17-04-2026.jsonl                 38%  21%  41%  n=1182
+  personal-test-da-1111__11-11-2025.jsonl                    0%  18%  82%  n=271
+  personal-znx-qwen3.5-27b-baseline__23-04-2026.jsonl       33%  13%  54%  n=106
+  personal-znx-single_sft_checkpoint_600.__24-04-2026.json   9%   5%  85%  n=563
+
+missing-key classes (n=3401):
+  absent-from-all-sources: 1991 (58.5%)
+  case-mismatch: 375 (11.0%)
+  exists-in-payments.csv: 322 (9.5%)
+  near-miss: 224 (6.6%)
+  exists-only-in:merchant_data.json/fees.json: 198 (5.8%)
+  exists-only-in:fees.json: 101 (3.0%)
+  non-string/unknown: 84 (2.5%)
+  exists-only-in:merchant_category_codes.csv: 78 (2.3%)
+  exists-only-in:acquirer_countries.csv/merchant_data.json: 27 (0.8%)
+  exists-only-in:acquirer_countries.csv: 1 (0.0%)
+
+files with XML <Code>/<Execute> markers: 6
+  Renmin University of China-deepanalyze-8B__09-02-2026.js reads of non-context files not written earlier: 439 (ran without error: 368); traces: 160
+  Renmin University of China-deepanalyze__09-02-2026.jsonl reads of non-context files not written earlier: 457 (ran without error: 384); traces: 165
+  personal-q_test_da-bs16-maxlen15__22-11-2025.jsonl       reads of non-context files not written earlier: 7 (ran without error: 5); traces: 5
+  personal-q_test_da_bs32_maxlen_10__22-11-2025.jsonl      reads of non-context files not written earlier: 7 (ran without error: 3); traces: 5
+  personal-test-da-1111__11-11-2025.jsonl                  reads of non-context files not written earlier: 2 (ran without error: 1); traces: 2
+  personal-znx-single_sft_checkpoint_600.__24-04-2026.json reads of non-context files not written earlier: 0 (ran without error: 0); traces: 0
+  cells 8100; error cells 1357; KeyError cells 240; next cell ran without error 192; no later successful cell 3
+
+step duration in v1__msr-basic5__04-09-2025.jsonl: median 33.1 s, p90 101.5 s, n=1520
+
+submissions: 25; submitters: 9
+OR(correct | data-reference error), FE=['task'], clustered by sub: 0.23 [0.12, 0.44] (n=10266)
+OR(correct | data-reference error), FE=['sub'], clustered by sub: 0.43 [0.29, 0.65] (n=10266)
+OR(correct | data-reference error), FE=['sub', 'task'], clustered by sub: 0.83 [0.56, 1.23] (n=10266)
+OR(correct | data-reference error), FE=['sub', 'task'], clustered by submitter: 0.83 [0.59, 1.17] (n=10266)

@@ -1,0 +1,2 @@
+finished arms with a constant answer: receipt 567, traceback 503
+pairs where only the receipt arm did so: 309; only the traceback arm: 245; sign test p = 0.007
