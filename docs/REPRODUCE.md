@@ -126,9 +126,9 @@ Receipt replay:   all episodes: n = 907; mean saving 0.332 [0.257, 0.406]; ...
 | 3.2, Table 4 | dry run on 101-line copies: 425 of 428 caught (99.3%), 11 of 8,517 wrongly stopped | `*_dry_s100.json`: add `caught`, `data_failures` and `false_blocks` over the four runs |
 | Table 4 | dry run on header-only copies: 409 of 428, 61 working cells stopped | `*_dry_h0.json`: add over the four runs |
 | 3.2, Table 4 | LLM checker: 244 of 428 caught (57.0%), 134 wrongly stopped | `llm_checker.txt`: add the four lines |
-| Table 5 | accuracy, cells, tokens and failures by arm; H1 saving 0.58 cells, p = 0.056 | `e1_gpt-oss.txt` |
+| Table 5 | recorded accuracy, cells and tokens by arm; as recorded, H1 saves 0.58 cells, p = 0.056 | `e1_gpt-oss.txt` (for the recovered columns, see B6) |
 | 3.3 | 588 live blocks: 580 confirmed, 8 with another error first | `e1_gpt-oss.txt`: `block validation` |
-| 3.1 | deepseek-v4.1-flash: 7 failures in 5 of 411 runs without the checker; accuracy 56.0% in both arms | `e1_deepseek41.txt`: line `P0G0` (failures) and lines `P0G0`, `P0G1` (accuracy) |
+| 3.1 | deepseek-v4.1-flash: 7 failures in 5 of 411 runs without the checker; accuracy 56.0% in both arms as recorded | `e1_deepseek41.txt`: line `P0G0` (failures) and lines `P0G0`, `P0G1` (accuracy) |
 | 3.3 | receipt saves 0.33 cells (0.26 to 0.41); 0.17 without the largest submitter | `receipts_gpt-oss.txt`: `PRIMARY` and `(c)` |
 | 3.3 | the receipt arm more often ends with a constant answer (309 against 245 pairs) | `constant_answers_gpt-oss.txt` |
 | 3.3 | deepseek-v4-flash:0731 and deepseek-v4.1-flash save 0.23 and 0.20 cells | `results/model-runs/receipts_deepseek-v4-flash-0731.txt` and `receipts_deepseek41.txt` (from the original runs) |
@@ -252,7 +252,7 @@ uv run live/e1_report.py --results runs/e1/results_deepseek41.jsonl --questions 
   --validation runs/e1/validation_deepseek41.jsonl
 ```
 
-The preprint's estimate of run-to-run noise (5 to 9 points of accuracy at temperature 1.0) comes from comparing arms on the questions where the checker never blocked (9 points in seed 1). No script in this release prints it.
+The preprint's estimate of run-to-run variation compares the arms with and without the checker on the questions where the checker never blocked, and the two seeds of one arm. `uv run live/e1_noise.py --results recorded/e1/results.jsonl --questions $Q` prints both (as recorded: 8.8 points in seed 1). Part B6 gives the figures with the lost answers recovered (7.1 points, and 3.9 points between the seeds of the plain arm without the checker).
 
 ## B5. Receipt replay on recorded DABstep traces (Section 3.3)
 
@@ -280,6 +280,36 @@ uv run rq3-pilot/constant_answers.py runs/receipts/results_gpt-oss.jsonl
 ```
 
 The two deepseek runs used the first 250 episodes (`recorded/receipts/episodes_deepseek.jsonl`) with one seed. Their reports are in `results/model-runs/receipts_deepseek*.txt`.
+
+## B6. Answers lost by our harness (Section 3.4, free)
+
+Our harness defines `final_answer` in the same namespace as the model's variables. When the model defines its own `final_answer` or assigns a value to that name, the harness records no answer. `live/fa_replay.py` replays the recorded cells of the affected runs with `live/fa_runner.py`, which keeps `final_answer` safe, and stops at the first answer. `live/fa_rescore.py` ends each such run at its answer and writes a copy of `recorded/` that `tools/rescore.sh` scores unchanged. The replays of our runs are in `results/fa-replay/` (see its README).
+
+```bash
+make bench-data
+make fa-rescore       # uses results/fa-replay; about 3 minutes
+```
+
+To make the replays again (Linux with bubblewrap, and the sandbox Python of B1; about 1 hour on 2 cores):
+
+```bash
+make fa-replay SANDBOX_PY=sandbox-env/bin/python
+make fa-rescore FA_REPLAYS=runs/fa-replay
+```
+
+| Preprint | Value | Where |
+| --- | --- | --- |
+| 3.4 | model defined or assigned `final_answer`: 962 of 3,288 gpt-oss:120b runs; 163 of the 822 deepseek-v4.1-flash runs in `P0G0` and `P0G1` | `runs/fa_rescore_summary.txt`: `live_gpt` line; `live_ds` lines `P0G0` (74) and `P0G1` (89) |
+| 3.4 | 16% to 27% of the runs on the other benchmarks | `runs/fa_rescore_summary.txt` lines `ia_gpt` 41/257, `ia_ds` 68/257, `qr_gpt` 112/411, `db_gpt` 64/264; KramaBench 21/104 (run not released) |
+| 3.4 | 934 and 163 answers recovered in the live experiment, 283 in the other runs | the same lines (`answer recovered`); KramaBench 16 |
+| 3.4 | replay fidelity: 9,160 of 9,234 cells; 11 runs kept as recorded | `replay reproduced ... earlier cells` and `not used because an earlier cell diverged` on each line; KramaBench 629 of 646 and 1 run |
+| 3.4 | 6,062 of the 8,517 working cells of the four later runs remain; no blocks | `runs/rescore_fa/`: `cells without an error` in the four Table 3 reports (1,664 + 2,143 + 875 + 1,380) |
+| Table 5 | recovered accuracy 61.3%, 57.3%, 57.2%, 58.3%; cells 5.60, 5.27, 4.69, 4.41; errors 567, 39, 277, 29 | `runs/rescore_fa/e1_gpt-oss.txt`, lines `P0G0` to `P1G1` |
+| 3.3 | recovered H1: 0.33 cells saved (-0.005 to 0.66), p = 0.037; accuracy -4.0 points (-7.3 to -0.7); H3 +1.2 points; column names -4.1 points | `runs/rescore_fa/e1_gpt-oss.txt`, lines `H1`, `H3` and `prompt within G0` |
+| 3.1, 3.3 | deepseek-v4.1-flash 69.1% in both arms after recovery | `runs/rescore_fa/e1_deepseek41.txt`, lines `P0G0` and `P0G1` |
+| 3.3 | 7.1 points on the questions where the checker never blocked (seed 1), 2.2 points the other way in seed 2; 3.9 points between the seeds of `P0G0` | `uv run live/e1_noise.py --results runs/fa_recorded/e1/results.jsonl --questions $Q` |
+
+`runs/fa_rescore_summary.txt` counts the `live_ds` file as a whole (850 runs), which includes 28 partial runs in the arms with column names; the preprint uses the 822 runs of the two plain-prompt arms. The receipt replay (B5) is not affected: it counts cells until the first working cell, which is never later than the first answer. Token counts cannot be recovered, because the harness recorded them per run.
 
 ## What you cannot reproduce exactly
 

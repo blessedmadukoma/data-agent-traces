@@ -22,6 +22,7 @@ The repository contains no benchmark data. The commands below download each data
 | DAB, paper-matched corpus: 8,940 of 52,940 Python calls (16.9%) | `make dab` | free |
 | DAB: 5,418 of 6,306 unlimited MongoDB queries (85.9%) are cut to 5 documents | `make dab` | free |
 | Held-out tests, baselines, live QRData experiment and receipt replay, from our recorded runs | `make bench-data rescore` | free, about 3 minutes |
+| Our harness lost the answer in 27% of the live-experiment runs; the same results with those answers recovered | `make bench-data fa-rescore` | free, about 3 minutes |
 | The same experiments with new model runs | see [docs/REPRODUCE.md](docs/REPRODUCE.md), B1 to B5 | USD 1 to 13 each |
 
 [docs/REPRODUCE.md](docs/REPRODUCE.md) lists every number in the preprint with its command and the expected output. [results/](results/) holds the reports that these commands printed on our machines.
@@ -43,6 +44,7 @@ make dab-data       # download the DAB logs and MongoDB dumps (2.2 GB)
 make dab            # the DAB replay
 make bench-data     # InfiAgent-DABench, QRData and DiscoveryBench (540 MB)
 make rescore        # score our recorded model runs again, without model calls
+make fa-rescore     # the same, with the answers that our harness lost recovered
 ```
 
 Each target prints its report and also writes it to `runs/`. Run `make help` for the full list. You can change any path on the command line, for example `make dabstep DATA=/data/dabstep`.
@@ -56,7 +58,7 @@ The experiments with models need Linux with [bubblewrap](https://github.com/cont
 | `dabstep-gate/` | DABstep manifest and trace parsers, the checker (`gate.py`, `gate_adapter.py`), its evaluation and the recovery analyses. `v6/` and `v7/` hold the earlier frozen checker versions. |
 | `dataagentbench-replay/` | DAB log parser, prevalence, checker evaluation, harness count and MongoDB count. |
 | `kramabench/`, `infiagent/`, `qrdata/`, `discoverybench/` | Runs of our own agent on these benchmarks, and the scoring of the checker on the recorded cells. |
-| `live/` | The live 2 x 2 experiment on QRData (column names in the prompt, checker on or off). |
+| `live/` | The live 2 x 2 experiment on QRData (column names in the prompt, checker on or off), and the replay that recovers the answers our harness lost. |
 | `baselines/` | Two alternative checkers: a dry run on truncated data and an LLM checker. |
 | `rq3-pilot/` | Replay of recorded DABstep episodes with a model: receipt against traceback. |
 | `tools/` | Download and small helper scripts. |

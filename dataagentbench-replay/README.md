@@ -16,4 +16,4 @@ The checker runs with `alias=True` here, so `x = var_x` keeps both names tracked
 
 The DAB repository has no licence file. The authors allowed us to publish statistics from the logs. Do not publish the logs or records derived from them without asking the authors.
 
-[1] R. Ma *et al.*, "Can AI agents answer your data questions? A benchmark for data agents," in *Proc. EMNLP*, 2026, arXiv:2603.20576. https://github.com/ucbepic/DataAgentBench
+[1] R. Ma *et al.*, "Can AI agents answer your data questions? A benchmark for data agents," arXiv:2603.20576, 2026. https://github.com/ucbepic/DataAgentBench
