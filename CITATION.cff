@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the preprint below."
+title: "data-agent-traces: code for 'Data Agents Often Name Missing Data and Recover Cheaply; Harnesses Distort the Record'"
+type: software
+version: 1.0.0
+date-released: 2026-09-27
+license: MIT
+repository-code: "https://github.com/blessedmadukoma/data-agent-traces"
+authors:
+  - family-names: Madukoma
+    given-names: Blessed
+    email: blessedmadukoma@gmail.com
+keywords:
+  - data agents
+  - LLM agents
+  - static analysis
+  - benchmarks
+  - agent traces
+preferred-citation:
+  type: article
+  status: preprint
+  title: "Data Agents Often Name Missing Data and Recover Cheaply; Harnesses Distort the Record"
+  authors:
+    - family-names: Madukoma
+      given-names: Blessed
+  year: 2026
+  month: 9

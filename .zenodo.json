@@ -1,0 +1,11 @@
+{
+  "title": "data-agent-traces: code for \"Data Agents Often Name Missing Data and Recover Cheaply; Harnesses Distort the Record\"",
+  "description": "Trace parsers for DABstep and DataAgentBench, an exact pre-execution checker for column, key and file names in agent-written Python, and the scripts of every experiment in the preprint. The repository contains no benchmark data; the scripts download each dataset at a pinned commit.",
+  "upload_type": "software",
+  "creators": [
+    {"name": "Madukoma, Blessed"}
+  ],
+  "license": "MIT",
+  "keywords": ["data agents", "LLM agents", "static analysis", "benchmarks", "agent traces"],
+  "version": "1.0.0"
+}
