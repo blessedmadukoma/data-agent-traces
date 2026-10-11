@@ -1,0 +1,28 @@
+{
+ "DABstep": {
+  "population": {
+   "neg-rest": 19259,
+   "neg-sus": 2577,
+   "pos": 4429
+  },
+  "sample": {
+   "pos": 100,
+   "neg-rest": 50,
+   "neg-sus": 50
+  },
+  "failed_total": 26265
+ },
+ "DAB": {
+  "population": {
+   "neg-rest": 19607,
+   "pos": 4751,
+   "neg-sus": 3626
+  },
+  "sample": {
+   "pos": 100,
+   "neg-sus": 50,
+   "neg-rest": 50
+  },
+  "failed_total": 27984
+ }
+}

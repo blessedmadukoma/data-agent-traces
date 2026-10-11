@@ -1,8 +1,8 @@
 # data-agent-traces
 
-Code for the preprint *What Agent Traces Hide: Data-Reference Errors and Harness Effects in LLM Data Agents* (B. Madukoma, 2026).
+Code for the preprint *What Agent Traces Do Not Record: Harness Effects and Data-Reference Errors in Code-Writing LLM-based Agents for Data Analysis* (B. Madukoma and P. Mitra, 2026).
 
-A data agent answers a question by writing Python or SQL, running it and reading the output. The code names columns, keys and files. This repository measures what happens when a name is wrong. It has three parts:
+An LLM-based agent for data analysis answers a question by writing Python or SQL, running it and reading the output. The code names columns, keys and files. This repository measures what happens when a name is wrong. It has three parts:
 
 1. Parsers that turn public agent traces from DABstep and DataAgentBench (DAB) into one record per code cell.
 2. A static checker (called the gate in the code) that reads a cell before it runs and blocks it only when it can prove that a named column, key or file does not exist.
@@ -23,6 +23,8 @@ The repository contains no benchmark data. The commands below download each data
 | DAB: 5,418 of 6,306 unlimited MongoDB queries (85.9%) are cut to 5 documents | `make dab` | free |
 | Held-out tests, baselines, live QRData experiment and receipt replay, from our recorded runs | `make bench-data rescore` | free, about 3 minutes |
 | Our harness lost the answer in 27% of the live-experiment runs; the same results with those answers recovered | `make bench-data fa-rescore` | free, about 3 minutes |
+| Hand audit of 400 failed steps: corrected counts of data-reference errors 4,005 (DABstep) and 3,566 (DAB); rule precision 0.87 and 0.72, recall 0.96 in both | see [audit/README.md](audit/README.md) | free, seconds |
+| Pre-registered DAB rerun: passing the code unchanged removes the syntax errors (26.3% of Python calls to 0%); Pass@1 −1.5 points (95% CI −7.6 to +4.1) | see [dab-rerun/README.md](dab-rerun/README.md) | free from the released results |
 | The same experiments with new model runs | see [docs/REPRODUCE.md](docs/REPRODUCE.md), B1 to B5 | USD 1 to 13 each |
 
 [docs/REPRODUCE.md](docs/REPRODUCE.md) lists every number in the preprint with its command and the expected output. [results/](results/) holds the reports that these commands printed on our machines.
@@ -61,7 +63,9 @@ The experiments with models need Linux with [bubblewrap](https://github.com/cont
 | `live/` | The live 2 x 2 experiment on QRData (column names in the prompt, checker on or off), and the replay that recovers the answers our harness lost. |
 | `baselines/` | Two alternative checkers: a dry run on truncated data and an LLM checker. |
 | `rq3-pilot/` | Replay of recorded DABstep episodes with a model: receipt against traceback. |
-| `tools/` | Download and small helper scripts. |
+| `tools/` | Download and helper scripts, the audit's sampling and analysis scripts, and the scripts for the numbers added in later preprint versions. |
+| `audit/` | The hand audit of the data-reference classification: plan, codebook, hashes, sampled step identifiers, both coders' labels and results. |
+| `dab-rerun/` | The pre-registered DAB rerun: pre-registration, amendments, hashes, harness patch, runner, judge, analysis and per-run results. |
 | `frozen/` | SHA-256 hashes of each frozen checker version. |
 | `results/` | Reports printed by the commands. |
 | `recorded-runs-2026-09.tar.gz` | Outputs of our model runs, 23 and 24 September 2026 (10 MB). `make rescore` unpacks it into `recorded/`. |

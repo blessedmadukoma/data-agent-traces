@@ -338,3 +338,53 @@ uv run python tools/dab_missing_files.py --run runs/dab
 | 2.1 | 0% to 22% of the runs of each other benchmark | `ia_gpt` 21.8%, `ia_ds` 0.0%, `qr_gpt` 9.5%, `db_gpt` 6.8% (KramaBench is not counted) |
 | 3.3 | 379 DAB reads of missing files blocked, 377 of them by kimi-k2-thinking | `blocked reads of missing files: 379 {'gemini-3-pro': 2, 'kimi-k2-thinking': 377}` |
 | 3.3 | 377 of the 379 are files that the model invented to hold an earlier result | `names of stored results: 350; to read by hand: 29`; of the 29 printed reads, 27 are such files and 2 name a file after a database |
+
+`tools/harness_nameerror.py` reads the corrected DABstep count and its interval from `audit/results_FINAL.json` (option `--audit`). Its output is the same as before.
+
+# Part D: numbers added in preprint v3.5 to v3.13 (free)
+
+Section numbers refer to preprint v3.13. These commands need the recorded runs (B0), `runs/fa_recorded` (B6) and, for the last block, `runs/dabstep` (A1).
+
+```bash
+tar xzf recorded-runs-2026-09.tar.gz                 # if B0 has not unpacked it
+make bench-data fa-rescore                           # writes runs/fa_recorded
+uv run tools/preprint_v3_numbers.py --qrdata data/QRData/benchmark/QRData.json \
+    --recorded recorded --recovered runs/fa_recorded --audit audit/results_FINAL.json
+uv run python tools/episode_listing_bound.py --manifest runs/dabstep/manifest.jsonl \
+    --cells runs/dabstep/parsed_*_cells.jsonl
+```
+
+`--replays` defaults to `results/fa-replay`. Without `--audit`, the script leaves out the intervals with Jeffreys' prior.
+
+| Preprint | Value | Line to look for |
+| --- | --- | --- |
+| Table 6 | 822 runs per arm; one run with column names and the checker did not finish; correct answers 315, 302, 322, 355 (recorded) and 504, 471, 470, 479 (recovered) | `== live experiment` per-arm lines |
+| 3.4 | with column names, +4.1 points as recorded and +1.2 recovered, over 821 pairs | `P1G0 -> P1G1` |
+| 3.4 | recovered, plain prompt: question bootstrap −4.0 (−7.3 to −0.7); seed 1 −7.1, seed 2 −1.0 | `question bootstrap`, `seed 1`, `seed 2` under `P0G0 -> P0G1` (recovered) |
+| 3.4 | worst case −2.9 points: 3 and 9 lost answers not recovered | `== lost answers not recovered` |
+| 3.1 | 954 lost answers (962 minus 8 recorded anyway) | the same block |
+| 2.4, 3.4 | 1,778 pairs from 907 cut traces; 0.33 steps saved (0.26 to 0.41); 59 pairs stopped early (58 time-outs, 9 lost processes in 67 arms); 0.35 (0.27 to 0.42) with 52 of them kept | `== receipt replay` |
+| 3.4 | 1,070 literal answers, 31 of them 'Not Applicable' | `finished arms with a literal answer` |
+| 3.4 | pairs whose earlier steps all reproduced: 1,406 pairs, 714 cut traces, 0.35 (0.27 to 0.44) | `every earlier step reproduced` |
+| 3.4 | file listings counted as inspection: 0.34 (0.26 to 0.41) | `file listings count as inspection` |
+| 3.4, contribution 3 | 567 errors without the checker: 510 missing files, 57 missing columns or keys; with the checker, 362 of 387 blocked steps read missing files; 560 of all 588 blocked steps (as recorded) | `== live experiment, plain prompt (recovered)` and the line below it |
+| 3.4 | of the 588 blocked steps, 1 was followed by a `NameError` on a name that the skipped lines define; 16 would have changed an existing name, and no later working step read its old value | `== blocked steps and the lines before the missing read` |
+| 3.1 | 1,092 of the 1,097 recovered answers are shown by the recorded step that gave them | `== recovered answers found in the recorded step`: `either`, 929 + 163 |
+| 2.2, 3.2, 5 | intervals with Jeffreys' prior: DABstep share 19.1% to 25.7%, recall 0.77 to 0.98; DAB share 11.4% to 16.6%, recall 0.74 to 0.98 | `== audit intervals with Jeffreys' prior` |
+| 3.4, contribution 3 | 61% of 2,459 error episodes end within two steps; 54% if every step that lists files counts as inspection | `episode_listing_bound.py`: `base` and `aggressive` lines, `within two steps` |
+
+# Part E: the hand audit and the controlled DAB rerun (free)
+
+The hand audit (Section 2.2) is in `audit/`, and the controlled rerun (Section 3.1) is in `dab-rerun/`. Each folder's README says how to check its files against the hashes frozen before the work started, and how to reproduce its numbers.
+
+```bash
+uv run python tools/audit_dre_analysis.py --sample audit/sample_ids.csv --strata audit/strata.json \
+    --coder1 audit/labels_coder1_final.json --coder2 audit/labels_coder2.jsonl
+```
+
+| Preprint | Value | Line to look for |
+| --- | --- | --- |
+| 2.2, 3.2 | DABstep: precision 0.87 (0.80 to 0.93), recall 0.96 (0.92 to 1.00), corrected count 4,005 (3,658 to 4,340) | `== DABstep` block |
+| 2.2, 3.2 | DAB: precision 0.72 (0.63 to 0.81), recall 0.96 (0.90 to 1.00), corrected count 3,566 (3,113 to 4,041) | `== DAB` block |
+| 2.2 | agreement before adjudication: kappa 0.95 (DABstep) and 0.71 (DAB), 5 and 29 disagreements | `agreement with coder 2` |
+| 2.2 | unclear items counted as not data-reference errors: DABstep precision 0.86 | `unclear counted as not` |

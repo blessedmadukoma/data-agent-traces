@@ -1,0 +1,401 @@
+id,corpus,stratum,rule_group,uid
+1,DABstep,pos,KeyError,v1__ONE LAB-Qwen-14B__01-05-2025.jsonl|233|3
+2,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl|385|0
+3,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|338|15
+4,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-gpt-4.1-nano__01-05-2025.jsonl|7|0
+5,DABstep,pos,index-error(wrapped),v1__personal-Qwen3.5-27B__27-03-2026.jsonl|218|8
+6,DABstep,neg-sus,other,v1__personal-test-da-1111__11-11-2025.jsonl|402|16
+7,DABstep,neg-sus,other,v1__independent researcher-DA__05-04-2026.jsonl|348|75
+8,DABstep,pos,KeyError,v1__personal-q_test_da-bs16-maxlen15__22-11-2025.jsonl|387|1
+9,DABstep,neg-sus,other,v1__ByteDance DataPlatform-LLM-data_agent__27-08-2025.jsonl|343|0
+10,DABstep,neg-rest,SyntaxError,v1__independent researcher-DA__05-04-2026.jsonl|61|23
+11,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|417|4
+12,DABstep,neg-rest,TypeError,v1__ONE LAB-Qwen-14B__01-05-2025.jsonl|273|5
+13,DABstep,neg-sus,other,v1__ONE LAB-Qwen-14B__01-05-2025.jsonl|41|1
+14,DABstep,pos,index-error(wrapped),v1__msr-basic__24-08-2025.jsonl|412|4
+15,DABstep,neg-sus,ValueError,v1__independent researcher-DA__05-04-2026.jsonl|49|118
+16,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-gpt-4.1-nano__01-05-2025.jsonl|30|2
+17,DABstep,pos,index-error(wrapped),v1__ONE_LAB-4o-mini__25-04-2025.jsonl|423|0
+18,DABstep,pos,index-error(wrapped),v1__personal-qwen3.5-27b-v2__17-04-2026.jsonl|239|2
+19,DABstep,neg-sus,other,v1__personal-znx-single_sft_checkpoint_600.__24-04-2026.jsonl|267|3
+20,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|112|1
+21,DABstep,pos,index-error(wrapped),v1__cam-basic__23-08-2025.jsonl|56|1
+22,DABstep,pos,index-error(wrapped),v1__ONE LAB-gpt-4.1__01-05-2025.jsonl|378|0
+23,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|330|36
+24,DABstep,neg-sus,other,v1__personal-znx-qwen3.5-27b-baseline__23-04-2026.jsonl|316|5
+25,DABstep,neg-rest,executor:forbidden,v1__ONE_LAB-4o-mini__25-04-2025.jsonl|394|0
+26,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|445|10
+27,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|76|49
+28,DABstep,neg-sus,other,v1__msr-basic5__04-09-2025.jsonl|358|0
+29,DABstep,neg-sus,ValueError,v1__personal-Qwen3.5-27B__27-03-2026.jsonl|321|5
+30,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|45|36
+31,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|442|7
+32,DABstep,neg-sus,AttributeError,v1__independent researcher-DA__05-04-2026.jsonl|246|28
+33,DABstep,neg-sus,other,v1__ONE LAB-Qwen-14B__01-05-2025.jsonl|144|1
+34,DABstep,neg-sus,other,v1__msr-basic5__04-09-2025.jsonl|94|0
+35,DABstep,neg-sus,AttributeError,v1__ONE LAB-Qwen-14B__01-05-2025.jsonl|185|1
+36,DABstep,pos,index-error(wrapped),v1__ONE LAB-gpt-4.1-nano__01-05-2025.jsonl|14|3
+37,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|88|4
+38,DABstep,neg-sus,other,v1__ByteDance DataPlatform-LLM-data_agent__27-08-2025.jsonl|367|6
+39,DABstep,pos,KeyError,v1__Renmin University of China-deepanalyze-8B__09-02-2026.jsonl|206|1
+40,DABstep,pos,KeyError,v1__personal-test-da-1111__11-11-2025.jsonl|333|1
+41,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl|29|0
+42,DABstep,neg-sus,other,v1__msr-basic-gpt5-nano__10-09-2025.jsonl|373|1
+43,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|203|63
+44,DABstep,neg-sus,other,v1__independent researcher-DA__05-04-2026.jsonl|164|28
+45,DABstep,neg-sus,other,v1__msr-basic__24-08-2025.jsonl|151|1
+46,DABstep,neg-sus,other,v1__msr-basic5__04-09-2025.jsonl|264|0
+47,DABstep,neg-sus,other,v1__independent researcher-DA__05-04-2026.jsonl|133|65
+48,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-gpt-4.1-mini__01-05-2025.jsonl|282|0
+49,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|374|13
+50,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|439|6
+51,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|130|2
+52,DABstep,pos,index-error(wrapped),v1__msr-basic gpt-5-mini__08-09-2025.jsonl|296|0
+53,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|240|95
+54,DABstep,neg-sus,other,v1__personal-q_test_da_bs32_maxlen_10__22-11-2025.jsonl|433|4
+55,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|231|41
+56,DABstep,neg-sus,AttributeError,v1__independent researcher-DA__05-04-2026.jsonl|264|0
+57,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|266|85
+58,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl|203|3
+59,DABstep,pos,index-error(wrapped),v1__ds-org-ds-rookie-v0__29-04-2025.jsonl|412|3
+60,DABstep,neg-sus,IndexError,v1__Renmin University of China-deepanalyze-8B__09-02-2026.jsonl|73|0
+61,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-14B__01-05-2025.jsonl|212|3
+62,DABstep,neg-sus,other,v1__independent researcher-DA__05-04-2026.jsonl|155|0
+63,DABstep,pos,index-error(wrapped),v1__cam-basic__23-08-2025.jsonl|398|2
+64,DABstep,neg-sus,other,v1__independent researcher-DA__05-04-2026.jsonl|135|18
+65,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|120|27
+66,DABstep,neg-sus,other,v1__independent researcher-DA__05-04-2026.jsonl|247|71
+67,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|350|3
+68,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|42|3
+69,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|17|20
+70,DABstep,pos,index-error(wrapped),v1__personal-qwen3.5-27b-v2__17-04-2026.jsonl|146|6
+71,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|392|2
+72,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|102|58
+73,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl|227|1
+74,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|79|0
+75,DABstep,pos,index-error(wrapped),v1__ONE LAB-gpt-4.1__01-05-2025.jsonl|312|1
+76,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-Qwen-14B__01-05-2025.jsonl|145|5
+77,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl|86|1
+78,DABstep,pos,index-error(wrapped),v1__ONE LAB-gpt-4.1-mini__01-05-2025.jsonl|149|0
+79,DABstep,neg-sus,ValueError,v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|299|2
+80,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-gpt-4.1-nano__01-05-2025.jsonl|288|0
+81,DABstep,pos,index-error(wrapped),v1__ONE LAB-gpt-4.1-nano__01-05-2025.jsonl|52|3
+82,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|442|22
+83,DABstep,neg-rest,SyntaxError,v1__msr-basic-gpt5-nano__10-09-2025.jsonl|354|0
+84,DABstep,neg-sus,AttributeError,v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl|303|1
+85,DABstep,pos,index-error(wrapped),v1__msr-basic gpt-5-mini__08-09-2025.jsonl|236|1
+86,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|309|8
+87,DABstep,pos,FileNotFoundError,v1__personal-znx-single_sft_checkpoint_600.__24-04-2026.jsonl|373|0
+88,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|442|43
+89,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|32|2
+90,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|141|20
+91,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|38|3
+92,DABstep,pos,index-error(wrapped),v1__personal-qwen3.5-27b-v2__17-04-2026.jsonl|586|0
+93,DABstep,neg-sus,ValueError,v1__personal-test-da-1111__11-11-2025.jsonl|371|4
+94,DABstep,pos,index-error(wrapped),v1__personal-qwen3.5-27b-v2__17-04-2026.jsonl|615|6
+95,DABstep,neg-sus,other,v1__ByteDance DataPlatform-LLM-data_agent__27-08-2025.jsonl|7|2
+96,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl|246|1
+97,DABstep,neg-rest,NameError,v1__personal-test-da-1111__11-11-2025.jsonl|270|3
+98,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|12|53
+99,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-Qwen-14B__01-05-2025.jsonl|40|1
+100,DABstep,pos,index-error(wrapped),v1__ByteDance DataPlatform-LLM-data_agent__27-08-2025.jsonl|26|2
+101,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|316|18
+102,DABstep,pos,KeyError,v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|279|6
+103,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|60|1
+104,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl|22|5
+105,DABstep,pos,index-error(wrapped),v1__personal-Qwen3.5-27B__27-03-2026.jsonl|370|6
+106,DABstep,pos,KeyError,v1__Renmin University of China-deepanalyze-8B__09-02-2026.jsonl|280|2
+107,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|32|66
+108,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|52|28
+109,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|435|6
+110,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-gpt-4.1-mini__01-05-2025.jsonl|218|2
+111,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|19|58
+112,DABstep,neg-sus,IndexError,v1__personal-q_test_da-bs16-maxlen15__22-11-2025.jsonl|35|7
+113,DABstep,neg-sus,other,v1__personal-znx-single_sft_checkpoint_600.__24-04-2026.jsonl|149|9
+114,DABstep,pos,index-error(wrapped),v1__ONE_LAB-4o-mini__25-04-2025.jsonl|208|1
+115,DABstep,neg-sus,IndexError,v1__independent researcher-DA__05-04-2026.jsonl|215|63
+116,DABstep,neg-rest,executor:forbidden,v1__ONE_LAB-4o-mini__25-04-2025.jsonl|352|1
+117,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|240|1
+118,DABstep,neg-sus,other,v1__ONE LAB-Qwen-14B__01-05-2025.jsonl|34|2
+119,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|122|34
+120,DABstep,neg-rest,SyntaxError,v1__independent researcher-DA__05-04-2026.jsonl|23|29
+121,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|113|0
+122,DABstep,neg-sus,ValueError,v1__ONE LAB-gpt-4.1-mini__01-05-2025.jsonl|286|3
+123,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|208|0
+124,DABstep,neg-rest,NameError,v1__personal-q_test_da-bs16-maxlen15__22-11-2025.jsonl|369|3
+125,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-14B__01-05-2025.jsonl|221|5
+126,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl|193|0
+127,DABstep,pos,KeyError(wrapped),v1__ONE LAB-Qwen-14B__01-05-2025.jsonl|117|4
+128,DABstep,pos,FileNotFoundError,v1__personal-znx-single_sft_checkpoint_600.__24-04-2026.jsonl|70|0
+129,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|283|2
+130,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|115|4
+131,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|242|2
+132,DABstep,pos,KeyError,v1__personal-test-da-1111__11-11-2025.jsonl|261|2
+133,DABstep,neg-sus,other,v1__msr-basic5__04-09-2025.jsonl|80|1
+134,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|148|47
+135,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl|387|1
+136,DABstep,neg-sus,other,v1__msr-basic-gpt5-nano__10-09-2025.jsonl|222|2
+137,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|279|19
+138,DABstep,neg-sus,ValueError,v1__personal-Qwen3.5-27B__27-03-2026.jsonl|218|5
+139,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-gpt-4.1__01-05-2025.jsonl|403|0
+140,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|410|1
+141,DABstep,neg-sus,other,v1__ByteDance DataPlatform-LLM-data_agent__27-08-2025.jsonl|299|1
+142,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|98|3
+143,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|363|52
+144,DABstep,pos,index-error(wrapped),v1__personal-qwen3.5-27b-v2__17-04-2026.jsonl|233|3
+145,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|320|85
+146,DABstep,neg-sus,other,v1__independent researcher-DA__05-04-2026.jsonl|49|78
+147,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|433|10
+148,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|372|101
+149,DABstep,neg-rest,SyntaxError,v1__independent researcher-DA__05-04-2026.jsonl|389|27
+150,DABstep,neg-sus,other,v1__msr-basic5__04-09-2025.jsonl|348|2
+151,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|376|24
+152,DABstep,neg-sus,other,v1__independent researcher-DA__05-04-2026.jsonl|47|37
+153,DABstep,neg-sus,other,v1__ByteDance DataPlatform-LLM-data_agent__27-08-2025.jsonl|429|2
+154,DABstep,pos,FileNotFoundError,v1__personal-znx-single_sft_checkpoint_600.__24-04-2026.jsonl|266|0
+155,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|84|15
+156,DABstep,pos,index-error(wrapped),v1__ONE LAB-gpt-4.1__01-05-2025.jsonl|231|1
+157,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|144|58
+158,DABstep,pos,ValueError:usecols,v1__independent researcher-DA__05-04-2026.jsonl|293|68
+159,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|220|44
+160,DABstep,neg-sus,AttributeError,v1__Renmin University of China-deepanalyze-8B__09-02-2026.jsonl|189|1
+161,DABstep,pos,KeyError,v1__personal-q_test_da_bs32_maxlen_10__22-11-2025.jsonl|251|1
+162,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|390|0
+163,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|152|21
+164,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|43|20
+165,DABstep,neg-sus,other,v1__ByteDance DataPlatform-LLM-data_agent__27-08-2025.jsonl|367|4
+166,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-gpt-4.1-nano__01-05-2025.jsonl|331|0
+167,DABstep,neg-rest,SyntaxError,v1__personal-qwen3.5-27b-v2__17-04-2026.jsonl|232|5
+168,DABstep,neg-sus,other,v1__msr-basic-gpt5-nano__10-09-2025.jsonl|314|0
+169,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|112|11
+170,DABstep,pos,KeyError,v1__Renmin University of China-deepanalyze-8B__09-02-2026.jsonl|285|2
+171,DABstep,neg-sus,other,v1__msr-basic5__04-09-2025.jsonl|289|0
+172,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|49|92
+173,DABstep,neg-sus,other,v1__ds-org-ds-rookie-v0__29-04-2025.jsonl|115|2
+174,DABstep,neg-sus,other,v1__msr-basic gpt-5-mini__08-09-2025.jsonl|327|1
+175,DABstep,pos,index-error(wrapped),v1__ONE LAB-gpt-4.1-nano__01-05-2025.jsonl|72|0
+176,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|370|1
+177,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|372|21
+178,DABstep,neg-sus,other,v1__personal-qwen3.5-27b-v2__17-04-2026.jsonl|435|3
+179,DABstep,neg-sus,AttributeError,v1__ONE_LAB-4o-mini__25-04-2025.jsonl|288|4
+180,DABstep,neg-rest,TypeError,v1__ds-org-ds-rookie-v0__29-04-2025.jsonl|136|3
+181,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|57|5
+182,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|200|1
+183,DABstep,neg-rest,executor:forbidden,v1__personal-Qwen3.5-27B__27-03-2026.jsonl|152|1
+184,DABstep,pos,KeyError,v1__independent researcher-DA__05-04-2026.jsonl|279|30
+185,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|333|3
+186,DABstep,pos,index-error(wrapped),v1__ONE LAB-gpt-4.1__01-05-2025.jsonl|88|0
+187,DABstep,pos,FileNotFoundError,v1__personal-znx-single_sft_checkpoint_600.__24-04-2026.jsonl|298|0
+188,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl|334|2
+189,DABstep,pos,index-error(wrapped),v1__ONE LAB-Qwen-14B-coder__01-05-2025.jsonl|128|2
+190,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|57|83
+191,DABstep,pos,index-error(wrapped),v1__msr-basic__24-08-2025.jsonl|66|0
+192,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-gpt-4.1__01-05-2025.jsonl|448|1
+193,DABstep,pos,KeyError,v1__Renmin University of China-deepanalyze-8B__09-02-2026.jsonl|227|2
+194,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|7|38
+195,DABstep,pos,index-error(wrapped),v1__ONE LAB-gpt-4.1__01-05-2025.jsonl|171|0
+196,DABstep,neg-rest,SyntaxError,v1__independent researcher-DA__05-04-2026.jsonl|330|98
+197,DABstep,neg-rest,NameError,v1__independent researcher-DA__05-04-2026.jsonl|217|63
+198,DABstep,pos,FileNotFoundError,v1__independent researcher-DA__05-04-2026.jsonl|102|41
+199,DABstep,neg-rest,executor:forbidden,v1__ONE LAB-Qwen-7B__01-05-2025.jsonl|343|0
+200,DABstep,pos,index-error(wrapped),v1__ONE_LAB-4o-mini__25-04-2025.jsonl|77|1
+201,DAB,pos,py:data-key,gpt-5.1/PATENTS/query1/run_41|3
+202,DAB,pos,py:data-file,kimi-k2-thinking/googlelocal/query3/run_22|17
+203,DAB,pos,sql:missing-column,kimi-k2-thinking/PATENTS/query3/run_29|1
+204,DAB,neg-sus,py:other,kimi-k2-thinking/PANCANCER_ATLAS/query2/run_28|28
+205,DAB,neg-sus,sql:other,gpt-5.2/crmarenapro/query13/run_48|1
+206,DAB,pos,sql:missing-table,gpt-5.1/bookreview/query3/run_37|2
+207,DAB,pos,sql:missing-column,gpt-5-mini/PANCANCER_ATLAS/query3/run_36|3
+208,DAB,neg-sus,py:other,gemini-3-pro/civic_unstructured/query4/run_8|14
+209,DAB,neg-sus,py:other,kimi-k2-thinking/agnews/query2/run_46|2
+210,DAB,pos,py:data-file,kimi-k2-thinking/DEPS_DEV_V1/query2/run_45|30
+211,DAB,neg-rest,interface:var-name,kimi-k2-thinking/stockindex/query1/run_44|14
+212,DAB,pos,sql:missing-table,kimi-k2-thinking/stockmarket/query2/run_5|24
+213,DAB,pos,sql:missing-column,gpt-5.2/DEPS_DEV_V1/query1/run_41|2
+214,DAB,neg-sus,py:other,kimi-k2-thinking/yelp/query4/run_5|10
+215,DAB,pos,py:data-file,kimi-k2-thinking/agnews/query2/run_32|11
+216,DAB,neg-sus,py:AttributeError,gpt-5.1/paper_unstructured/query3/run_7|4
+217,DAB,pos,sql:missing-table,gpt-5-mini/stockmarket/query4/run_14|28
+218,DAB,neg-rest,interface:var-name,kimi-k2-thinking/music_brainz_20k/query3/run_13|4
+219,DAB,neg-rest,py:NameError,gemini-3-pro/crmarenapro/query4/run_47|12
+220,DAB,pos,py:data-file,kimi-k2-thinking/paper_unstructured/query2/run_17|8
+221,DAB,neg-rest,py:ModuleNotFoundError,gemini-2.5-flash/PANCANCER_ATLAS/query3/run_28|13
+222,DAB,neg-rest,interface:var-name,gemini-3-pro/paper_unstructured/query5/run_22|5
+223,DAB,pos,py:data-key,gpt-5-mini/yelp/query2/run_5|4
+224,DAB,neg-sus,sql:other,gpt-5.1/yelp/query7/run_30|4
+225,DAB,neg-rest,py:TypeError,gemini-2.5-flash/paper_unstructured/query4/run_3|5
+226,DAB,neg-rest,py:timeout,kimi-k2-thinking/PATENTS/query1/run_49|19
+227,DAB,pos,sql:missing-table,gpt-5-mini/bookreview/query2/run_4|0
+228,DAB,neg-sus,py:AttributeError,gemini-2.5-flash/yelp/query6/run_3|1
+229,DAB,pos,sql:missing-column,gemini-3-pro/PANCANCER_ATLAS/query1/run_16|3
+230,DAB,pos,sql:missing-column,gemini-3-pro/PANCANCER_ATLAS/query2/run_37|3
+231,DAB,neg-rest,sql:syntax,gemini-2.5-flash/bookreview/query2/run_3|4
+232,DAB,pos,py:data-file,kimi-k2-thinking/GITHUB_REPOS/query3/run_12|3
+233,DAB,neg-sus,sql:other,gpt-5.1/GITHUB_REPOS/query3/run_9|8
+234,DAB,neg-sus,py:other,kimi-k2-thinking/yelp/query5/run_19|19
+235,DAB,neg-rest,py:TypeError,gemini-2.5-flash/yelp/query3/run_32|14
+236,DAB,pos,sql:missing-table,kimi-k2-thinking/bookreview/query3/run_1|6
+237,DAB,pos,sql:missing-table,gpt-5.2/crmarenapro/query5/run_32|0
+238,DAB,neg-sus,sql:other,gemini-3-pro/GITHUB_REPOS/query2/run_9|2
+239,DAB,pos,py:data-key,kimi-k2-thinking/yelp/query2/run_23|27
+240,DAB,neg-sus,py:ValueError,gpt-5.2/PANCANCER_ATLAS/query3/run_28|9
+241,DAB,neg-rest,interface:var-name,kimi-k2-thinking/googlelocal/query3/run_32|17
+242,DAB,pos,sql:missing-table,gpt-5.2/crmarenapro/query6/run_7|4
+243,DAB,neg-rest,py:SyntaxError,kimi-k2-thinking/PATENTS/query3/run_26|17
+244,DAB,neg-rest,py:NameError,kimi-k2-thinking/googlelocal/query2/run_4|8
+245,DAB,pos,sql:missing-table,gemini-2.5-flash/bookreview/query2/run_31|0
+246,DAB,pos,sql:missing-table,kimi-k2-thinking/stockmarket/query4/run_19|4
+247,DAB,pos,sql:missing-column,kimi-k2-thinking/stockmarket/query2/run_6|6
+248,DAB,pos,sql:missing-table,gpt-5-mini/crmarenapro/query2/run_43|8
+249,DAB,neg-sus,mongo:other,kimi-k2-thinking/yelp/query2/run_12|20
+250,DAB,pos,sql:missing-table,gpt-5.2/bookreview/query3/run_38|0
+251,DAB,pos,py:data-file,kimi-k2-thinking/crmarenapro/query7/run_43|6
+252,DAB,pos,sql:missing-table,gpt-5.2/stockmarket/query5/run_2|7
+253,DAB,pos,sql:missing-table,gpt-5.1/bookreview/query3/run_26|1
+254,DAB,pos,py:data-key,gpt-5-mini/paper_unstructured/query2/run_29|6
+255,DAB,pos,sql:missing-column,gemini-3-pro/PANCANCER_ATLAS/query1/run_2|3
+256,DAB,pos,sql:missing-column,gemini-2.5-flash/PANCANCER_ATLAS/query1/run_45|6
+257,DAB,neg-sus,py:other,gemini-3-pro/civic_unstructured/query2/run_27|12
+258,DAB,pos,py:data-key,gemini-2.5-flash/yelp/query4/run_49|4
+259,DAB,pos,sql:missing-column,gpt-5.1/PANCANCER_ATLAS/query3/run_32|4
+260,DAB,neg-rest,py:print-format,gemini-2.5-flash/crmarenapro/query10/run_24|2
+261,DAB,neg-sus,py:other,kimi-k2-thinking/paper_unstructured/query2/run_30|6
+262,DAB,neg-rest,py:TypeError,gemini-2.5-flash/crmarenapro/query10/run_39|13
+263,DAB,neg-rest,py:TypeError,gemini-2.5-flash/crmarenapro/query6/run_36|8
+264,DAB,pos,py:data-key,gemini-2.5-flash/paper_unstructured/query3/run_31|8
+265,DAB,pos,py:data-file,kimi-k2-thinking/yelp/query2/run_37|14
+266,DAB,pos,py:data-file,kimi-k2-thinking/GITHUB_REPOS/query1/run_46|5
+267,DAB,neg-rest,py:TypeError,gemini-2.5-flash/yelp/query4/run_37|10
+268,DAB,pos,sql:missing-column,gemini-2.5-flash/PANCANCER_ATLAS/query3/run_38|1
+269,DAB,neg-sus,py:other,kimi-k2-thinking/yelp/query7/run_5|14
+270,DAB,pos,sql:missing-column,kimi-k2-thinking/DEPS_DEV_V1/query1/run_34|16
+271,DAB,pos,sql:missing-column,gemini-2.5-flash/crmarenapro/query6/run_12|0
+272,DAB,neg-rest,py:TypeError,gemini-2.5-flash/agnews/query2/run_21|17
+273,DAB,neg-rest,py:SyntaxError,kimi-k2-thinking/stockmarket/query4/run_6|53
+274,DAB,neg-sus,py:other,gemini-3-pro/paper_unstructured/query4/run_32|18
+275,DAB,neg-rest,py:TypeError,gemini-2.5-flash/yelp/query5/run_40|3
+276,DAB,neg-rest,interface:var-file,gemini-3-pro/paper_unstructured/query5/run_25|2
+277,DAB,pos,sql:missing-table,kimi-k2-thinking/stockmarket/query4/run_19|35
+278,DAB,pos,py:data-key,gemini-2.5-flash/paper_unstructured/query3/run_31|14
+279,DAB,neg-sus,sql:other,gpt-5.1/crmarenapro/query12/run_34|2
+280,DAB,neg-sus,py:IndexError,kimi-k2-thinking/yelp/query5/run_39|35
+281,DAB,pos,py:data-file,kimi-k2-thinking/civic_unstructured/query3/run_32|6
+282,DAB,pos,sql:missing-column,gpt-5.1/DEPS_DEV_V1/query2/run_31|1
+283,DAB,pos,sql:missing-table,gpt-5.1/bookreview/query1/run_13|2
+284,DAB,neg-rest,py:NameError,gemini-3-pro/yelp/query3/run_9|2
+285,DAB,pos,sql:missing-table,gemini-2.5-flash/bookreview/query3/run_42|2
+286,DAB,neg-sus,sql:other,gemini-2.5-flash/stockindex/query2/run_49|5
+287,DAB,pos,py:data-key,gpt-5.1/bookreview/query1/run_43|7
+288,DAB,neg-sus,sql:other,gemini-3-pro/stockindex/query1/run_34|6
+289,DAB,pos,sql:missing-column,gemini-2.5-flash/crmarenapro/query1/run_26|0
+290,DAB,neg-sus,py:AttributeError,kimi-k2-thinking/paper_unstructured/query3/run_47|9
+291,DAB,pos,sql:missing-table,gpt-5-mini/crmarenapro/query2/run_46|1
+292,DAB,neg-rest,py:TypeError,gemini-2.5-flash/agnews/query1/run_9|6
+293,DAB,neg-rest,py:SyntaxError,kimi-k2-thinking/paper_unstructured/query5/run_43|6
+294,DAB,neg-rest,interface:var-name,kimi-k2-thinking/crmarenapro/query9/run_48|5
+295,DAB,neg-sus,py:other,kimi-k2-thinking/PANCANCER_ATLAS/query3/run_18|16
+296,DAB,neg-rest,py:TypeError,gemini-2.5-flash/googlelocal/query1/run_45|4
+297,DAB,neg-sus,py:ValueError,kimi-k2-thinking/stockindex/query3/run_24|14
+298,DAB,pos,sql:missing-column,gemini-2.5-flash/PANCANCER_ATLAS/query2/run_34|2
+299,DAB,neg-sus,sql:other,gpt-5.1/yelp/query7/run_49|5
+300,DAB,neg-sus,py:OSError,kimi-k2-thinking/PATENTS/query1/run_24|62
+301,DAB,neg-rest,py:SyntaxError,kimi-k2-thinking/agnews/query3/run_22|8
+302,DAB,neg-sus,sql:other,gpt-5.2/yelp/query6/run_4|0
+303,DAB,pos,sql:missing-table,gpt-5.1/crmarenapro/query4/run_25|0
+304,DAB,neg-sus,py:other,kimi-k2-thinking/PANCANCER_ATLAS/query2/run_28|36
+305,DAB,neg-rest,py:SyntaxError,gpt-5-mini/crmarenapro/query10/run_2|6
+306,DAB,neg-rest,interface:var-file,gemini-3-pro/DEPS_DEV_V1/query2/run_18|7
+307,DAB,neg-rest,interface:var-key,gemini-2.5-flash/stockmarket/query4/run_46|15
+308,DAB,neg-rest,py:SyntaxError,kimi-k2-thinking/crmarenapro/query3/run_38|4
+309,DAB,pos,py:data-file,kimi-k2-thinking/PANCANCER_ATLAS/query2/run_29|16
+310,DAB,neg-sus,py:other,gpt-5-mini/bookreview/query1/run_0|7
+311,DAB,neg-rest,py:TypeError,gemini-2.5-flash/yelp/query1/run_14|4
+312,DAB,pos,sql:missing-table,gpt-5.1/DEPS_DEV_V1/query1/run_24|3
+313,DAB,pos,sql:missing-column,gemini-3-pro/PANCANCER_ATLAS/query2/run_48|3
+314,DAB,pos,py:data-file,kimi-k2-thinking/GITHUB_REPOS/query4/run_15|9
+315,DAB,neg-sus,sql:other,gpt-5.1/yelp/query7/run_4|3
+316,DAB,neg-sus,py:AttributeError,kimi-k2-thinking/civic_unstructured/query5/run_2|21
+317,DAB,pos,py:data-key,gemini-2.5-flash/paper_unstructured/query3/run_23|17
+318,DAB,pos,sql:missing-table,kimi-k2-thinking/stockmarket/query2/run_2|26
+319,DAB,pos,sql:missing-table,gpt-5.1/crmarenapro/query13/run_19|0
+320,DAB,pos,sql:missing-table,gpt-5.2/bookreview/query2/run_5|0
+321,DAB,neg-sus,py:IndexError,gpt-5.2/yelp/query2/run_5|17
+322,DAB,pos,sql:missing-table,gpt-5.2/crmarenapro/query3/run_35|4
+323,DAB,neg-rest,py:TypeError,gemini-2.5-flash/crmarenapro/query4/run_4|3
+324,DAB,pos,sql:missing-table,kimi-k2-thinking/GITHUB_REPOS/query2/run_13|12
+325,DAB,neg-rest,py:SyntaxError,kimi-k2-thinking/civic_unstructured/query4/run_49|21
+326,DAB,pos,py:data-key,kimi-k2-thinking/bookreview/query3/run_40|9
+327,DAB,neg-sus,py:other,kimi-k2-thinking/paper_unstructured/query2/run_44|17
+328,DAB,pos,py:data-key,gemini-2.5-flash/PATENTS/query1/run_22|8
+329,DAB,pos,sql:missing-table,gpt-5.2/bookreview/query2/run_31|1
+330,DAB,pos,py:data-key,gpt-5.2/PATENTS/query1/run_1|3
+331,DAB,pos,py:data-file,kimi-k2-thinking/bookreview/query1/run_20|26
+332,DAB,pos,sql:missing-column,gpt-5.1/PANCANCER_ATLAS/query2/run_1|0
+333,DAB,pos,sql:missing-column,kimi-k2-thinking/DEPS_DEV_V1/query1/run_31|13
+334,DAB,pos,sql:missing-table,kimi-k2-thinking/GITHUB_REPOS/query3/run_13|31
+335,DAB,neg-rest,py:TypeError,gemini-2.5-flash/agnews/query4/run_13|15
+336,DAB,pos,py:data-file,kimi-k2-thinking/agnews/query1/run_27|28
+337,DAB,pos,sql:missing-table,gpt-5.2/stockmarket/query4/run_40|8
+338,DAB,neg-sus,py:AttributeError,gpt-5.2/crmarenapro/query6/run_22|8
+339,DAB,pos,py:data-file,kimi-k2-thinking/PATENTS/query3/run_7|24
+340,DAB,pos,sql:missing-column,kimi-k2-thinking/PATENTS/query2/run_19|28
+341,DAB,neg-sus,py:other,kimi-k2-thinking/civic_unstructured/query5/run_46|8
+342,DAB,pos,sql:missing-table,gemini-3-pro/bookreview/query2/run_39|1
+343,DAB,neg-rest,mongo:query-json,gpt-5-mini/yelp/query3/run_28|3
+344,DAB,neg-sus,py:OperationalError,kimi-k2-thinking/PATENTS/query3/run_42|2
+345,DAB,pos,sql:missing-table,gpt-5-mini/bookreview/query3/run_34|0
+346,DAB,neg-rest,py:TypeError,gemini-3-pro/googlelocal/query3/run_36|5
+347,DAB,neg-sus,sql:other,gpt-5.1/stockmarket/query4/run_13|4
+348,DAB,neg-sus,py:other,kimi-k2-thinking/paper_unstructured/query1/run_34|6
+349,DAB,neg-rest,py:TypeError,gpt-5-mini/paper_unstructured/query4/run_9|13
+350,DAB,pos,sql:missing-column,gemini-3-pro/PANCANCER_ATLAS/query3/run_16|2
+351,DAB,pos,sql:missing-column,gemini-3-pro/PATENTS/query3/run_21|14
+352,DAB,neg-sus,sql:other,gpt-5.1/crmarenapro/query11/run_22|0
+353,DAB,neg-sus,sql:other,gpt-5.1/yelp/query7/run_12|3
+354,DAB,pos,py:data-file,kimi-k2-thinking/PANCANCER_ATLAS/query1/run_12|13
+355,DAB,neg-sus,sql:other,gpt-5.1/yelp/query3/run_39|3
+356,DAB,neg-sus,py:other,gpt-5-mini/PATENTS/query1/run_24|9
+357,DAB,neg-sus,sql:other,gpt-5.1/yelp/query3/run_1|4
+358,DAB,neg-sus,py:ValueError,gpt-5-mini/PANCANCER_ATLAS/query3/run_24|11
+359,DAB,pos,py:data-key,kimi-k2-thinking/bookreview/query2/run_29|12
+360,DAB,pos,sql:missing-column,gpt-5.1/PANCANCER_ATLAS/query3/run_31|0
+361,DAB,neg-rest,sql:syntax,gemini-3-pro/crmarenapro/query5/run_48|10
+362,DAB,pos,py:data-file,kimi-k2-thinking/PANCANCER_ATLAS/query1/run_25|11
+363,DAB,pos,sql:missing-column,gpt-5.1/DEPS_DEV_V1/query2/run_11|3
+364,DAB,neg-rest,py:SyntaxError,kimi-k2-thinking/agnews/query2/run_4|3
+365,DAB,pos,py:data-key,gemini-2.5-flash/PATENTS/query2/run_34|3
+366,DAB,pos,sql:missing-column,gpt-5.1/PANCANCER_ATLAS/query1/run_5|1
+367,DAB,pos,sql:missing-table,gpt-5-mini/bookreview/query2/run_1|0
+368,DAB,pos,sql:missing-column,gpt-5-mini/PATENTS/query3/run_33|12
+369,DAB,neg-rest,sql:syntax,gpt-5.1/crmarenapro/query5/run_36|0
+370,DAB,neg-rest,sql:function,gpt-5.2/crmarenapro/query5/run_36|0
+371,DAB,pos,py:data-file,kimi-k2-thinking/civic_unstructured/query3/run_46|6
+372,DAB,neg-rest,py:TypeError,gemini-2.5-flash/agnews/query1/run_21|17
+373,DAB,pos,sql:missing-column,gpt-5.1/PANCANCER_ATLAS/query1/run_41|2
+374,DAB,pos,sql:missing-column,gpt-5.2/PANCANCER_ATLAS/query2/run_21|0
+375,DAB,pos,sql:missing-table,gpt-5.2/crmarenapro/query1/run_4|9
+376,DAB,neg-sus,py:other,kimi-k2-thinking/civic_unstructured/query5/run_8|24
+377,DAB,pos,sql:missing-column,gemini-2.5-flash/PANCANCER_ATLAS/query2/run_45|1
+378,DAB,neg-sus,sql:other,gpt-5.1/crmarenapro/query11/run_14|0
+379,DAB,neg-rest,py:timeout,gpt-5.1/PATENTS/query1/run_12|4
+380,DAB,pos,sql:missing-column,gpt-5.1/PANCANCER_ATLAS/query3/run_21|4
+381,DAB,neg-rest,py:SyntaxError,kimi-k2-thinking/PANCANCER_ATLAS/query1/run_45|22
+382,DAB,neg-rest,py:print-format,gemini-3-pro/stockmarket/query5/run_40|7
+383,DAB,pos,sql:missing-column,gpt-5.1/PANCANCER_ATLAS/query1/run_15|5
+384,DAB,neg-rest,py:print-format,gemini-2.5-flash/crmarenapro/query4/run_14|2
+385,DAB,pos,sql:missing-column,gpt-5-mini/PATENTS/query2/run_34|1
+386,DAB,pos,sql:missing-table,gpt-5.1/bookreview/query1/run_29|1
+387,DAB,neg-rest,py:SyntaxError,kimi-k2-thinking/paper_unstructured/query4/run_37|17
+388,DAB,pos,sql:missing-column,gpt-5-mini/DEPS_DEV_V1/query2/run_35|9
+389,DAB,pos,py:data-file,kimi-k2-thinking/paper_unstructured/query1/run_24|4
+390,DAB,neg-sus,py:other,kimi-k2-thinking/GITHUB_REPOS/query2/run_19|21
+391,DAB,pos,sql:missing-column,kimi-k2-thinking/PANCANCER_ATLAS/query2/run_13|3
+392,DAB,pos,sql:missing-table,gemini-2.5-flash/bookreview/query1/run_33|3
+393,DAB,neg-rest,py:NameError,gemini-3-pro/stockindex/query3/run_41|10
+394,DAB,pos,sql:missing-table,kimi-k2-thinking/GITHUB_REPOS/query3/run_3|17
+395,DAB,neg-rest,py:TypeError,kimi-k2-thinking/agnews/query4/run_37|10
+396,DAB,neg-rest,py:SyntaxError,kimi-k2-thinking/stockmarket/query5/run_5|5
+397,DAB,neg-sus,sql:other,gpt-5.2/GITHUB_REPOS/query2/run_17|4
+398,DAB,neg-sus,py:other,kimi-k2-thinking/googlelocal/query3/run_16|9
+399,DAB,pos,py:data-file,kimi-k2-thinking/stockmarket/query4/run_45|3
+400,DAB,neg-sus,py:other,gpt-5.1/stockindex/query3/run_9|7
