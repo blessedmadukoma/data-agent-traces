@@ -1,0 +1,400 @@
+{"id": 1, "label": 1, "note": "groupby('mcc') on payments_df; payments.csv has no mcc column"}
+{"id": 2, "label": 3, "note": "Interpreter forbids open(); harness rule"}
+{"id": 3, "label": 1, "note": "FileNotFoundError: transactions_june.csv does not exist"}
+{"id": 4, "label": 3, "note": "Interpreter forbids open(); harness rule"}
+{"id": 5, "label": 1, "note": "fee_1234 column missing in average_rules (filtered before column added)"}
+{"id": 6, "label": 3, "note": "Code execution timed out after 30 seconds"}
+{"id": 7, "label": 3, "note": "No reference error; program exited itself after failing to parse hours"}
+{"id": 8, "label": 1, "note": "fees.json has no column eur_debit_rate"}
+{"id": 9, "label": 3, "note": "IsADirectoryError: path exists but is a directory, not a missing name"}
+{"id": 10, "label": 3, "note": "IndentationError, syntax error"}
+{"id": 11, "label": 1, "note": "merchant_category_codes.csv has no column category_code"}
+{"id": 12, "label": 3, "note": "TypeError: json.loads given a DataFrame"}
+{"id": 13, "label": 3, "note": "Import from io not allowed; harness rule"}
+{"id": 14, "label": 1, "note": "Indexed data row (card_scheme, aci) lacks merchant_category_code key"}
+{"id": 15, "label": 1, "note": "parse_dates column 'date' missing in sales.csv"}
+{"id": 16, "label": 3, "note": "Forbidden function search(); harness rule"}
+{"id": 17, "label": 1, "note": "payments.csv has no column merchant_name"}
+{"id": 18, "label": 1, "note": "payments-derived frame has no column date"}
+{"id": 19, "label": 3, "note": "'list' object is not an iterator; interpreter/next() issue"}
+{"id": 20, "label": 1, "note": "payments.csv has no column TransactionType"}
+{"id": 21, "label": 1, "note": "payments.csv has no column month"}
+{"id": 22, "label": 1, "note": "payments.csv has no column merchant_name"}
+{"id": 23, "label": 1, "note": "FileNotFoundError: transactions.csv does not exist"}
+{"id": 24, "label": 3, "note": "'list' object is not an iterator; interpreter/next() issue"}
+{"id": 25, "label": 3, "note": "Interpreter forbids open(); harness rule"}
+{"id": 26, "label": 3, "note": "NameError: df not defined"}
+{"id": 27, "label": 1, "note": "KeyError 'value': column absent in df read from data.csv"}
+{"id": 28, "label": 3, "note": "AttributeError: list has no attribute keys; type error"}
+{"id": 29, "label": 3, "note": "ValueError: truth value of empty array ambiguous"}
+{"id": 30, "label": 3, "note": "NameError: df not defined"}
+{"id": 31, "label": 3, "note": "NameError: records not defined"}
+{"id": 32, "label": 3, "note": "AttributeError: list has no attribute get; type error"}
+{"id": 33, "label": 3, "note": "Import from tools not allowed; harness rule"}
+{"id": 34, "label": 3, "note": "list has no attribute keys; type error"}
+{"id": 35, "label": 3, "note": "String 'merchant' has no attribute get; iterating non-list object, type error"}
+{"id": 36, "label": 1, "note": "payments.csv has no column merchant_name"}
+{"id": 37, "label": 1, "note": "payments.csv has no column date"}
+{"id": 38, "label": 3, "note": "TypeError: float is not iterable"}
+{"id": 39, "label": 1, "note": "card_scheme moved to index by groupby; missing from result row"}
+{"id": 40, "label": 1, "note": "fees.json has no column merchant_category"}
+{"id": 41, "label": 1, "note": "payments.csv has no column transaction_type"}
+{"id": 42, "label": 3, "note": "list has no attribute get; type error"}
+{"id": 43, "label": 1, "note": "FileNotFoundError: 商户数据.csv does not exist"}
+{"id": 44, "label": 1, "note": "transactions.csv not found (caught, then exit 1)"}
+{"id": 45, "label": 3, "note": "Import from scipy not allowed; harness rule"}
+{"id": 46, "label": 3, "note": "Import from pathlib not allowed; harness rule"}
+{"id": 47, "label": 3, "note": "Execution timed out after 120 seconds"}
+{"id": 48, "label": 3, "note": "Interpreter forbids open(); harness rule"}
+{"id": 49, "label": 3, "note": "NameError: csv_files not defined"}
+{"id": 50, "label": 1, "note": "payments.csv has no column date"}
+{"id": 51, "label": 3, "note": "Forbidden function load_json; harness rule"}
+{"id": 52, "label": 1, "note": "fees.json record has key ID, not id"}
+{"id": 53, "label": 3, "note": "NameError: df not defined"}
+{"id": 54, "label": 3, "note": "Code execution timed out after 30 seconds"}
+{"id": 55, "label": 3, "note": "NameError: excel_files not defined"}
+{"id": 56, "label": 3, "note": "AttributeError: str has no attribute get; type error"}
+{"id": 57, "label": 1, "note": "FileNotFoundError: transactions.csv does not exist"}
+{"id": 58, "label": 3, "note": "Indexing a string with 'amount': TypeError, not a missing column"}
+{"id": 59, "label": 1, "note": "merchant_data record has no key mcc"}
+{"id": 60, "label": 3, "note": "IndexError: list index out of range (position)"}
+{"id": 61, "label": 1, "note": "payments.csv has no column month"}
+{"id": 62, "label": 3, "note": "Execution timed out after 120 seconds"}
+{"id": 63, "label": 3, "note": "fees_data is raw string; indexing character with key, TypeError"}
+{"id": 64, "label": 3, "note": "Execution timed out after 120 seconds"}
+{"id": 65, "label": 1, "note": "Column 手续费 not in filtered_2023_transactions.csv"}
+{"id": 66, "label": 1, "note": "SQLite: no such table transactions"}
+{"id": 67, "label": 1, "note": "payments-derived frame has no column amount"}
+{"id": 68, "label": 3, "note": "merchant_data is program-fabricated mock records (merchant_id keys), not benchmark data"}
+{"id": 69, "label": 1, "note": "FileNotFoundError: GlobalCard_credit_transactions.csv does not exist"}
+{"id": 70, "label": 1, "note": "merchant_data record has account_type, not accounttype"}
+{"id": 71, "label": 1, "note": "merchant_data.json has no column fee_id"}
+{"id": 72, "label": 1, "note": "data.csv rows have no field value"}
+{"id": 73, "label": 3, "note": "fees_data is a string; indexing character with 'id', TypeError"}
+{"id": 74, "label": 3, "note": "Interpreter forbids open(); harness rule"}
+{"id": 75, "label": 1, "note": "merchant_data.json has no column name"}
+{"id": 76, "label": 3, "note": "Interpreter forbids open() inside load_file; harness rule"}
+{"id": 77, "label": 3, "note": "read_file returned fabricated records (mcc_code, amount), not fees.json; program-built object"}
+{"id": 78, "label": 1, "note": "payments.csv has no column merchant_name"}
+{"id": 79, "label": 3, "note": "ValueError: argmin of empty sequence after empty filter"}
+{"id": 80, "label": 3, "note": "Interpreter forbids open(); harness rule"}
+{"id": 81, "label": 3, "note": "IndexError: list index out of range on empty list"}
+{"id": 82, "label": 1, "note": "Column 商户名称 not in data.csv"}
+{"id": 83, "label": 3, "note": "SyntaxError: from builtins import None"}
+{"id": 84, "label": 3, "note": "list has no attribute items; type error on program-built list"}
+{"id": 85, "label": 1, "note": "payments.csv has no column created_at"}
+{"id": 86, "label": 1, "note": "FileNotFoundError: transactions.csv does not exist"}
+{"id": 87, "label": 1, "note": "Data directory path data/context does not exist (wrong path)"}
+{"id": 88, "label": 3, "note": "NameError: os not defined"}
+{"id": 89, "label": 3, "note": "Slicing a program-built dict; KeyError slice, not a data name"}
+{"id": 90, "label": 1, "note": "FileNotFoundError: transactions.csv does not exist"}
+{"id": 91, "label": 3, "note": "NameError: df not defined"}
+{"id": 92, "label": 1, "note": "merchant_category_codes row has no field code"}
+{"id": 93, "label": 3, "note": "ValueError: cannot convert '<100k' to float"}
+{"id": 94, "label": 1, "note": "apply without axis passes psp_reference column Series; no card_scheme key in it"}
+{"id": 95, "label": 3, "note": "'list' object is not an iterator; interpreter/next() issue"}
+{"id": 96, "label": 1, "note": "payments.csv has no column merchant_id"}
+{"id": 97, "label": 3, "note": "NameError: json not imported"}
+{"id": 98, "label": 1, "note": "payments.csv has no column amount"}
+{"id": 99, "label": 3, "note": "Forbidden function load_file_content; harness rule"}
+{"id": 100, "label": 1, "note": "fees.json record has key ID, not id"}
+{"id": 101, "label": 1, "note": "merchant_data.json records have no key merchant_id; KeyError on column"}
+{"id": 102, "label": 1, "note": "merge right_on='merchant' but acquirer_countries has no merchant column; KeyError"}
+{"id": 103, "label": 3, "note": "interpreter forbids calling file_reader; harness rule"}
+{"id": 104, "label": 3, "note": "KeyError: 1 on program-built dict aci_to_fee; count used as key"}
+{"id": 105, "label": 3, "note": "iterating DataFrame gives column-name strings; string indexed with 'card_scheme' TypeError"}
+{"id": 106, "label": 1, "note": "payments.csv has no capture_delay column; KeyError"}
+{"id": 107, "label": 3, "note": "NameError: candidate_files not defined"}
+{"id": 108, "label": 1, "note": "FileNotFoundError on data file transactions.csv"}
+{"id": 109, "label": 3, "note": "NameError: continuous_vars not defined"}
+{"id": 110, "label": 3, "note": "interpreter forbids open(); harness rule"}
+{"id": 111, "label": 3, "note": "NameError: df not defined"}
+{"id": 112, "label": 3, "note": "IndexError: list index out of range on program-built rules list"}
+{"id": 113, "label": 1, "note": "json.load(fees)['rules']: fees.json is a list with no 'rules' key; interpreter comparison error"}
+{"id": 114, "label": 1, "note": "payments has no transaction_date column; KeyError"}
+{"id": 115, "label": 3, "note": "error truncated; FileNotFound caught; columns picked from df, remaining failure positional/conversion"}
+{"id": 116, "label": 3, "note": "interpreter forbids open(); harness rule"}
+{"id": 117, "label": 3, "note": "interpreter forbids calling file_reader; harness rule"}
+{"id": 118, "label": 3, "note": "import from tools not allowed; harness rule"}
+{"id": 119, "label": 1, "note": "FileNotFoundError on data file transactions.csv"}
+{"id": 120, "label": 3, "note": "SyntaxError: step code is pasted output text"}
+{"id": 121, "label": 1, "note": "payments.csv has no amount column; KeyError"}
+{"id": 122, "label": 3, "note": "ValueError: to_dict orient=index needs unique index"}
+{"id": 123, "label": 1, "note": "payments.csv has no merchant_name column; KeyError"}
+{"id": 124, "label": 3, "note": "NameError: datetime not imported"}
+{"id": 125, "label": 1, "note": "fees row has no AuthorizationCharacteristicsIndicator key/column; KeyError"}
+{"id": 126, "label": 3, "note": "interpreter forbids open(); harness rule"}
+{"id": 127, "label": 1, "note": "merchant_data has no 'Fee ID' column; loc KeyError"}
+{"id": 128, "label": 1, "note": "FileNotFoundError on data/context/transactions.csv"}
+{"id": 129, "label": 3, "note": "interpreter forbids calling search(); harness rule"}
+{"id": 130, "label": 3, "note": "slice used on a dict; KeyError slice is positional, not a name"}
+{"id": 131, "label": 3, "note": "indexing None (fee_64 is None) with 'relative_fee'"}
+{"id": 132, "label": 1, "note": "payments read with usecols excluding psp_reference; groupby column not found"}
+{"id": 133, "label": 3, "note": "AttributeError: fees list has no method keys()"}
+{"id": 134, "label": 1, "note": "fees.json records have no effective_date key; KeyError"}
+{"id": 135, "label": 3, "note": "fees_data is fabricated program-built records, not from fees.json; KeyError account_type"}
+{"id": 136, "label": 3, "note": "import from decimal not allowed; harness rule"}
+{"id": 137, "label": 1, "note": "FileNotFoundError on data file transactions.csv"}
+{"id": 138, "label": 3, "note": "ValueError: truth value of empty array ambiguous"}
+{"id": 139, "label": 3, "note": "interpreter forbids open(); harness rule"}
+{"id": 140, "label": 1, "note": "payments.csv has no account_type column; KeyError"}
+{"id": 141, "label": 3, "note": "fees list printed in error; calling .keys() on a list, attribute/method error"}
+{"id": 142, "label": 1, "note": "payments.csv has no merchant_category_code column; KeyError"}
+{"id": 143, "label": 3, "note": "NameError: os not defined"}
+{"id": 144, "label": 1, "note": "fees.json has no effective_date column; KeyError"}
+{"id": 145, "label": 3, "note": "NameError: fee_files not defined"}
+{"id": 146, "label": 3, "note": "execution time-out"}
+{"id": 147, "label": 3, "note": "NameError: df not defined"}
+{"id": 148, "label": 1, "note": "payments.csv has no transaction_amount column; KeyError"}
+{"id": 149, "label": 3, "note": "IndentationError in step code"}
+{"id": 150, "label": 3, "note": "merchant_data list has no method get(); attribute error"}
+{"id": 151, "label": 1, "note": "FileNotFoundError on data file fee_schedule.csv"}
+{"id": 152, "label": 3, "note": "JSONDecodeError: existing fees_standardized.json is empty; parse failure"}
+{"id": 153, "label": 3, "note": "fees list printed in error; calling .keys() on a list, attribute/method error"}
+{"id": 154, "label": 1, "note": "FileNotFoundError on data directory path data/context"}
+{"id": 155, "label": 4, "note": "error message cut off; likely KeyError account_type on first CSV but not shown"}
+{"id": 156, "label": 1, "note": "merchant_data has no name column; KeyError"}
+{"id": 157, "label": 1, "note": "DataFrame read from data.csv has no score column; KeyError"}
+{"id": 158, "label": 1, "note": "usecols user_id, payment_amount not columns of payments.csv"}
+{"id": 159, "label": 1, "note": "FileNotFoundError on data file expenses.csv"}
+{"id": 160, "label": 3, "note": "fees list has no method items(); attribute error"}
+{"id": 161, "label": 1, "note": "payments.csv has no timestamp column; KeyError"}
+{"id": 162, "label": 1, "note": "payments.csv has no merchant_name column; KeyError"}
+{"id": 163, "label": 1, "note": "fees.json records have no effective_date key; KeyError"}
+{"id": 164, "label": 3, "note": "FileNotFoundError was caught; step fails on NameError os not defined"}
+{"id": 165, "label": 3, "note": "read_csv on JSON file; tokenizing parse error"}
+{"id": 166, "label": 3, "note": "interpreter forbids open(); harness rule"}
+{"id": 167, "label": 3, "note": "SyntaxError: step code is the word 'and'"}
+{"id": 168, "label": 3, "note": "import from pathlib not allowed; harness rule"}
+{"id": 169, "label": 1, "note": "FileNotFoundError on data file 跨境交易数据.csv"}
+{"id": 170, "label": 1, "note": "DataFrame from matching_fee_ids.csv has no fee_id column; KeyError"}
+{"id": 171, "label": 3, "note": "import from pprint not allowed; harness rule"}
+{"id": 172, "label": 1, "note": "FileNotFoundError on data file transactions.csv"}
+{"id": 173, "label": 3, "note": "file_reader returns text; string has no method get(); attribute error"}
+{"id": 174, "label": 3, "note": "fees list has no method keys(); attribute error"}
+{"id": 175, "label": 1, "note": "payments.csv has no transaction_amount column; KeyError"}
+{"id": 176, "label": 1, "note": "payments.csv has no month column; KeyError"}
+{"id": 177, "label": 1, "note": "payments.csv rows have no merchant_name field; KeyError"}
+{"id": 178, "label": 3, "note": "fees list has no method get(); attribute error"}
+{"id": 179, "label": 3, "note": "list has no method keys(); attribute error on program-made object"}
+{"id": 180, "label": 3, "note": "TypeError: list is not an iterator (next on list)"}
+{"id": 181, "label": 1, "note": "FileNotFoundError on data file transactions.csv"}
+{"id": 182, "label": 3, "note": "NameError: available not defined"}
+{"id": 183, "label": 3, "note": "interpreter forbids open(); harness rule"}
+{"id": 184, "label": 1, "note": "combined_2023_transactions.csv has no transaction_date column; KeyError"}
+{"id": 185, "label": 3, "note": "interpreter forbids calling file(); harness rule"}
+{"id": 186, "label": 1, "note": "payments.csv has no date column; KeyError"}
+{"id": 187, "label": 1, "note": "FileNotFoundError on data directory path data/context"}
+{"id": 188, "label": 1, "note": "payments.csv has no account_type column; KeyError"}
+{"id": 189, "label": 3, "note": "hard-coded fake JSON; string key 'data' indexed with 'merchant_id', TypeError"}
+{"id": 190, "label": 1, "note": "FileNotFoundError on data file transactions.csv"}
+{"id": 191, "label": 1, "note": "fees.json records have key 'ID', not 'id'; KeyError"}
+{"id": 192, "label": 3, "note": "interpreter forbids open(); harness rule"}
+{"id": 193, "label": 1, "note": "payments.csv has no is_intracountry column; KeyError"}
+{"id": 194, "label": 3, "note": "NameError: original_avg not defined"}
+{"id": 195, "label": 1, "note": "merchant_category_codes.csv has no 'MCC Description' column; KeyError"}
+{"id": 196, "label": 3, "note": "SyntaxError: invalid character in executed code"}
+{"id": 197, "label": 3, "note": "NameError: os not defined"}
+{"id": 198, "label": 1, "note": "FileNotFoundError on data file transactions.csv"}
+{"id": 199, "label": 3, "note": "interpreter forbids open(); harness rule"}
+{"id": 200, "label": 1, "note": "payments.csv has no date column; KeyError"}
+{"id": 201, "label": 3, "note": "KeyError 'code' on program-built frame that is empty; name defined by program, not data"}
+{"id": 202, "label": 3, "note": "FileNotFoundError on harness temp result file /tmp/tmp...json; tool interface"}
+{"id": 203, "label": 1, "note": "SQL no such column publication_number in publicationinfo"}
+{"id": 204, "label": 3, "note": "Harness: __RESULT__ marker not printed"}
+{"id": 205, "label": 3, "note": "DuckDB type error comparing VARCHAR and DATE"}
+{"id": 206, "label": 1, "note": "SQL no such table review_database"}
+{"id": 207, "label": 1, "note": "Postgres column patient_description does not exist (unquoted case-folded identifier)"}
+{"id": 208, "label": 3, "note": "Harness: __RESULT__ marker not printed"}
+{"id": 209, "label": 3, "note": "Harness: __RESULT__ marker not printed"}
+{"id": 210, "label": 3, "note": "Invented file name standing for stored query result; tool interface, not benchmark data file"}
+{"id": 211, "label": 3, "note": "NameError var_functions not defined; harness result variable"}
+{"id": 212, "label": 1, "note": "stockmarket ticker table UGAZ does not exist"}
+{"id": 213, "label": 1, "note": "Column ProjectName not found in project_info"}
+{"id": 214, "label": 3, "note": "Harness: __RESULT__ marker not printed"}
+{"id": 215, "label": 3, "note": "Invented /tmp file for query results; tool interface, not benchmark data path"}
+{"id": 216, "label": 3, "note": "AttributeError str has no items; type error on result variable"}
+{"id": 217, "label": 1, "note": "Table {sym} does not exist (unfilled placeholder); missing table name by rule"}
+{"id": 218, "label": 3, "note": "NameError var_functions not defined; harness result variable"}
+{"id": 219, "label": 3, "note": "NameError json not imported"}
+{"id": 220, "label": 3, "note": "Invented file path for stored query results; tool interface, not benchmark data"}
+{"id": 221, "label": 3, "note": "ModuleNotFoundError scipy"}
+{"id": 222, "label": 3, "note": "NameError on harness result variable name"}
+{"id": 223, "label": 1, "note": "review_count missing in merged frame (both sides had it, suffixed _x/_y); agg fails"}
+{"id": 224, "label": 3, "note": "DuckDB date parse error, mixed formats"}
+{"id": 225, "label": 3, "note": "TypeError json.loads on list"}
+{"id": 226, "label": 3, "note": "Timeout"}
+{"id": 227, "label": 1, "note": "SQL no such table review_database"}
+{"id": 228, "label": 3, "note": "AttributeError str has no to_json"}
+{"id": 229, "label": 1, "note": "Postgres column patient_description does not exist (unquoted case-folded identifier)"}
+{"id": 230, "label": 1, "note": "Postgres column patient_description does not exist (unquoted case-folded identifier)"}
+{"id": 231, "label": 3, "note": "SQL incomplete input (syntax)"}
+{"id": 232, "label": 3, "note": "FileNotFoundError on harness temp result file /tmp/tmp...json; tool interface"}
+{"id": 233, "label": 3, "note": "Temp CSV made in python sandbox not visible to DB; tool environment, not data file"}
+{"id": 234, "label": 3, "note": "Harness: __RESULT__ marker not printed"}
+{"id": 235, "label": 3, "note": "TypeError list indices must be integers, on result variable"}
+{"id": 236, "label": 1, "note": "Postgres relation review does not exist"}
+{"id": 237, "label": 1, "note": "Postgres relation orderitem_sub does not exist"}
+{"id": 238, "label": 3, "note": "DuckDB conversion error casting empty string to INT"}
+{"id": 239, "label": 3, "note": "KeyError total_reviews on program-built frame from empty results list"}
+{"id": 240, "label": 3, "note": "ValueError item wrong length"}
+{"id": 241, "label": 3, "note": "NameError var_functions not defined; harness result variable"}
+{"id": 242, "label": 1, "note": "DuckDB table products_orders.PricebookEntry does not exist in queried database"}
+{"id": 243, "label": 3, "note": "SyntaxError unterminated string literal"}
+{"id": 244, "label": 3, "note": "NameError query_db_6 not defined; harness result variable"}
+{"id": 245, "label": 1, "note": "SQL no such table review_database"}
+{"id": 246, "label": 1, "note": "stockmarket ticker table AAPL does not exist"}
+{"id": 247, "label": 1, "note": "Column Symbol not found in ticker table SPY"}
+{"id": 248, "label": 1, "note": "DuckDB table Account does not exist in queried database"}
+{"id": 249, "label": 3, "note": "Wrong tool arguments: Mongo query missing collection field"}
+{"id": 250, "label": 1, "note": "SQL no such table review_database"}
+{"id": 251, "label": 3, "note": "FileNotFoundError on harness temp result file /tmp/tmp...json; tool interface"}
+{"id": 252, "label": 1, "note": "stockmarket ticker table MDCN does not exist"}
+{"id": 253, "label": 1, "note": "SQL no such table review_database"}
+{"id": 254, "label": 1, "note": "title missing after merge (both frames had title, suffixed _x/_y)"}
+{"id": 255, "label": 1, "note": "Postgres column patient_description does not exist (unquoted case-folded identifier)"}
+{"id": 256, "label": 1, "note": "Postgres column cancer_type_acronym does not exist in clinical_info"}
+{"id": 257, "label": 3, "note": "Harness: __RESULT__ marker not printed"}
+{"id": 258, "label": 1, "note": "KeyError results on business records from Mongo; no such field in record"}
+{"id": 259, "label": 1, "note": "Postgres column cancer_type_acronym does not exist in clinical_info"}
+{"id": 260, "label": 3, "note": "Harness: printed result not valid JSON"}
+{"id": 261, "label": 3, "note": "Harness: __RESULT__ marker not printed"}
+{"id": 262, "label": 3, "note": "TypeError list indices must be integers, on harness result variable"}
+{"id": 263, "label": 3, "note": "TypeError list indices must be integers, on harness result variable"}
+{"id": 264, "label": 3, "note": "KeyError title on program-built frame from empty list"}
+{"id": 265, "label": 3, "note": "FileNotFoundError on harness temp result file /tmp/tmp...json; tool interface"}
+{"id": 266, "label": 3, "note": "FileNotFoundError on harness temp result file /tmp/tmp...json; tool interface"}
+{"id": 267, "label": 3, "note": "TypeError list indices must be integers, on harness result variable"}
+{"id": 268, "label": 1, "note": "Postgres column gender does not exist in clinical_info"}
+{"id": 269, "label": 3, "note": "Harness: __RESULT__ marker not printed"}
+{"id": 270, "label": 1, "note": "Column ProjectName not found in project_info"}
+{"id": 271, "label": 1, "note": "Double-quoted ID parsed as column name; column 0Q0Wt000001WRAzKAO not found"}
+{"id": 272, "label": 3, "note": "TypeError list indices must be integers, on harness result variable"}
+{"id": 273, "label": 3, "note": "SyntaxError invalid syntax"}
+{"id": 274, "label": 3, "note": "Harness: __RESULT__ marker not printed"}
+{"id": 275, "label": 3, "note": "TypeError list indices must be integers, on harness result variable"}
+{"id": 276, "label": 3, "note": "FileNotFoundError on harness result variable name used as file; tool interface"}
+{"id": 277, "label": 1, "note": "stockmarket ticker table CYS does not exist"}
+{"id": 278, "label": 3, "note": "KeyError title on program-built frame from empty list"}
+{"id": 279, "label": 3, "note": "DuckDB type error comparing VARCHAR and TIMESTAMP"}
+{"id": 280, "label": 3, "note": "IndexError list index out of range"}
+{"id": 281, "label": 3, "note": "FileNotFoundError on harness temp result file /tmp/tmp...json; tool interface"}
+{"id": 282, "label": 1, "note": "Column ProjectName not found in project_info"}
+{"id": 283, "label": 1, "note": "Postgres relation sqlite_master does not exist (wrong-engine catalog table)"}
+{"id": 284, "label": 3, "note": "NameError json not imported"}
+{"id": 285, "label": 1, "note": "SQL no such table review_database"}
+{"id": 286, "label": 3, "note": "DuckDB date parse error, mixed formats"}
+{"id": 287, "label": 3, "note": "Result variable is a path string; list() gives chars, so frame lacks data columns"}
+{"id": 288, "label": 3, "note": "DuckDB date parse error, mixed formats"}
+{"id": 289, "label": 1, "note": "Double-quoted ID parsed as column name; column 00QWt0000089AekMAE not found"}
+{"id": 290, "label": 3, "note": "AttributeError str has no get, on result variable"}
+{"id": 291, "label": 1, "note": "DuckDB table Product2 does not exist in queried database"}
+{"id": 292, "label": 3, "note": "TypeError json.loads on list (result variable)"}
+{"id": 293, "label": 3, "note": "SyntaxError invalid syntax (var_functions.query_db:2)"}
+{"id": 294, "label": 3, "note": "NameError var_functions not defined; harness result variable"}
+{"id": 295, "label": 3, "note": "Harness: __RESULT__ marker not printed"}
+{"id": 296, "label": 3, "note": "TypeError json.loads on list (result variable)"}
+{"id": 297, "label": 3, "note": "ValueError date parse failure"}
+{"id": 298, "label": 1, "note": "Postgres column cancer_type_acronym does not exist in clinical_info"}
+{"id": 299, "label": 3, "note": "DuckDB date parse error, mixed formats"}
+{"id": 300, "label": 3, "note": "Code ran and printed codes; harness failed parsing non-JSON printed result"}
+{"id": 301, "label": 3, "note": "SyntaxError from var_functions.query_db:10 in code"}
+{"id": 302, "label": 3, "note": "DuckDB date conversion error, not a missing name"}
+{"id": 303, "label": 1, "note": "Table support.Case does not exist in the DuckDB database queried (lives in other DB)"}
+{"id": 304, "label": 3, "note": "__RESULT__ not printed; harness output rule"}
+{"id": 305, "label": 3, "note": "SyntaxError (walrus in dict literal)"}
+{"id": 306, "label": 3, "note": "FileNotFoundError on harness result variable name used as path (tool interface)"}
+{"id": 307, "label": 3, "note": "KeyError on locals() harness result variable var_function-call (tool interface)"}
+{"id": 308, "label": 3, "note": "SyntaxError, mismatched parenthesis"}
+{"id": 309, "label": 3, "note": "FileNotFoundError on harness temp result file /tmp/tmp...json, not a benchmark data file"}
+{"id": 310, "label": 3, "note": "__RESULT__ not printed; harness output rule"}
+{"id": 311, "label": 3, "note": "TypeError list indices on harness result variable"}
+{"id": 312, "label": 1, "note": "Table project_info_project_packageversion_mapping does not exist"}
+{"id": 313, "label": 1, "note": "Postgres: unquoted Patient_description folds to missing column patient_description"}
+{"id": 314, "label": 3, "note": "FileNotFoundError on guessed harness temp result file /tmp/tmp...json"}
+{"id": 315, "label": 3, "note": "DuckDB date conversion error"}
+{"id": 316, "label": 3, "note": "AttributeError: str has no attribute get (type issue)"}
+{"id": 317, "label": 1, "note": "merge on 'title': column absent in a records data frame (likely empty filtered frame)"}
+{"id": 318, "label": 1, "note": "stockmarket ticker table BRK.B does not exist"}
+{"id": 319, "label": 1, "note": "no such table sales_pipeline.Contract in the SQLite database queried"}
+{"id": 320, "label": 1, "note": "no such table review_database in SQLite"}
+{"id": 321, "label": 3, "note": "IndexError iloc out of bounds (position)"}
+{"id": 322, "label": 1, "note": "Table products_orders.Product2 does not exist in the DuckDB database queried"}
+{"id": 323, "label": 3, "note": "TypeError tz-aware vs naive datetime comparison"}
+{"id": 324, "label": 1, "note": "Table metadata_database.languages does not exist in the DuckDB database queried"}
+{"id": 325, "label": 3, "note": "SyntaxError from var_functions.query_db:38"}
+{"id": 326, "label": 1, "note": "KeyError 'rating': column absent in reviews data frame from query results"}
+{"id": 327, "label": 3, "note": "__RESULT__ marker printed without colon; harness output rule"}
+{"id": 328, "label": 1, "note": "KeyError 'filing_year': column absent in derived (empty) cpc_filings_df records frame"}
+{"id": 329, "label": 1, "note": "no such table review_database in SQLite"}
+{"id": 330, "label": 1, "note": "KeyError 'ema': column absent in result of groupby-apply (empty) records frame"}
+{"id": 331, "label": 3, "note": "FileNotFoundError on invented name 'rl44' for harness stored result (tool interface)"}
+{"id": 332, "label": 1, "note": "Postgres column vital_status does not exist"}
+{"id": 333, "label": 1, "note": "Column ProjectName not found in project_info"}
+{"id": 334, "label": 1, "note": "Table metadata_database.languages does not exist in DuckDB database queried"}
+{"id": 335, "label": 3, "note": "TypeError: open() given list instead of path"}
+{"id": 336, "label": 3, "note": "FileNotFoundError on guessed harness temp result file path"}
+{"id": 337, "label": 1, "note": "Table stockinfo_database.stockinfo does not exist in DuckDB database queried"}
+{"id": 338, "label": 3, "note": "AttributeError: float has no strip (NaN value type)"}
+{"id": 339, "label": 3, "note": "FileNotFoundError on guessed harness temp result file /tmp/tmp...json"}
+{"id": 340, "label": 1, "note": "Postgres: unquoted titleFull folds to missing column titlefull"}
+{"id": 341, "label": 3, "note": "__RESULT__ not printed; harness output rule"}
+{"id": 342, "label": 1, "note": "no such table review_database in SQLite"}
+{"id": 343, "label": 3, "note": "Invalid Mongo query JSON (JSONDecodeError)"}
+{"id": 344, "label": 1, "note": "sqlite3 on guessed db path: no such table publicationinfo (wrong data file path)"}
+{"id": 345, "label": 1, "note": "no such table review_database in SQLite"}
+{"id": 346, "label": 3, "note": "TypeError json.loads on list"}
+{"id": 347, "label": 1, "note": "read_parquet on nonexistent data file path 'stocktrade_database' (missing file)"}
+{"id": 348, "label": 3, "note": "__RESULT__ not printed; harness output rule"}
+{"id": 349, "label": 3, "note": "TypeError json.loads on list"}
+{"id": 350, "label": 1, "note": "Postgres column acronym does not exist in clinical_info"}
+{"id": 351, "label": 1, "note": "Postgres: unquoted titleFull folds to missing column titlefull"}
+{"id": 352, "label": 3, "note": "DuckDB type mismatch VARCHAR vs DATE"}
+{"id": 353, "label": 3, "note": "strptime format parse error"}
+{"id": 354, "label": 3, "note": "FileNotFoundError on invented filename for harness stored result"}
+{"id": 355, "label": 3, "note": "DuckDB timestamp conversion error"}
+{"id": 356, "label": 3, "note": "re.error in regex pattern"}
+{"id": 357, "label": 3, "note": "strptime format parse error"}
+{"id": 358, "label": 3, "note": "ValueError item wrong length (boolean indexing)"}
+{"id": 359, "label": 1, "note": "groupby 'title' after merge produced title_x/title_y; 'title' absent in merged frame"}
+{"id": 360, "label": 1, "note": "Postgres column gender does not exist"}
+{"id": 361, "label": 3, "note": "Postgres syntax error at reserved word Case (unquoted), not missing-table error"}
+{"id": 362, "label": 3, "note": "FileNotFoundError on guessed harness temp result file /tmp/tmp...json"}
+{"id": 363, "label": 1, "note": "Column ProjectName not found in project_info"}
+{"id": 364, "label": 3, "note": "SyntaxError from var_functions.query_db:2"}
+{"id": 365, "label": 1, "note": "KeyError 'filing_date': column absent in filtered (empty, columnless) frame used"}
+{"id": 366, "label": 1, "note": "Postgres column cancer_type_acronym does not exist"}
+{"id": 367, "label": 1, "note": "no such table review_database in SQLite"}
+{"id": 368, "label": 1, "note": "Postgres: unquoted titleFull folds to missing column titlefull"}
+{"id": 369, "label": 3, "note": "Postgres syntax error at reserved word Case"}
+{"id": 370, "label": 3, "note": "Postgres operator type mismatch text >= timestamp"}
+{"id": 371, "label": 3, "note": "FileNotFoundError on invented local file for earlier query result (tool interface)"}
+{"id": 372, "label": 3, "note": "TypeError list indices on harness result variable"}
+{"id": 373, "label": 1, "note": "Postgres column project does not exist"}
+{"id": 374, "label": 1, "note": "Postgres column vital_status does not exist"}
+{"id": 375, "label": 1, "note": "Table Opportunity does not exist in the DuckDB database queried"}
+{"id": 376, "label": 3, "note": "__RESULT__ not printed properly; harness output rule"}
+{"id": 377, "label": 1, "note": "Postgres column vital_status does not exist"}
+{"id": 378, "label": 3, "note": "DuckDB type mismatch VARCHAR vs DATE"}
+{"id": 379, "label": 3, "note": "Timeout"}
+{"id": 380, "label": 1, "note": "Postgres column cancer_type_acronym does not exist"}
+{"id": 381, "label": 3, "note": "SyntaxError (bare __RESULT__: line)"}
+{"id": 382, "label": 3, "note": "Printed result not parseable as JSON; harness output rule"}
+{"id": 383, "label": 1, "note": "Postgres column Cancer_type_acronym does not exist"}
+{"id": 384, "label": 3, "note": "Printed result not JSON (JSONDecodeError); harness output rule"}
+{"id": 385, "label": 1, "note": "Postgres: unquoted titleFull folds to missing column titlefull"}
+{"id": 386, "label": 1, "note": "no such table review_database in SQLite"}
+{"id": 387, "label": 3, "note": "SyntaxError from var_functions.query_db:28"}
+{"id": 388, "label": 1, "note": "Column ProjectName not found in project_info"}
+{"id": 389, "label": 3, "note": "FileNotFoundError on guessed harness temp result file /tmp/tmp...json"}
+{"id": 390, "label": 3, "note": "__RESULT__ not printed; harness output rule"}
+{"id": 391, "label": 1, "note": "Postgres: unquoted Patient_description folds to missing column patient_description"}
+{"id": 392, "label": 1, "note": "no such table review_database in SQLite"}
+{"id": 393, "label": 3, "note": "NameError: results_df not defined"}
+{"id": 394, "label": 1, "note": "Table metadata_database.languages does not exist in DuckDB database queried"}
+{"id": 395, "label": 3, "note": "TypeError string indices (file path string used as records)"}
+{"id": 396, "label": 3, "note": "SyntaxError from var_functions.query_db:6"}
+{"id": 397, "label": 3, "note": "DuckDB table function read_sqlite does not exist (missing function)"}
+{"id": 398, "label": 3, "note": "__RESULT__ not printed; harness output rule"}
+{"id": 399, "label": 3, "note": "FileNotFoundError on guessed harness temp result file /tmp/tmp...json"}
+{"id": 400, "label": 3, "note": "pd.to_datetime format mismatch (failed conversion)"}

@@ -37,7 +37,14 @@ UNDEFINED = [re.compile(p) for p in (
     r"The variable `([^`]+)` is not defined",
     r"name '([^']+)' is not defined",
 )]
-CORRECTED = (4005.19, 3657.74, 4339.54)   # audit: corrected count and 95% bootstrap interval
+
+
+def load_corrected(path):
+    """Corrected DABstep count and its 95% bootstrap interval, from the audit results file."""
+    res = json.load(open(path))["DABstep"]
+    return (res["estimates"]["corrected"], *res["ci95_bootstrap"]["corrected"])
+
+
 RULE_COUNT = 4429
 
 
@@ -84,7 +91,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--manifest", required=True)
     ap.add_argument("--cells", nargs="+", required=True)
+    ap.add_argument("--audit", default=os.path.join(HERE, "..", "audit", "results_FINAL.json"),
+                    help="audit results (corrected count and its interval)")
     a = ap.parse_args()
+    CORRECTED = load_corrected(a.audit)
     manifest = {m["submission_file"]: m for m in map(json.loads, open(a.manifest))}
     traces = collections.defaultdict(list)
     failed_all = 0

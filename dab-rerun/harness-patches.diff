@@ -1,0 +1,172 @@
+diff -ru -x __pycache__ dabx-orig/common_scaffold/DataAgent.py dabx/common_scaffold/DataAgent.py
+--- dabx-orig/common_scaffold/DataAgent.py	2026-10-06 20:17:07.993316575 +0200
++++ dabx/common_scaffold/DataAgent.py	2026-10-06 20:17:27.114756227 +0200
+@@ -16,6 +16,8 @@
+ from common_scaffold.tools.QueryDBTool import QueryDBTool
+ from common_scaffold.tools.ReturnAnswerTool import ReturnAnswerTool
+ from common_scaffold.validate.validate import validate
++from common_scaffold import budget  # [rerun patch: budget]
++from common_scaffold.tools.db_utils import mongo_utils  # [rerun patch: arm C]
+ 
+ 
+ SUCCESS_TOOL_RESULT_TMPL = """
+@@ -73,7 +75,16 @@
+         self.logger.info(f"\tmax_iterations: {self.max_iterations}")
+         self.llm_call_count = 0
+         load_dotenv()
+-        if "gpt" in deployment_name.lower():
++        # [rerun patch: model access] Ollama Cloud through its OpenAI-compatible endpoint.
++        # The request (model, messages, tools; no temperature or seed) is unchanged.
++        self.api_model = deployment_name
++        if deployment_name.startswith("ollama/"):
++            self.client = OpenAI(
++                api_key=os.getenv("OLLAMA_API_KEY"),
++                base_url="https://ollama.com/v1",
++            )
++            self.api_model = deployment_name.split("/", 1)[1]
++        elif "gpt" in deployment_name.lower():
+             self.client = AzureOpenAI(
+                 api_key=os.getenv("AZURE_API_KEY"),
+                 api_version=os.getenv("AZURE_API_VERSION"),
+@@ -190,14 +201,16 @@
+         # vllm tool calling: https://docs.vllm.ai/en/v0.6.0/getting_started/examples/openai_chat_completion_client_with_tools.html
+         start = time.time()
+         response = None
++        budget.check()  # [rerun patch: budget] stop before the call if the hard cap is reached
+         for attempt in range(3):
+-            try: 
++            try:
+                 response = self.client.chat.completions.create(
+-                    model=self.deployment_name,
++                    model=self.api_model,
+                     messages=self.messages,
+                     tools=[tool.get_spec() for tool in self.tools.values()],
+                     timeout=600,
+                 )
++                budget.record(response)  # [rerun patch: budget] add this call's tokens to the ledger
+                 break
+             except Exception as e:
+                 response = None
+@@ -298,7 +311,13 @@
+                 content = FAIL_TOOL_PREVIEW_TMPL.replace("{tool_name}", tool_name).replace("{tool_result_preview}", serialized_result[:prompt_builder.PREVIEW_LENGTH])
+             else:
+                 content = FAIL_TOOL_RESULT_TMPL.replace("{tool_name}", tool_name).replace("{tool_result}", serialized_result)
+-            
++
++        # [rerun patch: arm C] tell the model when a MongoDB result was cut by the default limit.
++        # In arms A and B no note is ever set, so the message is unchanged.
++        if tool_name == "query_db":
++            note = mongo_utils.pop_truncation_note()
++            if note and exec_result["success"] == True:
++                content = content.rstrip("\n") + "\n\n" + note + "\n"
+ 
+         self.messages.append({
+             "role": "tool",
+Only in dabx/common_scaffold: budget.py
+diff -ru -x __pycache__ dabx-orig/common_scaffold/prompts/prompt_builder.py dabx/common_scaffold/prompts/prompt_builder.py
+--- dabx-orig/common_scaffold/prompts/prompt_builder.py	2026-10-06 20:17:07.993379876 +0200
++++ dabx/common_scaffold/prompts/prompt_builder.py	2026-10-06 20:17:49.002757528 +0200
+@@ -89,11 +89,21 @@
+         tool_call_instructions = CLAUDE_TOOL_CALL_INSTRUCTIONS
+     else:
+         raise ValueError(f"Unknown deployment_name: {deployment_name}")
+-    
++
++    system_content = system_prompt.replace("{TOOL_CALL_INSTRUCTIONS}", tool_call_instructions).strip() + system_prompt_suffix
++    # [rerun patch: arms B and C] key rule 7 must describe how the code is actually run.
++    # Only this clause changes; the rest of rule 7 (including "do not use triple double-quotes")
++    # stays, so that the arms differ only in how the code reaches exec().
++    import os as _os
++    if _os.environ.get("DAB_ARM", "A") != "A":
++        old_clause = "your code will be quoted by triple double-quotes and passed as a string to `exec(...)`"
++        new_clause = "your code will be passed unchanged as a string to `exec(...)`"
++        assert system_content.count(old_clause) == 1
++        system_content = system_content.replace(old_clause, new_clause)
+     return [
+         {
+             "role": "system",
+-            "content": system_prompt.replace("{TOOL_CALL_INSTRUCTIONS}", tool_call_instructions).strip() + system_prompt_suffix
++            "content": system_content
+         },
+         {
+             "role": "user",
+diff -ru -x __pycache__ dabx-orig/common_scaffold/tools/ExecTool.py dabx/common_scaffold/tools/ExecTool.py
+--- dabx-orig/common_scaffold/tools/ExecTool.py	2026-10-06 20:17:07.993437892 +0200
++++ dabx/common_scaffold/tools/ExecTool.py	2026-10-06 20:17:40.426757018 +0200
+@@ -205,7 +205,13 @@
+         super()._exec(args)
+         if "code" in args:
+             env_args = args["env"]
+-            exec_str = f'''code = """{args["code"]}"""\n\nenv_args = {env_args}\n\nexec(code, env_args)\n'''
++            if os.environ.get("DAB_ARM", "A") == "A":
++                # Arm A: the line as released (DataAgentBench main, commit 6ad9d68).
++                exec_str = f'''code = """{args["code"]}"""\n\nenv_args = {env_args}\n\nexec(code, env_args)\n'''
++            else:
++                # [rerun patch: arms B and C] repr() builds a literal that evaluates to the model's
++                # code unchanged, so exec() receives exactly what the model wrote.
++                exec_str = f'''code = {args["code"]!r}\n\nenv_args = {env_args}\n\nexec(code, env_args)\n'''
+             result = self.run_python(exec_str)
+         elif "command" in args:
+             result = self.run_shell(args["command"])
+diff -ru -x __pycache__ dabx-orig/common_scaffold/tools/db_utils/mongo_utils.py dabx/common_scaffold/tools/db_utils/mongo_utils.py
+--- dabx-orig/common_scaffold/tools/db_utils/mongo_utils.py	2026-10-06 20:17:07.993590357 +0200
++++ dabx/common_scaffold/tools/db_utils/mongo_utils.py	2026-10-06 20:18:00.266758197 +0200
+@@ -6,6 +6,17 @@
+ import subprocess
+ from pathlib import Path
+ import logging
++import os as _os
++
++# [rerun patch: arm C] state for the truncation note (one run per process).
++_LAST_LIMIT_DEFAULTED = False
++_TRUNCATION_NOTE = None
++
++
++def pop_truncation_note():
++    global _TRUNCATION_NOTE
++    note, _TRUNCATION_NOTE = _TRUNCATION_NOTE, None
++    return note
+ 
+ """
+ MongoDB Config:
+@@ -31,7 +42,9 @@
+         #     check=True
+         # )
+         result = subprocess.run(
+-            ["mongorestore", f"--nsInclude={db_name}.*", dump_path],
++            # [rerun patch: infrastructure] --uri so that each parallel worker restores into its own
++            # MongoDB instance; the original command always used localhost:27017.
++            ["mongorestore", f"--uri={db_config.MONGO_URI}", f"--nsInclude={db_name}.*", dump_path],
+             check=True,
+             stdout=subprocess.PIPE,
+             stderr=subprocess.PIPE,
+@@ -77,6 +90,8 @@
+         collection = query_json["collection"]
+         filter = query_json.get("filter", {})
+         projection = query_json.get("projection", None)
++        global _LAST_LIMIT_DEFAULTED  # [rerun patch: arm C] remember whether the default applied
++        _LAST_LIMIT_DEFAULTED = "limit" not in query_json
+         limit = query_json.get("limit", 5)
+         return {
+             "db_name": db_client['db_name'],
+@@ -101,6 +116,20 @@
+                 result = list(cursor)
+             except Exception as e:
+                 raise ValueError(f"MongoDB query execution error ({type(e).__name__}): {str(e)}")
++            # [rerun patch: arm C] when the default limit (no "limit" in the query) cut the result,
++            # count the matching documents so that DataAgent can tell the model. Arms A and B skip this.
++            global _TRUNCATION_NOTE
++            _TRUNCATION_NOTE = None
++            if _os.environ.get("DAB_ARM", "A") == "C" and _LAST_LIMIT_DEFAULTED and limit is not None:
++                try:
++                    n = db[collection].count_documents(filter)
++                except Exception:
++                    n = None
++                if n is not None and n > len(result):
++                    _TRUNCATION_NOTE = (
++                        f"Note: this query set no \"limit\", so only the first {len(result)} of {n} "
++                        f"matching documents were returned. Add a \"limit\" field to the query to return more."
++                    )
+         
+         if not result:
+             result_df = pd.DataFrame()

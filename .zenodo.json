@@ -1,11 +1,20 @@
 {
-  "title": "data-agent-traces: code for \"What Agent Traces Hide: Data-Reference Errors and Harness Effects in LLM Data Agents\"",
-  "description": "Trace parsers for DABstep and DataAgentBench, an exact pre-execution checker for the column, key and file names in agent-written Python, and the scripts of every experiment in the preprint. The repository contains no benchmark data; the scripts download each dataset at a pinned commit.",
+  "title": "data-agent-traces: code for \"What Agent Traces Do Not Record: Harness Effects and Data-Reference Errors in Code-Writing LLM-based Agents for Data Analysis\"",
+  "description": "Trace parsers for DABstep and DataAgentBench, an exact pre-execution checker for the column, key and file names in agent-written Python, the scripts of every experiment in the preprint, the materials of the hand audit (codebook, plan, sampled step identifiers and both coders' labels) and of the pre-registered DataAgentBench rerun (pre-registration, amendments, harness patch, runner, analysis and per-run results). The repository contains no benchmark data; the scripts download each dataset at a pinned commit.",
   "upload_type": "software",
   "creators": [
-    {"name": "Madukoma, Blessed"}
+    {
+      "name": "Madukoma, Blessed"
+    }
   ],
   "license": "MIT",
-  "keywords": ["data agents", "LLM agents", "static analysis", "benchmarks", "agent traces"],
-  "version": "1.0.0"
+  "keywords": [
+    "LLM agents",
+    "agent harness",
+    "agent traces",
+    "data-reference errors",
+    "static analysis",
+    "benchmarks"
+  ],
+  "version": "2.1.0"
 }
