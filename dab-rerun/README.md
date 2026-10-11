@@ -66,5 +66,5 @@ This prints Pass@1 0.3099 for arm A and 0.2951 for arm B, as in `analysis.json`.
 | 3.1 | share of failed calls recorded as syntax errors −11.7 points (CI −21.8 to −3.2), p = 0.027 | `H3_syntax_share_B_minus_A` |
 | 3.1, Table 3 | judge: FM4 in 39% and 34% of failed runs; B − A per task −5.3 points (CI −14.4 to +3.3); on failed runs that end with an answer, +10.3 (CI −2.2 to +23.5) | `H4.all_failed`, `H4.return_answer_only` (both given as A − B) |
 | Table 3 | cost per run USD 0.0256 and 0.0183 | `runs_by_arm`: `usd` divided by `runs` |
-| Table 3 | failed calls per run 2.77 and 0.99; requests to the model per run 11.7 and 8.8 | means of `failed_tool_calls` and `llm_calls` over the kept runs in `runs.jsonl`; the 2 arm-B runs that reached the 2-hour cap have no `llm_calls` and count as 0 (without them, 8.9) |
+| Table 3 | failed calls per run 2.77 and 0.99; requests to the model per run 11.7 and 8.9 (31% more in arm A) | means of `failed_tool_calls` and `llm_calls` over the kept runs in `runs.jsonl`; the 2 arm-B runs that reached the 2-hour cap have no `llm_calls` and are left out of the mean of requests (they still count as wrong for Pass@1); `tools/v3_16_numbers.py` prints both means |
 | 3.1 | Arm C: 21 notes, followed by a query with a limit 20 times | `H5_notes` |
