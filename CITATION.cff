@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the preprint below."
-title: "data-agent-traces: code for 'What Agent Traces Hide: Data-Reference Errors and Harness Effects in LLM Data Agents'"
+title: "data-agent-traces: code for 'What Agent Traces Hide: Harness Effects and Data-Reference Errors in Code-Writing LLM Agents for Data Analysis'"
 type: software
-version: 1.0.0
-date-released: 2026-09-27
+version: 2.0.0
+date-released: 2026-10-11
 license: MIT
 repository-code: "https://github.com/blessedmadukoma/data-agent-traces"
 authors:
@@ -11,17 +11,20 @@ authors:
     given-names: Blessed
     email: blessedmadukoma@gmail.com
 keywords:
-  - data agents
   - LLM agents
+  - agent harness
+  - agent traces
+  - data-reference errors
   - static analysis
   - benchmarks
-  - agent traces
 preferred-citation:
   type: article
   status: preprint
-  title: "What Agent Traces Hide: Data-Reference Errors and Harness Effects in LLM Data Agents"
+  title: "What Agent Traces Hide: Harness Effects and Data-Reference Errors in Code-Writing LLM Agents for Data Analysis"
   authors:
     - family-names: Madukoma
       given-names: Blessed
+    - family-names: Mitra
+      given-names: Prasenjit
   year: 2026
-  month: 9
+  month: 10

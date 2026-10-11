@@ -315,3 +315,26 @@ make fa-rescore FA_REPLAYS=runs/fa-replay
 
 - Model outputs. Models on Ollama Cloud can change, and sampling at temperature 1.0 is random even with a fixed seed.
 - The hand audits of blocks on working cells. We read each block against the raw trace. The reports list every block, so you can repeat the audit.
+
+# Part C: numbers added in preprint v3.4 (free)
+
+These commands need `runs/dabstep` (A1), `runs/dab` (A2) and `make rescore` (B0). Section numbers refer to preprint v3.4.
+
+```bash
+uv run python tools/harness_nameerror.py --manifest runs/dabstep/manifest.jsonl --cells runs/dabstep/parsed_*_cells.jsonl
+make fa-rescore      # writes runs/fa_recorded (B6)
+uv run python tools/run_limit.py --rec runs/fa_recorded
+uv run python tools/dab_missing_files.py --run runs/dab
+```
+
+| Preprint | Value | Line to look for |
+| --- | --- | --- |
+| 3.1, 3.2 | 6,799 failed steps caused by harnesses that drop variables, 6,378 of them in one submission | `harness-caused NameErrors: certain 6185, strict 6799, ...`; the `independent researcher-DA` line ends with `6378` |
+| 3.1 | without them, `NameError` is 7.0% of the remaining failed steps | `[strict] ... NameError left 1354 (7.0%)` |
+| 3.2 | DABstep: rules 22.8%; corrected 20.6% (18.8% to 22.3%); refused calls 32.9%; syntax errors 16.1% | the `[strict]` line |
+| 3.2 | 15.2% of all failed steps | `[all failed steps] corrected share 15.2% (95% CI 13.9% to 16.5%)` |
+| 5 | other rules for harness-caused failures: 19.9%, 21.6% and 21.7% | the `[certain]`, `[reads]` and `[named]` lines |
+| 2.1 | runs that reached 15 replies without an answer: 5.5% to 6.9% of the gpt-oss:120b runs per arm of the live experiment, and 16 of the 822 deepseek-v4.1-flash runs | `live_gpt` lines `P0G0` to `P1G1`; `live_ds` lines `P0G0` (7) and `P0G1` (9) |
+| 2.1 | 0% to 22% of the runs of each other benchmark | `ia_gpt` 21.8%, `ia_ds` 0.0%, `qr_gpt` 9.5%, `db_gpt` 6.8% (KramaBench is not counted) |
+| 3.3 | 379 DAB reads of missing files blocked, 377 of them by kimi-k2-thinking | `blocked reads of missing files: 379 {'gemini-3-pro': 2, 'kimi-k2-thinking': 377}` |
+| 3.3 | 377 of the 379 are files that the model invented to hold an earlier result | `names of stored results: 350; to read by hand: 29`; of the 29 printed reads, 27 are such files and 2 name a file after a database |
