@@ -388,3 +388,19 @@ uv run python tools/audit_dre_analysis.py --sample audit/sample_ids.csv --strata
 | 2.2, 3.2 | DAB: precision 0.72 (0.63 to 0.81), recall 0.96 (0.90 to 1.00), corrected count 3,566 (3,113 to 4,041) | `== DAB` block |
 | 2.2 | agreement before adjudication: kappa 0.95 (DABstep) and 0.71 (DAB), 5 and 29 disagreements | `agreement with coder 2` |
 | 2.2 | unclear items counted as not data-reference errors: DABstep precision 0.86 | `unclear counted as not` |
+
+# Part F: numbers added in preprint v3.16 (free)
+
+These commands need `runs/dabstep` (A1) and `runs/dab` (A2). Section numbers refer to preprint v3.16.
+
+```bash
+uv run python tools/v3_16_numbers.py --dabstep-cells runs/dabstep/parsed_*_cells.jsonl --dab-cells runs/dab/cells_*.jsonl
+```
+
+| Preprint | Value | Line to look for |
+| --- | --- | --- |
+| 3.2 | first stratum of the audit weighted by error kind (not pre-registered): DAB 3,893 (95% CI 3,662 to 4,168), 13.9% (13.1% to 14.9%); DABstep 3,989, 20.5% | `== audit, first stratum weighted by error kind` |
+| 2.2 | 0 of the 19 sampled DAB missing-file reads were real data files: at most 14.6% of the 613 are not invented | `one-sided 95% upper bound` |
+| 3.1, contribution 1 | gpt-5.1's rank by failed calls per run falls in 99% of 10,000 bootstrap samples of the 64 DAB tasks, and by two or more places in 63% | `== rank of gpt-5.1` |
+| 3.1, Table 3 | requests to the model per run: 11.7 (A) and 8.9 (B, 265 runs with a recorded count); A / B = 1.31 | `== DAB rerun: requests to the model per run` |
+| 3.4 | answers that our harness lost, per arm of the live experiment: 281, 249, 224 and 200 | `tools/preprint_v3_numbers.py` (Part D), `== lost answers not recovered`: `defined` minus `answer recorded anyway` |
