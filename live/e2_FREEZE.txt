@@ -1,0 +1,25 @@
+Frozen 2026-10-12 11:08 CAT before the first run of E2 (second live experiment).
+Model: gpt-oss:120b on Ollama Cloud; sandbox image: mirror.gcr.io/library/python:3.12-slim with the host environment /home/claude/work/envs/sandbox
+9172f54ee5dae806352dff0033c02693886c89d78e80630532214d7b507e40ec  live/e2_preregistration.md
+d3438864dab1bcfafbdc255360681d2f4a48b01b0776635da19d78e4b5be733d  live/e2_run.py
+1b030b4c29415eaa3cc7b446f0eb5676ba6df7dbe7acf8930445b6fe2beb3045  live/e2_runner.py
+8a555f9feaa5c7f55773786f0ed0be8b7431268e7a2e0128095321cf1c488fe1  dabstep-gate/v9/gate.py
+a2dbd230d8e6b04aeba2e8154a3ef53ada78c6a99559349d07cd35c6db598968  kramabench/kb_run.py
+0390cfc50a21baf56fc2bbde9060a5c0b33a79afc200498d6abc2b3074461384  kramabench/kb_gate.py
+a12cc27a09b443374abab5f28eb357e0f8d752c76a1b9ea2e877198da654b12d  qrdata/qr_run.py
+3edce85d1630f56369a4dc4c05c5475adebbf6b2aad4c4ad2ae308fcae612b6c  rq3-pilot/rq3_run.py
+8038f9b147c06ce4f6356cf129bbb8cb9b152288c7973df114e78ab92b49b5be  live/e1_report.py
+e076d960f19434adf728aab70480ce34808c06066fcea48eaa38b145d1a111a1  data/QRData/benchmark/QRData.json
+Sandbox image ID: sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+
+Amendment 1, frozen 2026-10-12 11:36 CAT before the first run of the shared-prefix design:
+f7c28c304dc6c1a11729627271f3382a3489f7f42c2424fbb9d9d98b8623d564  live/e2_AMENDMENTS.md
+319de471b3feebdf1331d24a8dac4a94e0397627f2f1e9230a009ba13611ce05  live/e2_fork.py
+d3438864dab1bcfafbdc255360681d2f4a48b01b0776635da19d78e4b5be733d  live/e2_run.py
+ef7e5ade67c582c6f1cf79a2948a3b917687b457fe66c8d45cc9cd4c161136d8  live/e2_report.py
+0fd33eb13df1c8e038753f5be4c4bf41a33d923406bbe4a916a2a39ba5b153d8  live/e2_validate.py
+
+Amendment 2, frozen 2026-10-12 12:22 CAT before the first job of the one-sandbox-per-branch runner:
+85a745ff46abc74b2da7025cf0147246ecf65fc9f0fc4e227c3e5e06ca190275  live/e2_AMENDMENTS.md
+c14789e175a2bf9cb36ff1a88e326717fde5ad9dea99af8a9af2287d83c3922f  live/e2_fork.py
+319de471b3feebdf1331d24a8dac4a94e0397627f2f1e9230a009ba13611ce05  live/e2_fork_v1.py

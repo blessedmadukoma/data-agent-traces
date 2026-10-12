@@ -418,3 +418,20 @@ Release 4 (`dabstep-gate/v9/`) corrects gaps in release 3. It needs the outputs 
 | 81 programs (3 from a reader, 78 found) that release 3 blocks and release 4 does not | `cd dabstep-gate/v9 && python3 -m unittest test_gate_v9.py` | `OK` |
 | 10,000 generated programs, 12,315 steps; release 3 wrongly blocks 3,029 of 9,312 in pandas 3.0.5; release 4 none | `differential_test.py --n 10000 --seed 7` (see `dabstep-gate/v9/README.md`) | `pandas 3.0.5:` and the two gate lines |
 | Median 0.6 ms (release 3) and 1.1 ms (release 4) per step | timing of `decide()` on the same 20,000 DABstep steps | machine-dependent |
+
+## Second live experiment (E2) and the DAB rerun extension (October 2026)
+
+E2 (preprint v3.20, Section 3.4). The runs and transcripts are in `recorded-runs-e2-2026-10.tar.gz`
+(SHA-256 `492fd3116b849bec488e18c5e783bcc88ae9eb41561691e53b63a64e0cf38d45`).
+
+```bash
+tar -xzf recorded-runs-e2-2026-10.tar.gz
+python3 live/e2_report.py --results runs/e2/results.jsonl --questions data/QRData/benchmark/QRData.json \
+    --validation runs/e2/validation.jsonl --json /tmp/e2_report.json
+```
+
+The plan is `live/e2_preregistration.md`, with `live/e2_AMENDMENTS.md` and `live/e2_FREEZE.txt`. The runner is
+`live/e2_fork.py` (the version of amendment 1 is `live/e2_fork_v1.py`; `live/e2_run.py` holds the shared parts).
+
+DAB extension (Section 3.1): see `dab-rerun-ext/README.md`. The kimi-k2.6 pilots that came before it are in
+`dab-rerun-kimi/`.
