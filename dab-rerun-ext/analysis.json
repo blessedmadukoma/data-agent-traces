@@ -1,0 +1,126 @@
+{
+  "excluded": {
+    "A:infrastructure": 1,
+    "B:infrastructure": 1
+  },
+  "H1": {
+    "A": {
+      "runs": 269,
+      "python_calls": 1298,
+      "harness_caused": 272,
+      "harness_per_python_call": 0.20955315870570107,
+      "runs_with_harness_caused": 23,
+      "silent_changes": 213
+    },
+    "B": {
+      "runs": 269,
+      "python_calls": 772,
+      "harness_caused": 0,
+      "harness_per_python_call": 0.0,
+      "runs_with_harness_caused": 0,
+      "silent_changes": 0
+    }
+  },
+  "pass1": {
+    "A": 0.31816544566544563,
+    "B": 0.31377899877899873
+  },
+  "H2_B_minus_A": {
+    "estimate": -0.004386446886446904,
+    "ci95": [
+      -0.05225740231990231,
+      0.0460325854700854
+    ],
+    "wilcoxon_p": 0.25392081229141106,
+    "n_queries": 54,
+    "n_nonzero": 21,
+    "equal_weight_mean_diff": -0.011111111111111117
+  },
+  "H3_failed_calls_B_minus_A": {
+    "estimate": -1.212962962962963,
+    "ci95": [
+      -2.3518518518518516,
+      -0.3611111111111111
+    ],
+    "wilcoxon_p": 0.005693895113901443,
+    "n_queries": 54
+  },
+  "H3_syntax_share_B_minus_A": {
+    "estimate": -0.11574788724514602,
+    "ci95": [
+      -0.21613631960043692,
+      -0.028328416052758196
+    ],
+    "wilcoxon_p": 0.02284920348498641,
+    "n_queries": 30
+  },
+  "H4": {
+    "all_failed": {
+      "A": {
+        "n": 175,
+        "fm4": 66,
+        "share_fm4": 0.37714285714285717
+      },
+      "B": {
+        "n": 176,
+        "fm4": 64,
+        "share_fm4": 0.36363636363636365
+      },
+      "A_minus_B_per_query": {
+        "estimate": -0.0030303030303030247,
+        "ci95": [
+          -0.0981060606060606,
+          0.08939393939393939
+        ],
+        "wilcoxon_p": 0.8586292483655356,
+        "n_queries": 44
+      }
+    },
+    "return_answer_only": {
+      "A": {
+        "n": 95,
+        "fm4": 31,
+        "share_fm4": 0.3263157894736842
+      },
+      "B": {
+        "n": 115,
+        "fm4": 36,
+        "share_fm4": 0.3130434782608696
+      },
+      "A_minus_B_per_query": {
+        "estimate": 0.05714285714285714,
+        "ci95": [
+          -0.05476190476190477,
+          0.17048809523809508
+        ],
+        "wilcoxon_p": 0.27495335382247743,
+        "n_queries": 35
+      }
+    }
+  },
+  "runs_by_arm": {
+    "A": {
+      "runs": 269,
+      "prompt_tokens": 38906500,
+      "completion_tokens": 1573685,
+      "usd": 6.7801860000000005,
+      "terminate": {
+        "return_answer": 167,
+        "no_tool_call": 102
+      }
+    },
+    "B": {
+      "runs": 269,
+      "prompt_tokens": 31787975,
+      "completion_tokens": 1282709,
+      "usd": 5.53782165,
+      "terminate": {
+        "return_answer": 184,
+        "no_tool_call": 82,
+        "wall_clock_cap": 2,
+        "max_iterations": 1
+      }
+    }
+  },
+  "ledger_usd": 4.191736181999993
+}
