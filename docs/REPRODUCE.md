@@ -404,3 +404,17 @@ uv run python tools/v3_16_numbers.py --dabstep-cells runs/dabstep/parsed_*_cells
 | 3.1, contribution 1 | gpt-5.1's rank by failed calls per run falls in 99% of 10,000 bootstrap samples of the 64 DAB tasks, and by two or more places in 63% | `== rank of gpt-5.1` |
 | 3.1, Table 3 | requests to the model per run: 11.7 (A) and 8.9 (B, 265 runs with a recorded count); A / B = 1.31 | `== DAB rerun: requests to the model per run` |
 | 3.4 | answers that our harness lost, per arm of the live experiment: 281, 249, 224 and 200 | `tools/preprint_v3_numbers.py` (Part D), `== lost answers not recovered`: `defined` minus `answer recorded anyway` |
+
+# Part G: checker release 4 (preprint v3.19, Section 3.3; free)
+
+Release 4 (`dabstep-gate/v9/`) corrects gaps in release 3. It needs the outputs of Part A1, A2 and B0.
+
+| Number in the preprint | Command | Line to look for |
+| --- | --- | --- |
+| 228 decisions changed on 159,045 recorded steps; no block added; 18 blocks removed, none on a working step | `make release4` | `runs/release4/compare.txt`, lines of the six DAB models, `dabstep` and the four runs without `_live` (the `TOTAL` line also counts the `_live` files) |
+| 2,121 DABstep errors stopped; 22 replaced keys | `make release4` | `runs/release4/dabstep_v9_report.txt`: `caught with a cause match`, `replaced silently` |
+| 119 DAB references to columns or keys | `make release4` | `runs/release4/dab_v9_report.txt`: `by kind` (column + key) |
+| Same decision on all 12,637 steps of the live runs with the checker, 588 blocks | `make release4` | `decisions that differ between the releases: 0` |
+| 81 programs (3 from a reader, 78 found) that release 3 blocks and release 4 does not | `cd dabstep-gate/v9 && python3 -m unittest test_gate_v9.py` | `OK` |
+| 10,000 generated programs, 12,315 steps; release 3 wrongly blocks 3,029 of 9,312 in pandas 3.0.5; release 4 none | `differential_test.py --n 10000 --seed 7` (see `dabstep-gate/v9/README.md`) | `pandas 3.0.5:` and the two gate lines |
+| Median 0.6 ms (release 3) and 1.1 ms (release 4) per step | timing of `decide()` on the same 20,000 DABstep steps | machine-dependent |

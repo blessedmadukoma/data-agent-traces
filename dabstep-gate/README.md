@@ -10,6 +10,7 @@ The checker and the scripts for the DABstep submissions at dataset commit `c8fb5
 | `gate_adapter.py` | Schemas of the DABstep context files, the evidence model for file existence in a replay, and the executor profiles (fresh process, tolerant key lookup). |
 | `v6/gate.py`, `v7/gate.py` | Earlier frozen versions, used for the held-out tests. |
 | `test_gate.py` | 127 unit tests: `uv run python -m unittest test_gate.py` in this folder. |
+| `v9/` | Release 4 (version 9): corrects gaps in the model of Python and pandas that a reader and a differential test found. See `v9/README.md`. |
 
 ## Pipeline
 

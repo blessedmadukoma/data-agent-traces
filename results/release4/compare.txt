@@ -1,0 +1,16 @@
+dabstep: 74484 steps; 108 decisions changed {'unknown -> run': 6, 'run -> unknown': 89, 'block -> unknown': 11, 'block -> run': 2}; blocks 3477 -> 3464; blocks of working steps 4 -> 4; cause-matched blocks 2122 -> 2121; new blocks 0
+dab_gemini-2.5-flash: 12026 steps; 0 decisions changed {}; blocks 55 -> 55; blocks of working steps 0 -> 0; cause-matched blocks 52 -> 52; new blocks 0
+dab_gemini-3-pro: 16556 steps; 3 decisions changed {'run -> unknown': 3}; blocks 383 -> 383; blocks of working steps 0 -> 0; cause-matched blocks 377 -> 377; new blocks 0
+dab_gpt-5-mini: 6678 steps; 30 decisions changed {'run -> unknown': 29, 'unknown -> run': 1}; blocks 3 -> 3; blocks of working steps 0 -> 0; cause-matched blocks 3 -> 3; new blocks 0
+dab_gpt-5.1: 3850 steps; 62 decisions changed {'run -> unknown': 60, 'block -> unknown': 2}; blocks 9 -> 7; blocks of working steps 0 -> 0; cause-matched blocks 5 -> 3; new blocks 0
+dab_gpt-5.2: 6555 steps; 7 decisions changed {'run -> unknown': 7}; blocks 2 -> 2; blocks of working steps 0 -> 0; cause-matched blocks 2 -> 2; new blocks 0
+dab_kimi-k2-thinking: 29701 steps; 18 decisions changed {'run -> unknown': 15, 'block -> unknown': 3}; blocks 810 -> 807; blocks of working steps 0 -> 0; cause-matched blocks 797 -> 794; new blocks 0
+ia_gpt-oss: 2103 steps; 0 decisions changed {}; blocks 10 -> 10; blocks of working steps 0 -> 0; cause-matched blocks 8 -> 8; new blocks 0
+ia_gpt-oss_live: 2103 steps; 0 decisions changed {}; blocks 23 -> 23; blocks of working steps 0 -> 0; cause-matched blocks 21 -> 21; new blocks 0
+ia_deepseek41: 1545 steps; 0 decisions changed {}; blocks 8 -> 8; blocks of working steps 0 -> 0; cause-matched blocks 8 -> 8; new blocks 0
+ia_deepseek41_live: 1545 steps; 0 decisions changed {}; blocks 8 -> 8; blocks of working steps 0 -> 0; cause-matched blocks 8 -> 8; new blocks 0
+qr_gpt-oss: 3434 steps; 0 decisions changed {}; blocks 19 -> 19; blocks of working steps 0 -> 0; cause-matched blocks 14 -> 14; new blocks 0
+qr_gpt-oss_live: 3434 steps; 0 decisions changed {}; blocks 271 -> 271; blocks of working steps 0 -> 0; cause-matched blocks 267 -> 267; new blocks 0
+db_gpt-oss: 2113 steps; 0 decisions changed {}; blocks 18 -> 18; blocks of working steps 0 -> 0; cause-matched blocks 18 -> 18; new blocks 0
+db_gpt-oss_live: 2113 steps; 0 decisions changed {}; blocks 88 -> 88; blocks of working steps 0 -> 0; cause-matched blocks 86 -> 86; new blocks 0
+TOTAL: 168240 steps; 228 decisions changed; blocks 5184 -> 5166; blocks of working steps 4 -> 4; cause-matched blocks 3788 -> 3782; new blocks 0; cause-matched blocks lost 6

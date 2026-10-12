@@ -11,6 +11,7 @@ make check-frozen
 | `v6.sha256` | v6 (`dabstep-gate/v6/gate.py`) | frozen release 1 | KramaBench, receipt replay on DABstep |
 | `v7.sha256` | v7 (`dabstep-gate/v7/gate.py`, scored with `kramabench/kb_gate.py`) | frozen release 2 | InfiAgent-DABench with gpt-oss:120b and deepseek-v4.1-flash, QRData |
 | `v8.sha256` | v8 (`dabstep-gate/gate.py` and the scripts of the live experiment and the LLM baseline) | frozen release 3 | DiscoveryBench, live QRData experiment, baselines |
+| `v9.sha256` | v9 (`dabstep-gate/v9/`) | release 4, a correction | none: written after all evaluations, so this file is a record of the files, not a freeze |
 
 ## Two differences from the freeze records
 

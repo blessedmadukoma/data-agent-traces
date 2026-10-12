@@ -20,7 +20,7 @@ DAB_MODELS = gemini-2.5-flash gemini-3-pro gpt-5-mini gpt-5.1 gpt-5.2 kimi-k2-th
 
 .PHONY: help setup test check-frozen dabstep-data dabstep dabstep-extra dabstep-recount dab-data dab \
         bench-data rescore fa-rescore fa-replay \
-        receipts-select receipts-cost-check receipts-report
+        receipts-select receipts-cost-check receipts-report release4
 
 help:
 	@echo "setup            install the Python environment (uv sync)"
@@ -39,6 +39,7 @@ help:
 	@echo "receipts-select  cut the 1,000 DABstep episodes of the receipt replay (no model calls)"
 	@echo "receipts-cost-check  run the first 10 episodes with a model (needs OLLAMA_API_KEY; about USD 0.07)"
 	@echo "receipts-report  report the receipt replay"
+	@echo "release4         score every recorded step with checker release 4 (version 9) and compare with release 3"
 
 setup:
 	uv sync --all-groups
@@ -48,9 +49,10 @@ test:
 	cd dataagentbench-replay && uv run python -m unittest test_dab.py
 	cd rq3-pilot && DABSTEP_DATA=$(abspath $(DATA)) uv run python -m unittest test_rq3.py
 	cd live && uv run python -m unittest test_fa_runner.py
+	cd dabstep-gate/v9 && uv run python -m unittest test_gate_v9.py
 
 check-frozen:
-	$(SHA256) -c frozen/v6.sha256 frozen/v7.sha256 frozen/v8.sha256
+	$(SHA256) -c frozen/v6.sha256 frozen/v7.sha256 frozen/v8.sha256 frozen/v9.sha256
 
 dabstep-data:
 	uv run python tools/download_dabstep.py --revision $(DABSTEP_COMMIT) --out $(DATA)
@@ -169,3 +171,7 @@ receipts-cost-check:
 
 receipts-report:
 	uv run rq3-pilot/rq3_report.py $(RQ3_RUN)/results_cost10.jsonl
+
+# Checker release 4 (version 9): needs make dabstep, make dab and make rescore first.
+release4:
+	sh tools/release4.sh

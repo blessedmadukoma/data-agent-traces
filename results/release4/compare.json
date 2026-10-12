@@ -1,0 +1,282 @@
+{
+ "total": {
+  "steps": 168240,
+  "changed": 228,
+  "a_blocks": 5184,
+  "b_blocks": 5166,
+  "a_working_blocks": 4,
+  "b_working_blocks": 4,
+  "a_cause_blocks": 3788,
+  "b_cause_blocks": 3782,
+  "new_blocks": 0,
+  "lost_cause_blocks": 6
+ },
+ "files": {
+  "dabstep": {
+   "steps": 74484,
+   "changed": 108,
+   "transitions": {
+    "unknown -> run": 6,
+    "run -> unknown": 89,
+    "block -> unknown": 11,
+    "block -> run": 2
+   },
+   "new_blocks": [],
+   "a_blocks": 3477,
+   "b_blocks": 3464,
+   "a_working_blocks": 4,
+   "b_working_blocks": 4,
+   "a_cause_blocks": 2122,
+   "b_cause_blocks": 2121,
+   "lost_cause_blocks": [
+    {
+     "key": [
+      "v1__personal-q_test_da_bs32_maxlen_10__22-11-2025.jsonl",
+      "1694",
+      135,
+      5
+     ],
+     "b_outcome": "unknown",
+     "b_reason": "violation only in code that may not run"
+    }
+   ]
+  },
+  "dab_gemini-2.5-flash": {
+   "steps": 12026,
+   "changed": 0,
+   "transitions": {},
+   "new_blocks": [],
+   "a_blocks": 55,
+   "b_blocks": 55,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 52,
+   "b_cause_blocks": 52,
+   "lost_cause_blocks": []
+  },
+  "dab_gemini-3-pro": {
+   "steps": 16556,
+   "changed": 3,
+   "transitions": {
+    "run -> unknown": 3
+   },
+   "new_blocks": [],
+   "a_blocks": 383,
+   "b_blocks": 383,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 377,
+   "b_cause_blocks": 377,
+   "lost_cause_blocks": []
+  },
+  "dab_gpt-5-mini": {
+   "steps": 6678,
+   "changed": 30,
+   "transitions": {
+    "run -> unknown": 29,
+    "unknown -> run": 1
+   },
+   "new_blocks": [],
+   "a_blocks": 3,
+   "b_blocks": 3,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 3,
+   "b_cause_blocks": 3,
+   "lost_cause_blocks": []
+  },
+  "dab_gpt-5.1": {
+   "steps": 3850,
+   "changed": 62,
+   "transitions": {
+    "run -> unknown": 60,
+    "block -> unknown": 2
+   },
+   "new_blocks": [],
+   "a_blocks": 9,
+   "b_blocks": 7,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 5,
+   "b_cause_blocks": 3,
+   "lost_cause_blocks": [
+    {
+     "key": [
+      "gpt-5.1/DEPS_DEV_V1/query1/run_9",
+      7
+     ],
+     "b_outcome": "unknown",
+     "b_reason": "no supported source read in this cell"
+    },
+    {
+     "key": [
+      "gpt-5.1/GITHUB_REPOS/query1/run_20",
+      2
+     ],
+     "b_outcome": "unknown",
+     "b_reason": "no supported source read in this cell"
+    }
+   ]
+  },
+  "dab_gpt-5.2": {
+   "steps": 6555,
+   "changed": 7,
+   "transitions": {
+    "run -> unknown": 7
+   },
+   "new_blocks": [],
+   "a_blocks": 2,
+   "b_blocks": 2,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 2,
+   "b_cause_blocks": 2,
+   "lost_cause_blocks": []
+  },
+  "dab_kimi-k2-thinking": {
+   "steps": 29701,
+   "changed": 18,
+   "transitions": {
+    "run -> unknown": 15,
+    "block -> unknown": 3
+   },
+   "new_blocks": [],
+   "a_blocks": 810,
+   "b_blocks": 807,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 797,
+   "b_cause_blocks": 794,
+   "lost_cause_blocks": [
+    {
+     "key": [
+      "kimi-k2-thinking/bookreview/query3/run_41",
+      17
+     ],
+     "b_outcome": "unknown",
+     "b_reason": "violation only in code that may not run"
+    },
+    {
+     "key": [
+      "kimi-k2-thinking/bookreview/query3/run_43",
+      15
+     ],
+     "b_outcome": "unknown",
+     "b_reason": "violation only in code that may not run"
+    },
+    {
+     "key": [
+      "kimi-k2-thinking/bookreview/query3/run_9",
+      13
+     ],
+     "b_outcome": "unknown",
+     "b_reason": "violation only in code that may not run"
+    }
+   ]
+  },
+  "ia_gpt-oss": {
+   "steps": 2103,
+   "changed": 0,
+   "transitions": {},
+   "new_blocks": [],
+   "a_blocks": 10,
+   "b_blocks": 10,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 8,
+   "b_cause_blocks": 8,
+   "lost_cause_blocks": []
+  },
+  "ia_gpt-oss_live": {
+   "steps": 2103,
+   "changed": 0,
+   "transitions": {},
+   "new_blocks": [],
+   "a_blocks": 23,
+   "b_blocks": 23,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 21,
+   "b_cause_blocks": 21,
+   "lost_cause_blocks": []
+  },
+  "ia_deepseek41": {
+   "steps": 1545,
+   "changed": 0,
+   "transitions": {},
+   "new_blocks": [],
+   "a_blocks": 8,
+   "b_blocks": 8,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 8,
+   "b_cause_blocks": 8,
+   "lost_cause_blocks": []
+  },
+  "ia_deepseek41_live": {
+   "steps": 1545,
+   "changed": 0,
+   "transitions": {},
+   "new_blocks": [],
+   "a_blocks": 8,
+   "b_blocks": 8,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 8,
+   "b_cause_blocks": 8,
+   "lost_cause_blocks": []
+  },
+  "qr_gpt-oss": {
+   "steps": 3434,
+   "changed": 0,
+   "transitions": {},
+   "new_blocks": [],
+   "a_blocks": 19,
+   "b_blocks": 19,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 14,
+   "b_cause_blocks": 14,
+   "lost_cause_blocks": []
+  },
+  "qr_gpt-oss_live": {
+   "steps": 3434,
+   "changed": 0,
+   "transitions": {},
+   "new_blocks": [],
+   "a_blocks": 271,
+   "b_blocks": 271,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 267,
+   "b_cause_blocks": 267,
+   "lost_cause_blocks": []
+  },
+  "db_gpt-oss": {
+   "steps": 2113,
+   "changed": 0,
+   "transitions": {},
+   "new_blocks": [],
+   "a_blocks": 18,
+   "b_blocks": 18,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 18,
+   "b_cause_blocks": 18,
+   "lost_cause_blocks": []
+  },
+  "db_gpt-oss_live": {
+   "steps": 2113,
+   "changed": 0,
+   "transitions": {},
+   "new_blocks": [],
+   "a_blocks": 88,
+   "b_blocks": 88,
+   "a_working_blocks": 0,
+   "b_working_blocks": 0,
+   "a_cause_blocks": 86,
+   "b_cause_blocks": 86,
+   "lost_cause_blocks": []
+  }
+ }
+}

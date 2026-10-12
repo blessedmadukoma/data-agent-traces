@@ -1,0 +1,4 @@
+steps of the runs with the checker: 12637; blocked live: 588
+release 3 with the recorded evidence blocks 588 of the 588 blocked steps and 0 of the steps that ran
+release 4 blocks 588 of the 588 blocked steps (588 with the same missing name) and 0 of the steps that ran
+decisions that differ between the releases: 0

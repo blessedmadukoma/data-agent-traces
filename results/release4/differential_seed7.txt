@@ -1,0 +1,10 @@
+pandas 3.0.5: 12315 steps, 9312 ran without error, 3003 errors (2697 KeyError or FileNotFoundError), 0 timeouts, 0 crashes
+  ..: 5268 blocks, 3029 false blocks, 2239 blocks of failing steps, 55 checker crashes
+  .: 1810 blocks, 0 false blocks, 1810 blocks of failing steps, 0 checker crashes
+pandas 2.2.3: 12315 steps, 9350 ran without error, 2965 errors (2522 KeyError or FileNotFoundError), 0 timeouts, 0 crashes
+  ..: 5268 blocks, 3130 false blocks, 2138 blocks of failing steps, 55 checker crashes
+  .: 1810 blocks, 0 false blocks, 1810 blocks of failing steps, 0 checker crashes
+pandas 1.5.3: 12315 steps, 9413 ran without error, 2902 errors (2484 KeyError or FileNotFoundError), 0 timeouts, 0 crashes
+  ..: 5268 blocks, 3193 false blocks, 2075 blocks of failing steps, 55 checker crashes
+  .: 1810 blocks, 0 false blocks, 1810 blocks of failing steps, 0 checker crashes
+EXIT 0
