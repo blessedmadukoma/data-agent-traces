@@ -82,6 +82,8 @@ We changed the checker only between workloads. Before a new workload was opened,
 
 `make check-frozen` checks all three. Frozen files are kept byte for byte, so a few of their docstrings still show paths from our machine, such as `/home/claude/iaenv`. Replace these with your own paths when you run the commands. [frozen/README.md](frozen/README.md) lists the two files that are not byte-identical to their freeze and explains why.
 
+Release 4 (version 9, `dabstep-gate/v9/`) corrects gaps in the model of Python and pandas of release 3 that a reader and a differential test found. It was written after all evaluations and is not frozen; `make release4` shows that it changes 228 of 159,045 recorded decisions and adds no block. See `results/release4/`.
+
 ## Data and licences
 
 | Data | Source | Licence |
