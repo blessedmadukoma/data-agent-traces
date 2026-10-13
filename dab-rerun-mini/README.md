@@ -28,15 +28,16 @@ Pre-registration: [preregistration.md](preregistration.md), frozen by the hashes
 | Python calls with a syntax error from the embedding | 26.8% (146 of 544) | 0% (0 of 406) | |
 | Failed calls per run | 0.97 | 0.51 | −0.46 (−0.96 to +0.01); Wilcoxon p = 0.044 |
 | Subtraction check: B minus (A − harness-caused) | | | +0.08 (−0.27 to +0.43); p = 0.13 |
-| Requests to the model per run | 7.35 | 6.55 | −0.77 (−1.81 to +0.08); p = 0.18 |
+| Requests to the model per run | 7.35 | 6.58 | −0.77 (−1.81 to +0.08); p = 0.18 |
 | Pass@1 | 44.7% | 35.1% | −9.6 points (−14.2 to −5.1); p = 0.016 |
 
 **Reading:**
 
 - With the released harness, the embedding broke 26.8% of gpt-5-mini's Python calls, in 39 of 270 runs. With the code unchanged, it broke none.
-- Subtracting the harness-caused calls from A gives a count within 0.08 failed calls per run of B's. So for gpt-5-mini, one of DAB's six models, the subtraction that the paper applies to DAB's logs approximates what the model does without the effect.
+- B's failed calls per run minus A's count after subtracting the harness-caused calls is +0.08 (CI −0.27 to +0.43). For gpt-5-mini, one of DAB's six models, the rerun is therefore consistent with the subtraction that the paper applies to DAB's logs, but too imprecise to show that the two are equal.
 - Accuracy fell with the code unchanged. The pre-registration makes accuracy a secondary outcome and predicts no direction for it, and we do not know why it fell.
-- A post hoc look found no doubled escape sequences in B's code. B's Python calls contain escape sequences less often than A's (25 of 406, against 110 of 544), and B made fewer Python calls per run.
+- A post hoc look (`escape_check.py`, which needs the local run folders) found no doubled escape sequences in B's code. B's Python calls contain escape sequences less often than A's (25 of 406, against 110 of 544), and B made fewer Python calls per run.
+- Means per run are over tasks. In B, one PATENTS task has 2 runs, because 3 of its runs failed for infrastructure reasons after their retries.
 
 ## Files
 
@@ -45,5 +46,6 @@ Pre-registration: [preregistration.md](preregistration.md), frozen by the hashes
 | `rerun.py` | The runner. |
 | `DataAgent_patched.py` | DAB's agent with the model-access branch. |
 | `analysis_mini.py` | The analysis. |
+| `escape_check.py` | The post hoc check of escape sequences. |
 | `runs.jsonl` | One record per run, without the answers or any DAB data. |
 | `analysis.json`, `analysis_mini.json` | The analysis outputs. |
