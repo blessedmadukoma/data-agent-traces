@@ -99,7 +99,7 @@ We do not redistribute any of these datasets. We used only the public DABstep ta
 
 ## Citation
 
-If you use this code, please cite the preprint. [CITATION.cff](CITATION.cff) has the details. The archived release has a DOI on Zenodo.
+If you use this code, please cite the preprint. [CITATION.cff](CITATION.cff) has the details. Every release is archived on Zenodo; [doi:10.5281/zenodo.22999967](https://doi.org/10.5281/zenodo.22999967) resolves to the latest version.
 
 ## Licence
 
