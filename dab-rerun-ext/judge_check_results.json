@@ -1,0 +1,123 @@
+{
+ "n": 40,
+ "unsure": 5,
+ "modes": {
+  "FM1": {
+   "pooled": {
+    "n": 40,
+    "agree": 40,
+    "raw": 1.0,
+    "kappa": null,
+    "judge_yes": 0,
+    "human_yes": 0,
+    "kappa_ci95": null
+   },
+   "A": {
+    "n": 20,
+    "agree": 20,
+    "raw": 1.0,
+    "kappa": null,
+    "judge_yes": 0,
+    "human_yes": 0
+   },
+   "B": {
+    "n": 20,
+    "agree": 20,
+    "raw": 1.0,
+    "kappa": null,
+    "judge_yes": 0,
+    "human_yes": 0
+   }
+  },
+  "FM2": {
+   "pooled": {
+    "n": 40,
+    "agree": 30,
+    "raw": 0.75,
+    "kappa": 0.4505494505494505,
+    "judge_yes": 14,
+    "human_yes": 14,
+    "kappa_ci95": [
+     0.1428571428571424,
+     0.7222222222222222
+    ]
+   },
+   "A": {
+    "n": 20,
+    "agree": 15,
+    "raw": 0.75,
+    "kappa": 0.4318181818181819,
+    "judge_yes": 7,
+    "human_yes": 6
+   },
+   "B": {
+    "n": 20,
+    "agree": 15,
+    "raw": 0.75,
+    "kappa": 0.4680851063829787,
+    "judge_yes": 7,
+    "human_yes": 8
+   }
+  },
+  "FM3": {
+   "pooled": {
+    "n": 40,
+    "agree": 27,
+    "raw": 0.675,
+    "kappa": 0.2696629213483148,
+    "judge_yes": 16,
+    "human_yes": 9,
+    "kappa_ci95": [
+     -0.02272727272727275,
+     0.5512820512820512
+    ]
+   },
+   "A": {
+    "n": 20,
+    "agree": 14,
+    "raw": 0.7,
+    "kappa": 0.2941176470588233,
+    "judge_yes": 7,
+    "human_yes": 5
+   },
+   "B": {
+    "n": 20,
+    "agree": 13,
+    "raw": 0.65,
+    "kappa": 0.2553191489361702,
+    "judge_yes": 9,
+    "human_yes": 4
+   }
+  },
+  "FM4": {
+   "pooled": {
+    "n": 40,
+    "agree": 29,
+    "raw": 0.725,
+    "kappa": 0.4054054054054054,
+    "judge_yes": 10,
+    "human_yes": 17,
+    "kappa_ci95": [
+     0.1176470588235292,
+     0.6739130434782608
+    ]
+   },
+   "A": {
+    "n": 20,
+    "agree": 14,
+    "raw": 0.7,
+    "kappa": 0.3999999999999999,
+    "judge_yes": 6,
+    "human_yes": 10
+   },
+   "B": {
+    "n": 20,
+    "agree": 15,
+    "raw": 0.75,
+    "kappa": 0.39024390243902446,
+    "judge_yes": 4,
+    "human_yes": 7
+   }
+  }
+ }
+}
