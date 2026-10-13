@@ -435,3 +435,27 @@ The plan is `live/e2_preregistration.md`, with `live/e2_AMENDMENTS.md` and `live
 
 DAB extension (Section 3.1): see `dab-rerun-ext/README.md`. The kimi-k2.6 pilots that came before it are in
 `dab-rerun-kimi/`.
+
+## Third live experiment (E3, October 2026)
+
+E3 (preprint v3.21, Section 3.4) repeats E2 with E1's plain prompt and two models, gpt-oss:120b and gemma4:31b,
+where data-reference errors are common. The runs and transcripts are in `recorded-runs-e3-2026-10.tar.gz`
+(SHA-256 `936bb73d7b497e1a083e6bee6da5554575d8feb04fa1b7dfa7ca42fc56f59cfd`).
+
+```bash
+tar -xzf recorded-runs-e3-2026-10.tar.gz
+# per model (pre-registration, section 5)
+python3 live/e2_report.py --results runs/e3/gpt-oss-120b.jsonl --questions data/QRData/benchmark/QRData.json \
+    --validation runs/e3/validation_gpt-oss-120b.jsonl --json /tmp/e3_gpt-oss-120b.json
+python3 live/e2_report.py --results runs/e3/gemma4-31b.jsonl --questions data/QRData/benchmark/QRData.json \
+    --validation runs/e3/validation_gemma4-31b.jsonl --json /tmp/e3_gemma4-31b.json
+# pooled over the two models (H1, primary)
+python3 live/e3_report.py --questions data/QRData/benchmark/QRData.json \
+    --results runs/e3/gpt-oss-120b.jsonl runs/e3/gemma4-31b.jsonl --json /tmp/e3_pooled.json
+# descriptive numbers of E2 and E3 (runs with an executed data-reference error, kinds, next step)
+python3 tools/e3_numbers.py --questions data/QRData/benchmark/QRData.json runs/e2/results.jsonl runs/e3/*.jsonl
+```
+
+The plan is `live/e3_preregistration.md`, with `live/e3_AMENDMENTS.md` and `live/e3_FREEZE.txt`. The runner is
+`live/e3_fork.py`, which runs `live/e2_fork.py` with the plain prompt. The pilot that chose the second model, with
+its rule written before it ran, is in `runs/e3pilot/` (`PLAN.md`, `summary.txt`, `summarise.py` in the repository; its runs in the archive).
