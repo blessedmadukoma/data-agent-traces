@@ -318,13 +318,13 @@ def jeffreys(audit, sizes):
     res = json.load(open(audit))
     rng = np.random.default_rng(20261011)
     print("== audit intervals with Jeffreys' prior (stratum share ~ Beta(k+1/2, n-k+1/2))")
-    for corpus, (N, denom) in sizes.items():
+    for corpus, (N, denom, *drop) in sizes.items():
         cnt = res[corpus]["counts"]
         ks, ns = [], []
         for st in ("pos", "neg-sus", "neg-rest"):
             c = {int(k): v for k, v in cnt[st].items()}
             ks.append(c.get(1, 0))
-            ns.append(sum(v for k, v in c.items() if k != 4))      # unclear labels left out
+            ns.append(sum(v for k, v in c.items() if k != 4) - (drop[0].get(st, 0) if drop else 0))  # unclear left out
         p = np.stack([rng.beta(k + 0.5, n - k + 0.5, 400000) for k, n in zip(ks, ns)])
         count = (np.array(N)[:, None] * p).sum(0)
         rec = N[0] * p[0] / (N[0] * p[0] + N[1] * p[1] + N[2] * p[2])
@@ -356,7 +356,12 @@ def main():
     answer_evidence(os.path.join(a.recorded, "e1/results_deepseek41.jsonl"), os.path.join(a.replays, "live_ds.jsonl"),
                     {"P0G0", "P0G1"})
     if a.audit:
-        jeffreys(a.audit, {"DABstep": ([4429, 2577, 19259], 19466), "DAB": ([4751, 3626, 19607], 27984)})
+        # v3.22 correction: in DABstep, the share's denominator (19,466) excludes the 6,799 NameErrors attributed to
+        # dropped variables, so the third stratum counts only its other 12,460 steps, and the 15 sampled steps of
+        # the third stratum that are such NameErrors (scratch check against tools/harness_nameerror.py) leave 35.
+        # v3.21 used 19,259 and 50, which gave an upper bound of 25.7% instead of 25.3%.
+        jeffreys(a.audit, {"DABstep": ([4429, 2577, 12460], 19466, {"neg-rest": 15}),
+                           "DAB": ([4751, 3626, 19607], 27984)})
 
 
 if __name__ == "__main__":
