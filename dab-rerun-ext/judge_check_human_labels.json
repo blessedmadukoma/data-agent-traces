@@ -1,0 +1,246 @@
+{
+ "audit_type": "failure_mode",
+ "coder": "second human coder (not involved in the study)",
+ "note": "Modes and the unsure flag only; the coder's summaries and evidence quote DAB data and stay private.",
+ "total_cases": 40,
+ "decisions": {
+  "1": {
+   "modes": [
+    "FM3"
+   ],
+   "unsure": false
+  },
+  "2": {
+   "modes": [
+    "FM3"
+   ],
+   "unsure": false
+  },
+  "3": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": true
+  },
+  "4": {
+   "modes": [
+    "FM3"
+   ],
+   "unsure": false
+  },
+  "5": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "6": {
+   "modes": [
+    "FM3"
+   ],
+   "unsure": false
+  },
+  "7": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "8": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "9": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "10": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "11": {
+   "modes": [
+    "FM3"
+   ],
+   "unsure": false
+  },
+  "12": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "13": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "14": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "15": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "16": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "17": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "18": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "19": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "20": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "21": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "22": {
+   "modes": [],
+   "unsure": true
+  },
+  "23": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "24": {
+   "modes": [
+    "FM2",
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "25": {
+   "modes": [
+    "FM3",
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "26": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "27": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "28": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "29": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "30": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "31": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "32": {
+   "modes": [
+    "FM3"
+   ],
+   "unsure": false
+  },
+  "33": {
+   "modes": [
+    "FM3"
+   ],
+   "unsure": false
+  },
+  "34": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "35": {
+   "modes": [
+    "FM3"
+   ],
+   "unsure": true
+  },
+  "36": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  },
+  "37": {
+   "modes": [
+    "FM2"
+   ],
+   "unsure": false
+  },
+  "38": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": true
+  },
+  "39": {
+   "modes": [],
+   "unsure": true
+  },
+  "40": {
+   "modes": [
+    "FM4"
+   ],
+   "unsure": false
+  }
+ }
+}

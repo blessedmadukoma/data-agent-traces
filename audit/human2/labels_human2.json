@@ -1,0 +1,1602 @@
+{
+"1": {
+"label": 1,
+"note": "payments has no mcc column; the group-by fails on that name."
+},
+"2": {
+"label": 3,
+"note": "The interpreter refuses open before the file can be read."
+},
+"3": {
+"label": 1,
+"note": "transactions_june.csv cannot be found at the requested path."
+},
+"4": {
+"label": 3,
+"note": "open is forbidden by the interpreter; this is not a missing-file error."
+},
+"5": {
+"label": 1,
+"note": "fee_1234 was added to fees_df after average_rules was selected; the selected frame does not contain it."
+},
+"6": {
+"label": 3,
+"note": "The computation exceeds the 30-second time limit."
+},
+"7": {
+"label": 3,
+"note": "The code reads aci_ranking.csv, cannot extract a time, and exits explicitly; no named data access raises an error."
+},
+"8": {
+"label": 1,
+"note": "The grouped fees data has no eur_debit_rate column."
+},
+"9": {
+"label": 3,
+"note": "The path exists as a directory; the failure is IsADirectoryError."
+},
+"10": {
+"label": 3,
+"note": "SQL text is submitted as Python and fails with unexpected indentation."
+},
+"11": {
+"label": 1,
+"note": "The MCC table has mcc and description, not category_code."
+},
+"12": {
+"label": 3,
+"note": "json.loads receives a DataFrame instead of JSON text."
+},
+"13": {
+"label": 3,
+"note": "The interpreter blocks the io import."
+},
+"14": {
+"label": 1,
+"note": "The row being used contains card_scheme and aci, but not merchant_category_code."
+},
+"15": {
+"label": 1,
+"note": "read_csv requests date in parse_dates, but the input has no date column."
+},
+"16": {
+"label": 3,
+"note": "search is not an allowed or previously defined function."
+},
+"17": {
+"label": 1,
+"note": "The payments frame has merchant, not merchant_name."
+},
+"18": {
+"label": 1,
+"note": "The filtered payments frame has no date column."
+},
+"19": {
+"label": 3,
+"note": "The error is a list used where an iterator is required."
+},
+"20": {
+"label": 1,
+"note": "TransactionType is not a column of payments."
+},
+"21": {
+"label": 1,
+"note": "payments contains year and day_of_year, but no month column."
+},
+"22": {
+"label": 1,
+"note": "merchant_name is missing from the payments frame."
+},
+"23": {
+"label": 1,
+"note": "transactions.csv is not found."
+},
+"24": {
+"label": 3,
+"note": "A list is passed where an iterator is required."
+},
+"25": {
+"label": 3,
+"note": "The interpreter refuses open."
+},
+"26": {
+"label": 3,
+"note": "df is an undefined program variable."
+},
+"27": {
+"label": 1,
+"note": "data.csv loads successfully, but its columns are 商品, 单价 and 数量; value is absent."
+},
+"28": {
+"label": 3,
+"note": "The loaded fee list has no keys method."
+},
+"29": {
+"label": 3,
+"note": "The code tests the truth value of an empty array."
+},
+"30": {
+"label": 3,
+"note": "df is not defined when its columns are inspected."
+},
+"31": {
+"label": 3,
+"note": "records is an undefined program variable."
+},
+"32": {
+"label": 3,
+"note": "get is called on the fees list rather than on a dictionary."
+},
+"33": {
+"label": 3,
+"note": "Importing tools is forbidden."
+},
+"34": {
+"label": 3,
+"note": "keys is called on a list of fee records."
+},
+"35": {
+"label": 3,
+"note": "get is called on the string merchant, not a record."
+},
+"36": {
+"label": 1,
+"note": "merchant_name is not in the payments frame."
+},
+"37": {
+"label": 1,
+"note": "The payments frame has no date column."
+},
+"38": {
+"label": 3,
+"note": "A membership test is attempted on a float."
+},
+"39": {
+"label": 1,
+"note": "groupby moves card_scheme into the index; highest_fraud has no field with that name. This is explicitly label 1 under the codebook."
+},
+"40": {
+"label": 1,
+"note": "merchant_category is absent from the frame being indexed."
+},
+"41": {
+"label": 1,
+"note": "transaction_type is absent from payments."
+},
+"42": {
+"label": 3,
+"note": "The merchant list is treated as a dictionary with get."
+},
+"43": {
+"label": 1,
+"note": "The requested file 商户数据.csv is not found."
+},
+"44": {
+"label": 1,
+"note": "The code reports the missing transactions.csv and exits from its FileNotFoundError handler; that missing file prevents the step from continuing."
+},
+"45": {
+"label": 3,
+"note": "The interpreter blocks scipy."
+},
+"46": {
+"label": 3,
+"note": "The interpreter blocks pathlib."
+},
+"47": {
+"label": 3,
+"note": "The process reaches the 120-second time limit."
+},
+"48": {
+"label": 3,
+"note": "open is refused by the interpreter."
+},
+"49": {
+"label": 3,
+"note": "csv_files is an undefined variable."
+},
+"50": {
+"label": 1,
+"note": "date is not a payments column."
+},
+"51": {
+"label": 3,
+"note": "load_json is not an allowed or previously defined function."
+},
+"52": {
+"label": 1,
+"note": "The fee record uses ID, not lowercase id."
+},
+"53": {
+"label": 3,
+"note": "df is an undefined variable."
+},
+"54": {
+"label": 3,
+"note": "The computation exceeds the 30-second time limit."
+},
+"55": {
+"label": 3,
+"note": "excel_files has not been defined."
+},
+"56": {
+"label": 3,
+"note": "get is called on a string."
+},
+"57": {
+"label": 1,
+"note": "transactions.csv is not found."
+},
+"58": {
+"label": 3,
+"note": "A string is indexed as though it were a transaction dictionary."
+},
+"59": {
+"label": 1,
+"note": "The merchant record has merchant_category_code, not mcc."
+},
+"60": {
+"label": 3,
+"note": "The code requests position 1 of a split result that is too short."
+},
+"61": {
+"label": 1,
+"note": "month is absent from payments."
+},
+"62": {
+"label": 3,
+"note": "The process times out after 120 seconds."
+},
+"63": {
+"label": 3,
+"note": "fixed_amount is requested from a string, producing a type error."
+},
+"64": {
+"label": 3,
+"note": "The process times out after 120 seconds."
+},
+"65": {
+"label": 1,
+"note": "The loaded payments frame has no 手续费 column."
+},
+"66": {
+"label": 1,
+"note": "SQLite reports that the transactions table does not exist."
+},
+"67": {
+"label": 1,
+"note": "The Rafa_AI payments frame has eur_amount, not amount."
+},
+"68": {
+"label": 1,
+"note": "The merchant record shown in the error has no name key. Its structure differs from the reference schema, but the rule concerns the object actually indexed."
+},
+"69": {
+"label": 1,
+"note": "GlobalCard_credit_transactions.csv is not found."
+},
+"70": {
+"label": 1,
+"note": "The merchant key is account_type, not accounttype."
+},
+"71": {
+"label": 1,
+"note": "The merchant frame contains no fee_id column."
+},
+"72": {
+"label": 1,
+"note": "A CSV row read from data.csv has no value key."
+},
+"73": {
+"label": 3,
+"note": "The object indexed with id is a string, not a fee record."
+},
+"74": {
+"label": 3,
+"note": "open is forbidden by the interpreter."
+},
+"75": {
+"label": 1,
+"note": "The merchant frame has merchant, not name."
+},
+"76": {
+"label": 3,
+"note": "open is forbidden by the interpreter."
+},
+"77": {
+"label": 1,
+"note": "The fee object shown has only mcc_code and amount; account_type is missing from that object despite appearing in the reference schema."
+},
+"78": {
+"label": 1,
+"note": "merchant_name is absent from payments."
+},
+"79": {
+"label": 3,
+"note": "argmin is called on an empty sequence."
+},
+"80": {
+"label": 3,
+"note": "The interpreter refuses open."
+},
+"81": {
+"label": 3,
+"note": "Position 0 is requested from an empty list."
+},
+"82": {
+"label": 1,
+"note": "The loaded frame has no 商户名称 column."
+},
+"83": {
+"label": 3,
+"note": "from builtins import None is invalid Python syntax."
+},
+"84": {
+"label": 3,
+"note": "items is called on a list of fee dictionaries."
+},
+"85": {
+"label": 1,
+"note": "created_at is absent from the payments frame."
+},
+"86": {
+"label": 1,
+"note": "transactions.csv is not found."
+},
+"87": {
+"label": 1,
+"note": "The requested input directory data/context is missing; this is a wrong data path, not a temporary tool-result file."
+},
+"88": {
+"label": 3,
+"note": "os has not been imported or defined."
+},
+"89": {
+"label": 3,
+"note": "A slice is used to index a dictionary."
+},
+"90": {
+"label": 1,
+"note": "transactions.csv is not found."
+},
+"91": {
+"label": 3,
+"note": "df is an undefined variable."
+},
+"92": {
+"label": 1,
+"note": "The MCC record has mcc, not code."
+},
+"93": {
+"label": 3,
+"note": "The string <100k cannot be converted directly to float."
+},
+"94": {
+"label": 1,
+"note": "apply supplies a column Series named psp_reference; the function asks it for card_scheme, which is absent from that object."
+},
+"95": {
+"label": 3,
+"note": "A list is used where an iterator is required."
+},
+"96": {
+"label": 1,
+"note": "merchant_id is absent from payments."
+},
+"97": {
+"label": 3,
+"note": "json has not been imported or defined."
+},
+"98": {
+"label": 1,
+"note": "payments has eur_amount, not amount."
+},
+"99": {
+"label": 3,
+"note": "load_file_content is not an allowed or previously defined function."
+},
+"100": {
+"label": 1,
+"note": "The fee record contains ID, not id; the lookup fails before comparing any ID value."
+},
+"101": {
+"label": 1,
+"note": "The frame being selected has no merchant_id column."
+},
+"102": {
+"label": 1,
+"note": "The merge asks acquirer_countries for merchant, which is not one of its columns."
+},
+"103": {
+"label": 3,
+"note": "file_reader is not an allowed or previously defined function."
+},
+"104": {
+"label": 3,
+"note": "The program constructs aci_to_fee itself and then indexes it with a transaction count, 1, instead of an ACI name."
+},
+"105": {
+"label": 3,
+"note": "A string containing ID is treated as a dictionary with card_scheme."
+},
+"106": {
+"label": 1,
+"note": "payments_2023 has no capture_delay column."
+},
+"107": {
+"label": 3,
+"note": "candidate_files is undefined."
+},
+"108": {
+"label": 1,
+"note": "transactions.csv is not found."
+},
+"109": {
+"label": 3,
+"note": "continuous_vars is undefined."
+},
+"110": {
+"label": 3,
+"note": "The interpreter refuses open."
+},
+"111": {
+"label": 3,
+"note": "df is undefined."
+},
+"112": {
+"label": 3,
+"note": "A positional list access is out of range."
+},
+"113": {
+"label": 3,
+"note": "The comparison mixes an int and a str."
+},
+"114": {
+"label": 1,
+"note": "transaction_date is not a payments column."
+},
+"115": {
+"label": 4,
+"note": "The excerpt ends partway through a stderr path and omits the final exception. The initial missing file is caught, so it does not establish the later failure."
+},
+"116": {
+"label": 3,
+"note": "The interpreter refuses open."
+},
+"117": {
+"label": 3,
+"note": "file_reader is not an allowed or previously defined function."
+},
+"118": {
+"label": 3,
+"note": "The interpreter blocks the tools import."
+},
+"119": {
+"label": 1,
+"note": "transactions.csv is not found."
+},
+"120": {
+"label": 3,
+"note": "The reported failure is invalid Python syntax."
+},
+"121": {
+"label": 1,
+"note": "payments has eur_amount, not amount."
+},
+"122": {
+"label": 3,
+"note": "The index is not unique for to_json orient='index'."
+},
+"123": {
+"label": 1,
+"note": "merchant_name is absent from payments."
+},
+"124": {
+"label": 3,
+"note": "datetime is undefined."
+},
+"125": {
+"label": 1,
+"note": "The fee row has aci, not AuthorizationCharacteristicsIndicator."
+},
+"126": {
+"label": 3,
+"note": "open is forbidden by the interpreter."
+},
+"127": {
+"label": 1,
+"note": "The merchant frame has no Fee ID column."
+},
+"128": {
+"label": 1,
+"note": "data/context/transactions.csv is not found."
+},
+"129": {
+"label": 3,
+"note": "search is not an allowed or previously defined function."
+},
+"130": {
+"label": 3,
+"note": "A slice is used on a dictionary keyed by merchant and month."
+},
+"131": {
+"label": 3,
+"note": "The code indexes None; the recorded failure is a type error."
+},
+"132": {
+"label": 1,
+"note": "The grouped object has no psp_reference column."
+},
+"133": {
+"label": 3,
+"note": "keys is called on the fee list."
+},
+"134": {
+"label": 1,
+"note": "A fee record has no effective_date key."
+},
+"135": {
+"label": 1,
+"note": "The fee record shown contains card_scheme, transaction_value and fee, but no account_type."
+},
+"136": {
+"label": 3,
+"note": "The interpreter blocks decimal."
+},
+"137": {
+"label": 1,
+"note": "transactions.csv is not found."
+},
+"138": {
+"label": 3,
+"note": "The code tests an empty array as a Boolean."
+},
+"139": {
+"label": 3,
+"note": "The interpreter refuses open."
+},
+"140": {
+"label": 1,
+"note": "account_type is absent from payments."
+},
+"141": {
+"label": 3,
+"note": "The code loads fees.json as a list and calls keys on it; the output is truncated inside the list, but neither keys nor get is a list method."
+},
+"142": {
+"label": 1,
+"note": "merchant_category_code is absent from payments."
+},
+"143": {
+"label": 3,
+"note": "os is undefined."
+},
+"144": {
+"label": 1,
+"note": "The loaded fees frame has no effective_date column."
+},
+"145": {
+"label": 3,
+"note": "fee_files is undefined."
+},
+"146": {
+"label": 3,
+"note": "The process times out after 120 seconds."
+},
+"147": {
+"label": 3,
+"note": "df is undefined."
+},
+"148": {
+"label": 1,
+"note": "transaction_amount is absent from the frame being indexed."
+},
+"149": {
+"label": 3,
+"note": "The Python code fails with unexpected indentation."
+},
+"150": {
+"label": 3,
+"note": "get is called on a list of merchants."
+},
+"151": {
+"label": 1,
+"note": "fee_schedule.csv is not found."
+},
+"152": {
+"label": 3,
+"note": "The input is not valid JSON at its first character."
+},
+"153": {
+"label": 3,
+"note": "The code calls keys on the loaded fee list; the excerpt is cut inside that list, but the file schema and displayed object establish the list type."
+},
+"154": {
+"label": 1,
+"note": "The requested input directory data/context is missing."
+},
+"155": {
+"label": 4,
+"note": "The excerpt is cut during the directory listing, before the selected file, columns or final exception are shown."
+},
+"156": {
+"label": 1,
+"note": "The merchant frame has merchant, not name."
+},
+"157": {
+"label": 1,
+"note": "The frame loaded from data.csv has no score column."
+},
+"158": {
+"label": 1,
+"note": "read_csv requests user_id and payment_amount in usecols, but those columns are absent."
+},
+"159": {
+"label": 1,
+"note": "expenses.csv is not found."
+},
+"160": {
+"label": 3,
+"note": "items is called on a list."
+},
+"161": {
+"label": 1,
+"note": "timestamp is absent from the frame being indexed."
+},
+"162": {
+"label": 1,
+"note": "merchant_name is absent from payments."
+},
+"163": {
+"label": 1,
+"note": "The fee data has no effective_date key."
+},
+"164": {
+"label": 3,
+"note": "The missing fee_rules.csv is caught; the final unhandled error is the undefined os variable in the fallback."
+},
+"165": {
+"label": 3,
+"note": "CSV parsing fails because the field count is inconsistent."
+},
+"166": {
+"label": 3,
+"note": "The interpreter refuses open."
+},
+"167": {
+"label": 3,
+"note": "The submitted code is invalid Python syntax."
+},
+"168": {
+"label": 3,
+"note": "The interpreter blocks pathlib."
+},
+"169": {
+"label": 1,
+"note": "跨境交易数据.csv is not found."
+},
+"170": {
+"label": 1,
+"note": "The loaded matching_fee_ids.csv frame has no fee_id column."
+},
+"171": {
+"label": 3,
+"note": "The interpreter blocks pprint."
+},
+"172": {
+"label": 1,
+"note": "transactions.csv is not found."
+},
+"173": {
+"label": 3,
+"note": "get is called on the merchant list or its unparsed representation, not on a record."
+},
+"174": {
+"label": 3,
+"note": "keys is called on the fee list."
+},
+"175": {
+"label": 1,
+"note": "transaction_amount is absent from payments."
+},
+"176": {
+"label": 1,
+"note": "month is absent from payments."
+},
+"177": {
+"label": 1,
+"note": "merchant_name is absent from the data object being indexed."
+},
+"178": {
+"label": 3,
+"note": "get is called on the fee list."
+},
+"179": {
+"label": 3,
+"note": "keys is called on a list of merchant dictionaries."
+},
+"180": {
+"label": 3,
+"note": "A list is used where an iterator is required."
+},
+"181": {
+"label": 1,
+"note": "transactions.csv is not found."
+},
+"182": {
+"label": 3,
+"note": "available is an undefined variable."
+},
+"183": {
+"label": 3,
+"note": "The interpreter explicitly forbids open."
+},
+"184": {
+"label": 1,
+"note": "transaction_date is absent from the frame being indexed."
+},
+"185": {
+"label": 3,
+"note": "file is not an allowed or previously defined function."
+},
+"186": {
+"label": 1,
+"note": "date is absent from payments."
+},
+"187": {
+"label": 1,
+"note": "The requested input directory data/context is missing."
+},
+"188": {
+"label": 1,
+"note": "account_type is absent from payments."
+},
+"189": {
+"label": 3,
+"note": "The string data is indexed as though it were a merchant dictionary."
+},
+"190": {
+"label": 1,
+"note": "transactions.csv is not found."
+},
+"191": {
+"label": 1,
+"note": "The fee record contains ID, not id."
+},
+"192": {
+"label": 3,
+"note": "The interpreter refuses open."
+},
+"193": {
+"label": 1,
+"note": "The filtered payments frame has no is_intracountry column."
+},
+"194": {
+"label": 3,
+"note": "original_avg is an undefined variable."
+},
+"195": {
+"label": 1,
+"note": "The MCC table has description, not MCC Description."
+},
+"196": {
+"label": 3,
+"note": "The full-width colon is invalid in this Python code."
+},
+"197": {
+"label": 3,
+"note": "os is undefined."
+},
+"198": {
+"label": 1,
+"note": "transactions.csv is not found."
+},
+"199": {
+"label": 3,
+"note": "The interpreter refuses open."
+},
+"200": {
+"label": 1,
+"note": "date is absent from payments."
+},
+"201": {
+"label": 1,
+"note": "A derived patent-data frame is indexed by code, which is absent. Missing columns in frames built from data count under label 1."
+},
+"202": {
+"label": 3,
+"note": "/tmp/tmp5u4d7u3j.json is an invented tool-result file, covered by C1."
+},
+"203": {
+"label": 1,
+"note": "publicationinfo has no publication_number column."
+},
+"204": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing from the printed output."
+},
+"205": {
+"label": 3,
+"note": "SQL compares a VARCHAR date field with a DATE value without a cast."
+},
+"206": {
+"label": 1,
+"note": "review_database is used as a table name, but no such table exists in the queried database."
+},
+"207": {
+"label": 1,
+"note": "PostgreSQL cannot resolve the requested patient_id column."
+},
+"208": {
+"label": 3,
+"note": "The printed output omits the required __RESULT__: marker."
+},
+"209": {
+"label": 3,
+"note": "The printed output omits the required __RESULT__: marker."
+},
+"210": {
+"label": 3,
+"note": "package_query_36.json is an invented filename for an earlier query result; C1 applies."
+},
+"211": {
+"label": 3,
+"note": "var_functions is an undefined tool-result variable."
+},
+"212": {
+"label": 1,
+"note": "UGAZ is a missing ticker table; the stockmarket exception makes this label 1."
+},
+"213": {
+"label": 1,
+"note": "project_info has no ProjectName column."
+},
+"214": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"215": {
+"label": 3,
+"note": "/tmp/metadata_results.json is an invented query-result file; C1 applies."
+},
+"216": {
+"label": 3,
+"note": "items is called on a string."
+},
+"217": {
+"label": 1,
+"note": "The SQL literally references a table named {sym}, which does not exist; the codebook classifies the actual reference, even when substitution was intended."
+},
+"218": {
+"label": 3,
+"note": "var_functions is an undefined tool-result variable."
+},
+"219": {
+"label": 3,
+"note": "json has not been imported or defined."
+},
+"220": {
+"label": 3,
+"note": "/Users/Shared/wld12.json is an invented file for a prior citation-query result; C1 applies."
+},
+"221": {
+"label": 3,
+"note": "scipy is not installed."
+},
+"222": {
+"label": 3,
+"note": "The tool-result variable name is invalid or undefined; this is a storage-variable error."
+},
+"223": {
+"label": 1,
+"note": "The merge renames overlapping review_count columns with suffixes; the aggregate then asks for a column named review_count that is absent."
+},
+"224": {
+"label": 3,
+"note": "The supplied date format does not match the date strings."
+},
+"225": {
+"label": 3,
+"note": "json.loads receives a list instead of JSON text."
+},
+"226": {
+"label": 3,
+"note": "The process exits with code 124 after a time-out."
+},
+"227": {
+"label": 1,
+"note": "No table named review_database exists in the selected database."
+},
+"228": {
+"label": 3,
+"note": "to_json is called on a string."
+},
+"229": {
+"label": 1,
+"note": "Unquoted Patient_description becomes patient_description in PostgreSQL, a column that does not exist."
+},
+"230": {
+"label": 1,
+"note": "The unquoted Patient_description identifier resolves to a missing lowercase column."
+},
+"231": {
+"label": 3,
+"note": "The SQL statement ends at WHERE and is incomplete."
+},
+"232": {
+"label": 3,
+"note": "/tmp/tmphx5o9n70.json is an invented tool-result path; C1 applies."
+},
+"233": {
+"label": 3,
+"note": "The CSV path is an invented intermediate tool-result file, not a benchmark data file; C1 applies."
+},
+"234": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"235": {
+"label": 3,
+"note": "A list is indexed using a string."
+},
+"236": {
+"label": 1,
+"note": "The SQL asks the books database for a review relation that is not present there."
+},
+"237": {
+"label": 1,
+"note": "The statement refers to orderitem_sub, a relation not present in the database used by this call."
+},
+"238": {
+"label": 3,
+"note": "An empty regex-extraction result cannot be cast to INT32."
+},
+"239": {
+"label": 1,
+"note": "The derived state-summary frame has no total_reviews column, consistent with an empty result list without declared columns."
+},
+"240": {
+"label": 3,
+"note": "The Boolean selector has length 2 for an object of length 8."
+},
+"241": {
+"label": 3,
+"note": "var_functions is an undefined tool-result variable."
+},
+"242": {
+"label": 1,
+"note": "The referenced PricebookEntry table does not exist in this database."
+},
+"243": {
+"label": 3,
+"note": "The code fails with an unterminated string literal."
+},
+"244": {
+"label": 3,
+"note": "query_db_6 is an undefined program or tool-result variable."
+},
+"245": {
+"label": 1,
+"note": "No table named review_database exists in the selected database."
+},
+"246": {
+"label": 1,
+"note": "AAPL is a missing ticker table; the stockmarket exception applies."
+},
+"247": {
+"label": 1,
+"note": "The per-ticker SPY table has no Symbol column."
+},
+"248": {
+"label": 1,
+"note": "The Account table is not present in the database used by this query."
+},
+"249": {
+"label": 3,
+"note": "The Mongo tool argument lacks the required collection field."
+},
+"250": {
+"label": 1,
+"note": "The query refers to the missing table review_database."
+},
+"251": {
+"label": 3,
+"note": "/tmp/tmp3q_6m5i5.json is an invented tool-result file; C1 applies."
+},
+"252": {
+"label": 1,
+"note": "MDCN is a missing ticker table; this is label 1, not a missing ticker value."
+},
+"253": {
+"label": 1,
+"note": "The query refers to the missing table review_database."
+},
+"254": {
+"label": 1,
+"note": "The merged citation and paper frame has no unsuffixed title column after merging two frames that both contain title."
+},
+"255": {
+"label": 1,
+"note": "PostgreSQL resolves unquoted Patient_description to a missing lowercase column."
+},
+"256": {
+"label": 1,
+"note": "clinical_info has no cancer_type_acronym column."
+},
+"257": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"258": {
+"label": 1,
+"note": "The code asks each returned business record for results; that key does not exist in the data record."
+},
+"259": {
+"label": 1,
+"note": "clinical_info has no cancer_type_acronym column."
+},
+"260": {
+"label": 3,
+"note": "The program prints Python None rather than JSON null, so result parsing fails."
+},
+"261": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"262": {
+"label": 3,
+"note": "A list is indexed using a string."
+},
+"263": {
+"label": 3,
+"note": "A list is indexed using a string."
+},
+"264": {
+"label": 1,
+"note": "The filtered paper-data frame has no title column, consistent with an empty list of extracted records."
+},
+"265": {
+"label": 3,
+"note": "/tmp/tmp0n6o0v8a.json is an invented tool-result file; C1 applies."
+},
+"266": {
+"label": 3,
+"note": "/tmp/tmpq6g8q7wk.json is an invented tool-result file; C1 applies."
+},
+"267": {
+"label": 3,
+"note": "A list is indexed using a string."
+},
+"268": {
+"label": 1,
+"note": "The requested gender column is absent from clinical_info."
+},
+"269": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"270": {
+"label": 1,
+"note": "project_info has no ProjectName column."
+},
+"271": {
+"label": 1,
+"note": "Double quotes make the quote ID a column identifier; DuckDB reports that this named column does not exist."
+},
+"272": {
+"label": 3,
+"note": "A list is indexed using a string."
+},
+"273": {
+"label": 3,
+"note": "The submitted Python code has invalid syntax."
+},
+"274": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"275": {
+"label": 3,
+"note": "A list is indexed using a string."
+},
+"276": {
+"label": 3,
+"note": "A tool-result variable name is turned into an invented filename; C1 applies."
+},
+"277": {
+"label": 1,
+"note": "CYS is a missing ticker table; the stockmarket exception applies."
+},
+"278": {
+"label": 1,
+"note": "The derived paper frame has no title column after extracting no qualifying records."
+},
+"279": {
+"label": 3,
+"note": "SQL compares VARCHAR and TIMESTAMP values without conversion."
+},
+"280": {
+"label": 3,
+"note": "A positional list access is out of range."
+},
+"281": {
+"label": 3,
+"note": "/tmp/tmpg0v1e90h.json is an invented query-result file; C1 applies."
+},
+"282": {
+"label": 1,
+"note": "project_info has no ProjectName column."
+},
+"283": {
+"label": 1,
+"note": "The query references sqlite_master in PostgreSQL, where that relation does not exist."
+},
+"284": {
+"label": 3,
+"note": "json is an undefined module variable."
+},
+"285": {
+"label": 1,
+"note": "The query refers to the missing table review_database."
+},
+"286": {
+"label": 3,
+"note": "The date-format parser expects a space that does not match the input."
+},
+"287": {
+"label": 1,
+"note": "The reviews frame has no purchase_id column; converting a stored file path to a list does not load its records."
+},
+"288": {
+"label": 3,
+"note": "The date parser expects a number at the current position."
+},
+"289": {
+"label": 1,
+"note": "Double quotes turn the lead ID into a nonexistent column identifier; intent does not change label 1."
+},
+"290": {
+"label": 3,
+"note": "get is called on a string."
+},
+"291": {
+"label": 1,
+"note": "The Product2 table does not exist in the database used by this call."
+},
+"292": {
+"label": 3,
+"note": "json.loads receives a list rather than JSON text."
+},
+"293": {
+"label": 3,
+"note": "The Python code has invalid syntax."
+},
+"294": {
+"label": 3,
+"note": "var_functions is an undefined tool-result variable."
+},
+"295": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"296": {
+"label": 3,
+"note": "json.loads receives a list rather than JSON text."
+},
+"297": {
+"label": 3,
+"note": "The string 21 A cannot be converted to a number."
+},
+"298": {
+"label": 1,
+"note": "clinical_info has no cancer_type_acronym column."
+},
+"299": {
+"label": 3,
+"note": "The date parser expects a full month name that the input does not supply in that format."
+},
+"300": {
+"label": 4,
+"note": "The excerpt is cut inside a long CPC-code string and omits the exception or parser message; it cannot establish whether file loading or result parsing failed."
+},
+"301": {
+"label": 3,
+"note": "The Python code has invalid syntax."
+},
+"302": {
+"label": 3,
+"note": "CAST(date AS DATE) cannot parse the natural-language date string."
+},
+"303": {
+"label": 1,
+"note": "The referenced support.Case table does not exist in this database."
+},
+"304": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"305": {
+"label": 3,
+"note": "The Python code has invalid syntax."
+},
+"306": {
+"label": 3,
+"note": "A tool-result variable name is used as an invented filename; C1 applies."
+},
+"307": {
+"label": 3,
+"note": "The missing key names a tool-result variable, not a data field."
+},
+"308": {
+"label": 3,
+"note": "The closing bracket does not match the opening parenthesis."
+},
+"309": {
+"label": 3,
+"note": "/tmp/tmpsg9t_98g.json is an invented tool-result file; C1 applies."
+},
+"310": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"311": {
+"label": 3,
+"note": "A list is indexed using a string."
+},
+"312": {
+"label": 1,
+"note": "project_info_project_packageversion_mapping is not an existing table."
+},
+"313": {
+"label": 1,
+"note": "Unquoted Patient_description resolves to a missing lowercase column in PostgreSQL."
+},
+"314": {
+"label": 3,
+"note": "/tmp/tmp3z8h6p7u.json is an invented tool-result file; C1 applies."
+},
+"315": {
+"label": 3,
+"note": "The natural-language yelping_since value cannot be cast directly to DATE."
+},
+"316": {
+"label": 3,
+"note": "get is called on a string."
+},
+"317": {
+"label": 1,
+"note": "The merge requests title from a derived paper frame that does not contain it."
+},
+"318": {
+"label": 1,
+"note": "BRK.B is a missing ticker table; the stockmarket exception applies."
+},
+"319": {
+"label": 1,
+"note": "The query refers to sales_pipeline.Contract, which is not a table in the database used by this call."
+},
+"320": {
+"label": 1,
+"note": "The query refers to the missing table review_database."
+},
+"321": {
+"label": 3,
+"note": "iloc requests a position beyond the frame's rows."
+},
+"322": {
+"label": 1,
+"note": "products_orders.Product2 is not a table in the selected database."
+},
+"323": {
+"label": 3,
+"note": "A timezone-aware datetime Series is compared with a naive datetime."
+},
+"324": {
+"label": 1,
+"note": "The query references a languages table that is not accessible in this database."
+},
+"325": {
+"label": 3,
+"note": "The Python code has invalid syntax."
+},
+"326": {
+"label": 1,
+"note": "The reviews frame has no rating column. The codebook includes absent columns in derived frames even if bad result loading caused the absence."
+},
+"327": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"328": {
+"label": 1,
+"note": "The derived CPC-filings frame has no filing_year column."
+},
+"329": {
+"label": 1,
+"note": "The query refers to the missing table review_database."
+},
+"330": {
+"label": 1,
+"note": "The derived EMA frame has no ema column when it is sorted."
+},
+"331": {
+"label": 3,
+"note": "rl44 is an invented filename for an earlier tool result; C1 explicitly covers it."
+},
+"332": {
+"label": 1,
+"note": "clinical_info has no vital_status column."
+},
+"333": {
+"label": 1,
+"note": "project_info has no ProjectName column."
+},
+"334": {
+"label": 1,
+"note": "The query references a languages table that is not accessible in this database."
+},
+"335": {
+"label": 3,
+"note": "open receives a list rather than a file path."
+},
+"336": {
+"label": 3,
+"note": "The tmp_mongo_result path is an invented tool-result file; C1 applies."
+},
+"337": {
+"label": 1,
+"note": "stockinfo_database.stockinfo is not present in the database used by this query."
+},
+"338": {
+"label": 3,
+"note": "strip is called on a float."
+},
+"339": {
+"label": 3,
+"note": "/tmp/tmpb9b1d2h5.json is an invented query-result file; C1 applies."
+},
+"340": {
+"label": 1,
+"note": "Unquoted titleFull is folded to titlefull, a column that does not exist in PostgreSQL."
+},
+"341": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"342": {
+"label": 1,
+"note": "The query refers to the missing table review_database."
+},
+"343": {
+"label": 3,
+"note": "The Mongo query argument is invalid JSON."
+},
+"344": {
+"label": 1,
+"note": "The locally opened SQLite database has no publicationinfo table."
+},
+"345": {
+"label": 1,
+"note": "The query refers to the missing table review_database."
+},
+"346": {
+"label": 3,
+"note": "json.loads receives a list rather than JSON text."
+},
+"347": {
+"label": 1,
+"note": "read_parquet treats stocktrade_database as a file path, and no file matches it; the codebook counts wrong data paths."
+},
+"348": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"349": {
+"label": 3,
+"note": "json.loads receives a list rather than JSON text."
+},
+"350": {
+"label": 1,
+"note": "clinical_info has no acronym column."
+},
+"351": {
+"label": 1,
+"note": "Unquoted titleFull resolves to missing titlefull in PostgreSQL."
+},
+"352": {
+"label": 3,
+"note": "SQL compares a VARCHAR CloseDate field with DATE values without conversion."
+},
+"353": {
+"label": 3,
+"note": "The date-format parser expects a hyphen that does not match the input."
+},
+"354": {
+"label": 3,
+"note": "wmnrqwxclzgxgclj.json is an invented tool-result filename; C1 applies."
+},
+"355": {
+"label": 3,
+"note": "The natural-language date cannot be cast directly to TIMESTAMP."
+},
+"356": {
+"label": 3,
+"note": "The regular expression has an unterminated character set."
+},
+"357": {
+"label": 3,
+"note": "The date-format parser expects a hyphen that does not match the input."
+},
+"358": {
+"label": 3,
+"note": "The Boolean selector has length 2 for an object of length 8."
+},
+"359": {
+"label": 1,
+"note": "The merged book-review frame has no title column at group-by time."
+},
+"360": {
+"label": 1,
+"note": "clinical_info has no gender column."
+},
+"361": {
+"label": 3,
+"note": "Unquoted Case is rejected as SQL syntax; the recorded error is not a missing relation."
+},
+"362": {
+"label": 3,
+"note": "/tmp/tmp7q8sdfk5.json is an invented tool-result file; C1 applies."
+},
+"363": {
+"label": 1,
+"note": "project_info has no ProjectName column."
+},
+"364": {
+"label": 3,
+"note": "The Python code has invalid syntax."
+},
+"365": {
+"label": 1,
+"note": "The patent-data object being indexed has no filing_date field."
+},
+"366": {
+"label": 1,
+"note": "clinical_info has no cancer_type_acronym column."
+},
+"367": {
+"label": 1,
+"note": "The query refers to the missing table review_database."
+},
+"368": {
+"label": 1,
+"note": "Unquoted titleFull resolves to the nonexistent lowercase titlefull column."
+},
+"369": {
+"label": 3,
+"note": "Unquoted Case produces a SQL syntax error."
+},
+"370": {
+"label": 3,
+"note": "The SQL operator cannot compare the supplied types; UndefinedFunction here describes an operator/type mismatch."
+},
+"371": {
+"label": 3,
+"note": "funding_data.json is an invented file for prior Funding-query output; C1 applies."
+},
+"372": {
+"label": 3,
+"note": "A list is indexed using a string."
+},
+"373": {
+"label": 1,
+"note": "clinical_info has no project column."
+},
+"374": {
+"label": 1,
+"note": "clinical_info has no vital_status column."
+},
+"375": {
+"label": 1,
+"note": "Opportunity is not a table in the selected database."
+},
+"376": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"377": {
+"label": 1,
+"note": "clinical_info has no vital_status column."
+},
+"378": {
+"label": 3,
+"note": "SQL compares VARCHAR and DATE values without conversion."
+},
+"379": {
+"label": 3,
+"note": "The process exits with code 124 after a time-out."
+},
+"380": {
+"label": 1,
+"note": "clinical_info has no cancer_type_acronym column."
+},
+"381": {
+"label": 3,
+"note": "The Python code has invalid syntax."
+},
+"382": {
+"label": 4,
+"note": "The excerpt is cut inside the printed SQL string, without the final exception or parser message. The displayed SQL is malformed, but the observed failure is not recoverable."
+},
+"383": {
+"label": 1,
+"note": "clinical_info has no column named Cancer_type_acronym with that spelling and case."
+},
+"384": {
+"label": 3,
+"note": "The code prints a sequence of single-quoted IDs, which is not valid JSON."
+},
+"385": {
+"label": 1,
+"note": "Unquoted titleFull resolves to a missing lowercase titlefull column."
+},
+"386": {
+"label": 1,
+"note": "The query refers to the missing table review_database."
+},
+"387": {
+"label": 3,
+"note": "The Python code has invalid syntax."
+},
+"388": {
+"label": 1,
+"note": "project_info has no ProjectName column."
+},
+"389": {
+"label": 3,
+"note": "/tmp/tmp7v0g7n1f.json is an invented tool-result file; C1 applies."
+},
+"390": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"391": {
+"label": 1,
+"note": "Unquoted Patient_description becomes the missing lowercase patient_description column."
+},
+"392": {
+"label": 1,
+"note": "The query refers to the missing table review_database."
+},
+"393": {
+"label": 3,
+"note": "results_df is an undefined variable."
+},
+"394": {
+"label": 1,
+"note": "The query refers to a languages table that is not accessible in this database."
+},
+"395": {
+"label": 3,
+"note": "A string is indexed as though it were a record dictionary."
+},
+"396": {
+"label": 3,
+"note": "The code fails with an unterminated string literal."
+},
+"397": {
+"label": 3,
+"note": "read_sqlite is a missing table function, not a missing data table; functions belong to label 3."
+},
+"398": {
+"label": 3,
+"note": "The required __RESULT__: marker is missing."
+},
+"399": {
+"label": 3,
+"note": "/tmp/tmp5f3l6e7s.json is an invented tool-result file; C1 applies."
+},
+"400": {
+"label": 3,
+"note": "The remaining error text gives pandas date-format advice; the code parses heterogeneous dates using fixed formats, indicating a date-conversion failure."
+}
+}
