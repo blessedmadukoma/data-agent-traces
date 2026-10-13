@@ -1,0 +1,228 @@
+{
+ "DABstep": {
+  "labelled": 200,
+  "labelled_random_part1": 100,
+  "coder1_final": {
+   "random_part1": {
+    "n": 100,
+    "raw": 0.98,
+    "kappa4": 0.9601275917065389,
+    "kappa_binary": 0.9592169657422512
+   },
+   "all_labelled": {
+    "n": 200,
+    "raw": 0.985,
+    "kappa4": 0.9703762219808432,
+    "kappa_binary": 0.9697336561743342
+   }
+  },
+  "coder1_before_adjudication": {
+   "random_part1": {
+    "n": 100,
+    "raw": 1.0,
+    "kappa4": 1.0,
+    "kappa_binary": 1.0
+   },
+   "all_labelled": {
+    "n": 200,
+    "raw": 1.0,
+    "kappa4": 1.0,
+    "kappa_binary": 1.0
+   }
+  },
+  "llm_coder": {
+   "random_part1": {
+    "n": 100,
+    "raw": 0.97,
+    "kappa4": 0.9403222597970957,
+    "kappa_binary": 0.9389747762408461
+   },
+   "all_labelled": {
+    "n": 200,
+    "raw": 0.975,
+    "kappa4": 0.9504066653441777,
+    "kappa_binary": 0.9596774193548386
+   }
+  },
+  "estimates_human2": {
+   "precision": 0.898989898989899,
+   "tp": 3981.626262626263,
+   "fn": 157.77551020408163,
+   "recall": 0.96188446571201,
+   "corrected": 4139.401772830344,
+   "corrected_share": 0.1576014381431694,
+   "rule_share": 0.16862745098039217
+  },
+  "ci95_human2": {
+   "precision": [
+    0.8383838383838383,
+    0.95
+   ],
+   "recall": [
+    0.9185943848271826,
+    1.0
+   ],
+   "corrected_share": [
+    0.1455079604657397,
+    0.16915373528051997
+   ]
+  },
+  "disagreements_with_coder1_final": [
+   {
+    "id": 68,
+    "human2": 1,
+    "coder1_final": 3,
+    "llm": 3
+   },
+   {
+    "id": 77,
+    "human2": 1,
+    "coder1_final": 3,
+    "llm": 3
+   },
+   {
+    "id": 135,
+    "human2": 1,
+    "coder1_final": 3,
+    "llm": 3
+   }
+  ]
+ },
+ "DAB": {
+  "labelled": 200,
+  "labelled_random_part1": 100,
+  "coder1_final": {
+   "random_part1": {
+    "n": 100,
+    "raw": 0.94,
+    "kappa4": 0.8753117206982542,
+    "kappa_binary": 0.8946925021061498
+   },
+   "all_labelled": {
+    "n": 200,
+    "raw": 0.945,
+    "kappa4": 0.886410574142916,
+    "kappa_binary": 0.9058380414312617
+   }
+  },
+  "coder1_before_adjudication": {
+   "random_part1": {
+    "n": 100,
+    "raw": 0.85,
+    "kappa4": 0.7023218892637427,
+    "kappa_binary": 0.6956168831168831
+   },
+   "all_labelled": {
+    "n": 200,
+    "raw": 0.84,
+    "kappa4": 0.6842001381624394,
+    "kappa_binary": 0.6772566817952597
+   }
+  },
+  "llm_coder": {
+   "random_part1": {
+    "n": 100,
+    "raw": 0.96,
+    "kappa4": 0.9174576970697482,
+    "kappa_binary": 0.9372909698996655
+   },
+   "all_labelled": {
+    "n": 200,
+    "raw": 0.965,
+    "kappa4": 0.9281903980303652,
+    "kappa_binary": 0.9480573446914605
+   }
+  },
+  "estimates_human2": {
+   "precision": 0.81,
+   "tp": 3848.3100000000004,
+   "fn": 148.0,
+   "recall": 0.962965835983695,
+   "corrected": 3996.3100000000004,
+   "corrected_share": 0.14280696112064037,
+   "rule_share": 0.16977558604917095
+  },
+  "ci95_human2": {
+   "precision": [
+    0.73,
+    0.89
+   ],
+   "recall": [
+    0.9102658314113244,
+    1.0
+   ],
+   "corrected_share": [
+    0.1276373403849819,
+    0.15808676386506576
+   ]
+  },
+  "disagreements_with_coder1_final": [
+   {
+    "id": 201,
+    "human2": 1,
+    "coder1_final": 3,
+    "llm": 3
+   },
+   {
+    "id": 239,
+    "human2": 1,
+    "coder1_final": 3,
+    "llm": 3
+   },
+   {
+    "id": 264,
+    "human2": 1,
+    "coder1_final": 3,
+    "llm": 3
+   },
+   {
+    "id": 278,
+    "human2": 1,
+    "coder1_final": 3,
+    "llm": 3
+   },
+   {
+    "id": 287,
+    "human2": 1,
+    "coder1_final": 3,
+    "llm": 3
+   },
+   {
+    "id": 300,
+    "human2": 4,
+    "coder1_final": 3,
+    "llm": 3
+   },
+   {
+    "id": 317,
+    "human2": 1,
+    "coder1_final": 3,
+    "llm": 1
+   },
+   {
+    "id": 326,
+    "human2": 1,
+    "coder1_final": 3,
+    "llm": 1
+   },
+   {
+    "id": 328,
+    "human2": 1,
+    "coder1_final": 3,
+    "llm": 1
+   },
+   {
+    "id": 330,
+    "human2": 1,
+    "coder1_final": 3,
+    "llm": 1
+   },
+   {
+    "id": 382,
+    "human2": 4,
+    "coder1_final": 3,
+    "llm": 3
+   }
+  ]
+ }
+}

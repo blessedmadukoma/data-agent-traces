@@ -50,3 +50,33 @@ uv run python tools/audit_dre_sample.py --root . --out runs/audit_dre
 
 - DABstep: `submission file|trace line|cell index`, as in `runs/dabstep/parsed_*_cells.jsonl`.
 - DAB: `model/dataset/query/run|call index`, as in `runs/dab/cells_*.jsonl`.
+
+## Second human coder (October 2026)
+
+A second person, who took no other part in the study, labelled all 400 items with the frozen codebook and clarification
+C1, blind to the strata, the rules' decisions, coder 1 and the LLM coder. The items were shown in the order of
+`human2/order.json` (`human2/make_order.py`); `human2/part1_composition_SEALED.json` says which part-1 items were the
+random sample and which were the earlier disagreements, and was kept out of the repository until the labels were in.
+He coded from the files of the private page and entered his answers afterwards, because the page did not record his
+first session; his final set is `human2/labels_human2.json` (prepared 13 October 2026, 10:51 UTC). Two earlier entries
+of his answers are kept privately; they agree with the final set on 384 of 400 and 87 of 87 items.
+
+| | DABstep | DAB |
+|---|---|---|
+| Cohen's kappa (four labels) with coder 1's final labels, all 200 items | 0.970 | 0.886 |
+| the same, random part-1 items only (n = 100) | 0.960 | 0.875 |
+| with coder 1 before adjudication (all 200) | 1.000 | 0.684 |
+| with the LLM coder (all 200) | 0.950 | 0.928 |
+| Disagreements with coder 1's final labels | 3 | 11 |
+| Precision from his labels (95% bootstrap CI) | 0.899 (0.838 to 0.950) | 0.810 (0.730 to 0.890) |
+| Recall from his labels | 0.962 | 0.963 |
+| Corrected share of all failed steps | 15.8% (14.6 to 16.9) | 14.3% (12.8 to 15.8) |
+
+Twelve of the 14 disagreements are keys or indexes of objects that the program built from the data (DAB `py:data-key`,
+DABstep wrapped index errors), which he labelled 1 and coder 1 labelled 3; the other two he labelled unclear. DAB's low
+kappa with coder 1 before adjudication is expected: those labels predate clarification C1, which he applied. The
+paper keeps coder 1's final labels for its estimates and reports his as a check. Reproduce with:
+
+```bash
+python3 tools/audit_human2_analysis.py --human2 audit/human2/labels_human2.json --json audit/human2/results_human2.json
+```

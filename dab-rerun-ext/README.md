@@ -22,3 +22,21 @@ In blocks 5 to 9, the embedding broke 272 of 1,298 Python calls (21.0%) in 23 of
 
 Reproduce from the records: `python3 dab-rerun-ext/analysis_ext.py` needs the run folders for H1, H3 and H4
 (not released, because they contain DAB's data); the pooled H2 and H3 use only `runs.jsonl` of both reruns.
+
+## H4b: human check of DAB's judge (October 2026)
+
+A person who did not run the experiments labelled the 40 failed runs drawn by `judge_check_items.py` (20 per harness)
+with DAB's failure modes, blind to the harness and to the judge's labels, on a private page.
+`judge_check_human_labels.json` holds his modes and his "unsure" flag per item; his written summaries quote DAB data and
+stay private. `judge_check_analysis.py` compares them with the judge's labels in the sealed key (not released, because
+the judge's text quotes DAB data) and writes `judge_check_results.json`.
+
+| Mode | Agreement | Cohen's kappa (95% CI) | Judge yes | Human yes |
+|---|---|---|---|---|
+| FM1 | 40/40 | n/a (neither used it) | 0 | 0 |
+| FM2 | 30/40 | 0.45 (0.14 to 0.72) | 14 | 14 |
+| FM3 | 27/40 | 0.27 (-0.02 to 0.55) | 16 | 9 |
+| FM4 | 29/40 | 0.41 (0.12 to 0.67) | 10 | 17 |
+
+Per harness, FM4 kappa is 0.40 (A) and 0.39 (B). He marked 5 of the 40 runs as unsure.
+
