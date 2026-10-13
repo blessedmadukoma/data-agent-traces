@@ -1,0 +1,5 @@
+gemma4-31b.jsonl             runs 40  runs with a data-reference error  5 (12.5%)  [file errors 0, column errors 5]  answered 40 (100%)  correct 27  $0.020
+glm-5-3-flash.jsonl          runs 38  runs with a data-reference error  2 ( 5.3%)  [file errors 0, column errors 2]  answered 31 (82%)  correct 24  $0.265
+gpt-oss-120b.jsonl           runs 40  runs with a data-reference error 20 (50.0%)  [file errors 33, column errors 2]  answered 36 (90%)  correct 28  $0.060
+gpt-oss-20b.jsonl            runs  6  runs with a data-reference error  0 ( 0.0%)  [file errors 0, column errors 0]  answered 6 (100%)  correct 4  $0.001
+nemotron-3-nano-30b.jsonl    runs 40  runs with a data-reference error  3 ( 7.5%)  [file errors 1, column errors 2]  answered 34 (85%)  correct 22  $0.040
