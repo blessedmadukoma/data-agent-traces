@@ -10,7 +10,7 @@ the system message (schemas and hints, which the coder needs) stays.
 Writes OUT/judge_check/items.json (for the page; holds DAB data, so it stays private) and
 OUT/judge_check/key_SEALED.json (item -> arm, dataset, query, block, and the judge's labels; not for the coder).
 
-Usage: /home/claude/dab-venv/bin/python dab-rerun-ext/judge_check_items.py
+Usage: $DAB_PY dab-rerun-ext/judge_check_items.py
 """
 import importlib.util, json, random, sys
 from pathlib import Path
