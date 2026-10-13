@@ -136,7 +136,7 @@ Receipt replay:   all episodes: n = 907; mean saving 0.332 [0.257, 0.406]; ...
 
 The KramaBench run is not in the archive, because the KramaBench repository has no licence file. Its report is `results/model-runs/kramabench_gpt-oss_v6.txt` (953 working cells, 4 blocked, 8 of 47 failures caught).
 
-The live file check for the recorded runs uses the Python folders that their sandbox mounted (`/home/claude/iaenv` and `/usr`). `tools/rescore.sh` passes them to `infiagent/mount_exists.py`. For your own runs, pass your own folders (see B2).
+The live file check for the recorded runs uses the Python folders that their sandbox mounted (its Python environment and `/usr`), at the paths recorded in the traces. `tools/rescore.sh` passes them to `infiagent/mount_exists.py`. For your own runs, pass your own folders (see B2).
 
 ## B1. Setup for new runs (paid)
 

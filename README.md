@@ -80,7 +80,7 @@ We changed the checker only between workloads. Before a new workload was opened,
 | v7 | frozen release 2 | 24 September 2026 | InfiAgent-DABench (two models), QRData | `frozen/v7.sha256` |
 | v8 | frozen release 3 | 24 September 2026, 10:21 UTC | DiscoveryBench, live QRData experiment, baselines | `frozen/v8.sha256` |
 
-`make check-frozen` checks all three. Frozen files are kept byte for byte, so a few of their docstrings still show paths from our machine, such as `/home/claude/iaenv`. Replace these with your own paths when you run the commands. [frozen/README.md](frozen/README.md) lists the two files that are not byte-identical to their freeze and explains why.
+`make check-frozen` checks all three. Frozen files are kept byte for byte, so a few of their docstrings still show paths from the machine on which we ran them. Replace these with your own paths when you run the commands. [frozen/README.md](frozen/README.md) lists the two files that are not byte-identical to their freeze and explains why.
 
 Release 4 (version 9, `dabstep-gate/v9/`) corrects gaps in the model of Python and pandas of release 3 that a reader and a differential test found. It was written after the evaluations on the four benchmarks, so it was not frozen before a benchmark; the pre-registrations of the second and third live experiments record its hash and use it; `make release4` shows that it changes 228 of 159,045 recorded decisions and adds no block. See `results/release4/`.
 
@@ -105,6 +105,3 @@ If you use this code, please cite the preprint. [CITATION.cff](CITATION.cff) has
 
 The code is released under the MIT licence. See [LICENSE](LICENSE).
 
-## Use of AI tools
-
-Claude (Anthropic) assisted with running the experiments and writing the analysis code.
