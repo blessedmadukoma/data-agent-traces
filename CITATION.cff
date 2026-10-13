@@ -2,8 +2,9 @@ cff-version: 1.2.0
 message: "If you use this code, please cite the preprint below."
 title: "data-agent-traces: code for 'What Agent Traces Do Not Record: Harness Effects and Data-Reference Errors in Code-Writing LLM-based Agents for Data Analysis'"
 type: software
-version: 2.1.0
-date-released: 2026-10-11
+version: 2.2.0
+date-released: 2026-10-14
+doi: 10.5281/zenodo.22999967
 license: MIT
 repository-code: "https://github.com/blessedmadukoma/data-agent-traces"
 authors:
