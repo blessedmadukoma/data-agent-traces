@@ -20,4 +20,4 @@ make check-frozen
 
 ## Paths in frozen files
 
-We did not edit frozen files, so some of their docstrings show paths from our machine, for example `/home/claude/iaenv/bin/python` or `/home/claude/qrdata_tables/data`. Use your own paths instead. [docs/REPRODUCE.md](../docs/REPRODUCE.md) gives the commands with neutral paths.
+We did not edit frozen files, so some of their docstrings show paths from the machine on which we ran them, for example the Python environment of the sandbox or the folder of the QRData tables. Use your own paths instead. [docs/REPRODUCE.md](../docs/REPRODUCE.md) gives the commands with neutral paths.

@@ -5,7 +5,7 @@ judge's calls go through the extension's ledger and cap. Writes OUT/judge.jsonl.
 budget.BudgetExhausted: the frozen judge catches this name. The rebuilt budget.py raises RuntimeError with the same
 message, so the wrapper binds the name to RuntimeError; nothing else changes.
 
-Usage: OLLAMA_API_KEY=... /home/claude/dab-venv/bin/python dab-rerun-ext/judge_ext.py
+Usage: OLLAMA_API_KEY=... $DAB_PY dab-rerun-ext/judge_ext.py
 """
 import importlib.util, os, sys
 from pathlib import Path

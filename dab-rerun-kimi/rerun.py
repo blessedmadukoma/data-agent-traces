@@ -14,9 +14,9 @@ import json, os, queue, random, shutil, subprocess, sys, time, fcntl
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-ROOT = Path(os.environ.get("DAB_ROOT", "/home/claude/dabx"))
-OUT = Path(os.environ.get("DAB_OUT", "/home/claude/dabx-runs-kimi"))
-PY = os.environ.get("DAB_PY", "/home/claude/dab-venv/bin/python")
+ROOT = Path(os.environ.get("DAB_ROOT", str(Path.home() / "dabx")))
+OUT = Path(os.environ.get("DAB_OUT", str(Path.home() / "dabx-runs-kimi")))
+PY = os.environ.get("DAB_PY", str(Path.home() / "dab-venv/bin/python"))
 MODEL = "ollama/kimi-k2.6"
 PRICES = {"DAB_PRICE_IN": "0.95", "DAB_PRICE_CACHED": "0.16", "DAB_PRICE_OUT": "4.00"}  # USD per 1M tokens
 SEED = 20261012

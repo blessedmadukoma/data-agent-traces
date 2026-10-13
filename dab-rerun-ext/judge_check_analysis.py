@@ -7,7 +7,7 @@ interval over runs (10,000 resamples, seed 20261012) for the pooled kappa.
 
 Inputs: the human labels (modes per item; no trace content) and the sealed key (item -> arm and the judge's labels).
 Usage: python3 dab-rerun-ext/judge_check_analysis.py --human dab-rerun-ext/judge_check_human_labels.json \
-           --key /home/claude/dabx-runs-ext/judge_check/key_SEALED.json [--json out.json]
+           --key $DAB_OUT/judge_check/key_SEALED.json [--json out.json]
 """
 import argparse
 import json
