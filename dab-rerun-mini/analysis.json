@@ -1,0 +1,78 @@
+{
+  "excluded": {
+    "B:infrastructure": 3
+  },
+  "H1": {
+    "A": {
+      "runs": 270,
+      "python_calls": 544,
+      "harness_caused": 146,
+      "harness_per_python_call": 0.26838235294117646,
+      "runs_with_harness_caused": 39,
+      "silent_changes": 47
+    },
+    "B": {
+      "runs": 267,
+      "python_calls": 406,
+      "harness_caused": 0,
+      "harness_per_python_call": 0.0,
+      "runs_with_harness_caused": 0,
+      "silent_changes": 0
+    }
+  },
+  "pass1": {
+    "A": 0.4465415140415141,
+    "B": 0.3508974358974359
+  },
+  "H2_B_minus_A": {
+    "estimate": -0.09564407814407822,
+    "ci95": [
+      -0.14246718559218557,
+      -0.05060737179487185
+    ],
+    "wilcoxon_p": 0.015732963783258225,
+    "n_queries": 54,
+    "n_nonzero": 26,
+    "equal_weight_mean_diff": -0.07037037037037037
+  },
+  "H3_failed_calls_B_minus_A": {
+    "estimate": -0.4648148148148148,
+    "ci95": [
+      -0.9629629629629628,
+      0.0074074074074074224
+    ],
+    "wilcoxon_p": 0.04387536824135924,
+    "n_queries": 54
+  },
+  "H3_syntax_share_B_minus_A": {
+    "estimate": -0.2244393939393939,
+    "ci95": [
+      -0.35704545454545455,
+      -0.10508484848484857
+    ],
+    "wilcoxon_p": 0.00146484375,
+    "n_queries": 25
+  },
+  "runs_by_arm": {
+    "A": {
+      "runs": 270,
+      "prompt_tokens": 17813240,
+      "completion_tokens": 1497034,
+      "usd": 7.4473780000000005,
+      "terminate": {
+        "return_answer": 269,
+        "max_iterations": 1
+      }
+    },
+    "B": {
+      "runs": 267,
+      "prompt_tokens": 13146111,
+      "completion_tokens": 1275397,
+      "usd": 5.837321749999999,
+      "terminate": {
+        "return_answer": 267
+      }
+    }
+  },
+  "ledger_usd": 8.504111150000012
+}

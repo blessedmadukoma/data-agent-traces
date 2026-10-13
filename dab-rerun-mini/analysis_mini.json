@@ -1,0 +1,33 @@
+{
+  "complete_blocks": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "H3_B_failed_minus_A_subtraction": {
+    "estimate": 0.07592592592592597,
+    "ci95": [
+      -0.2740740740740741,
+      0.42777777777777787
+    ],
+    "wilcoxon_p": 0.1312763804197947,
+    "n_queries": 54
+  },
+  "A_failed_per_run": 0.9740740740740741,
+  "A_harness_per_run": 0.5407407407407407,
+  "A_subtraction_per_run": 0.4333333333333333,
+  "B_failed_per_run": 0.5092592592592592,
+  "H5_requests_B_minus_A": {
+    "estimate": -0.7740740740740741,
+    "ci95": [
+      -1.8149074074074076,
+      0.07777777777777771
+    ],
+    "wilcoxon_p": 0.17693694761369072,
+    "n_queries": 54
+  },
+  "runs_with_harness_caused_A": 39,
+  "runs_A": 270
+}
